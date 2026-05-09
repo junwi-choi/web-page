@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://junwi-choi.github.io/web-page/sitemap.xml
