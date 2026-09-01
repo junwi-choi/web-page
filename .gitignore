@@ -1,1 +1,5 @@
 Thumbs.db
+
+# 로컬 인증/도구 (절대 커밋 금지)
+.env
+push.ps1
