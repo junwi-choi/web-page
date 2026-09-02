@@ -129,6 +129,133 @@
                 line-height: 1.32;
             }
         }
+
+        /* 히어로 자동 전환 슬라이드 */
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 900ms ease;
+            pointer-events: none;
+        }
+
+        .hero-slide.is-active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 2;
+        }
+
+        .hero-progress {
+            width: 120px;
+            height: 3px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, .28);
+            overflow: hidden;
+        }
+
+        .hero-progress span {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: #fff;
+        }
+
+        .hero-nav {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, .16);
+            color: #fff;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+
+        .hero-nav:hover {
+            background: rgba(255, 255, 255, .32);
+        }
+
+        .hero-nav:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .hero-progress {
+                width: 76px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-slide {
+                transition: none;
+            }
+        }
+
+        /* 상단 고정 내비 — 히어로 위에서는 투명 + 흰 글자, 스크롤하면 흰 배경 */
+        #nav {
+            background: transparent;
+            transition: background .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+
+        #nav::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+            transition: opacity .3s ease;
+        }
+
+        #nav.is-scrolled {
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(194, 198, 215, .35);
+            box-shadow: 0 2px 14px rgba(0, 0, 0, .06);
+        }
+
+        #nav.is-scrolled::before {
+            opacity: 0;
+        }
+
+        #nav .logo-color {
+            display: none;
+        }
+
+        #nav.is-scrolled .logo-white {
+            display: none;
+        }
+
+        #nav.is-scrolled .logo-color {
+            display: block;
+        }
+
+        #nav .nav-link {
+            color: #fff;
+        }
+
+        #nav .nav-link:hover {
+            color: rgba(255, 255, 255, .75);
+        }
+
+        #nav .nav-link.is-current {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        #nav.is-scrolled .nav-link {
+            color: #424655;
+        }
+
+        #nav.is-scrolled .nav-link:hover {
+            color: #0055c9;
+        }
+
+        #nav.is-scrolled .nav-link.is-current {
+            color: #0055c9;
+            border-color: #0055c9;
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -221,26 +348,24 @@
 
 <body class="bg-background text-on-surface selection:bg-primary/10">
     <!-- TopNavBar -->
-    <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 h-24">
+    <nav id="nav" class="fixed inset-x-0 top-0 z-50 h-24">
         <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-margin-desktop h-full">
             <a href="#home" class="shrink-0">
-                <img src="./source/logo-full.png" alt="가치 세무회계 · VALUE Tax &amp; Accounting"
-                    class="h-16 md:h-[4.5rem] w-auto" />
+                <img src="./source/logo-full-white.png" alt="가치 세무회계 · VALUE Tax &amp; Accounting"
+                    class="logo-white h-16 md:h-[4.5rem] w-auto" />
+                <img src="./source/logo-full.png" alt="" aria-hidden="true"
+                    class="logo-color h-16 md:h-[4.5rem] w-auto" />
                 <span class="sr-only">가치 세무회계 최준위 세무사</span>
             </a>
             <div class="hidden md:flex items-center gap-8">
-                <a class="text-primary border-b-2 border-primary pb-1 font-bold text-body-md" href="#home">홈</a>
-                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-body-md"
-                    href="#about">인사말</a>
-                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-body-md"
-                    href="#services">주요서비스</a>
-                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-body-md"
-                    href="#contact">문의하기</a>
-                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-body-md"
-                    href="#location">오시는길</a>
+                <a class="nav-link is-current border-b-2 pb-1 font-bold text-body-md transition-colors" href="#home">홈</a>
+                <a class="nav-link font-medium text-body-md transition-colors" href="#about">인사말</a>
+                <a class="nav-link font-medium text-body-md transition-colors" href="#services">주요서비스</a>
+                <a class="nav-link font-medium text-body-md transition-colors" href="#contact">문의하기</a>
+                <a class="nav-link font-medium text-body-md transition-colors" href="#location">오시는길</a>
             </div>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                class="inline-block bg-[#FEE500] text-[#191919] px-6 py-2.5 rounded-lg text-label-md font-bold hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95 flex items-center gap-2">
+                class="inline-block bg-[#FEE500] text-[#191919] px-6 py-2.5 rounded-lg text-label-md font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95 flex items-center gap-2">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
@@ -249,28 +374,106 @@
             </a>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-[500px] md:min-h-[700px] flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img alt="Business district background" class="w-full h-full object-cover"
+    <!-- Hero Section (auto-rotating) -->
+    <section id="home" class="relative min-h-[560px] md:min-h-[700px] overflow-hidden bg-inverse-surface" data-hero
+        aria-roledescription="carousel" aria-label="가치 세무회계 소개">
+
+        <!-- Slide 1 -->
+        <div class="hero-slide is-active absolute inset-0 flex items-center" data-slide>
+            <img alt="가산디지털단지 오피스 전경" class="absolute inset-0 w-full h-full object-cover"
                 src="./source/theanandthakur-building-6011756_1920.jpg" />
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
-        <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
-            <div class="max-w-2xl text-white">
-                <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Premium Tax
-                    Service</span>
-                <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
-                    대표님들의 가치를<br />최우선으로 생각하는<br /><span class="text-primary-fixed-dim">든든한 사업 파트너</span>
-                </h1>
-                <p class="text-body-lg text-white/90 mb-10 max-w-lg">
-                    프리미엄 세무서비스 제공. 업종별 최적의 절세 솔루션을 제시하며 사업의 시작부터 성장까지 함께합니다.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <div class="absolute inset-0 bg-black/45"></div>
+            <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Premium Tax Service</span>
+                    <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
+                        대표님들의 가치를<br />최우선으로 생각하는<br /><span class="text-primary-fixed-dim">든든한 사업 파트너</span></h1>
+                    <p class="text-body-lg text-white/90 mb-10 max-w-lg">프리미엄 세무서비스 제공. 업종별 최적의 절세 솔루션을 제시하며 사업의 시작부터 성장까지 함께합니다.</p>
                     <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료
-                        상담 신청하기</a>
+                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 · 수출입 -->
+        <div class="hero-slide absolute inset-0 flex items-center" data-slide>
+            <img alt="수출 컨테이너 항만" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-2-trade.jpg" />
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">수출입 세무 전문</span>
+                    <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
+                        수출 기업의 세금은<br /><span class="text-primary-fixed-dim">가치 세무회계</span></h1>
+                    <p class="text-body-lg text-white/90 mb-10 max-w-lg">영세율 적용, 부가세 조기환급, 외국환 거래·관세 이슈까지<br />수출입 실무에 정통한 대표 세무사가 직접 챙깁니다.</p>
+                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 · 건설업 -->
+        <div class="hero-slide absolute inset-0 flex items-center" data-slide>
+            <img alt="건설 현장" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-3-construction.jpg" />
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">건설업 세무 전문</span>
+                    <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
+                        건설업 세무,<br /><span class="text-primary-fixed-dim">현장을 아는 세무사에게</span></h1>
+                    <p class="text-body-lg text-white/90 mb-10 max-w-lg">기성고 수익인식, 하도급 노무비 적격증빙, 면허 유지 재무비율 관리까지 건설업 특유의 리스크를 선제적으로 대응합니다.</p>
+                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 · 노하우 -->
+        <div class="hero-slide absolute inset-0 flex items-center" data-slide>
+            <img alt="고객 자문 미팅" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-4-knowhow.jpg" />
+            <div class="absolute inset-0 bg-black/55"></div>
+            <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">검증된 실적</span>
+                    <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
+                        수백 곳의 사업장과<br /><span class="text-primary-fixed-dim">함께 쌓아온 노하우</span></h1>
+                    <p class="text-body-lg text-white/90 mb-10 max-w-lg">다양한 업종과 규모의 고객을 자문해 온 경험이, 대표님 사업에 가장 현실적인 해답을 만듭니다.</p>
+                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5 · 업종별 대응 -->
+        <div class="hero-slide absolute inset-0 flex items-center" data-slide>
+            <img alt="업종별 맞춤 세무 자문" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-5-industry.jpg" />
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">업종별 맞춤 대응</span>
+                    <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
+                        업종이 다르면<br /><span class="text-primary-fixed-dim">세무 전략도 달라야 합니다</span></h1>
+                    <p class="text-body-lg text-white/90 mb-10 max-w-lg">건설·수출입·제조·도소매·학원·외식 등 업종별로 특화된 절세 전략과 회계 관리를 제공합니다.</p>
+                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="hero-ctrl absolute bottom-7 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 text-white">
+            <div class="hero-progress" aria-hidden="true"><span data-progress></span></div>
+            <span class="text-sm font-semibold tabular-nums tracking-wide select-none whitespace-nowrap"><span data-cur>1</span><span class="opacity-50"> / </span><span data-total>5</span></span>
+            <div class="flex items-center gap-1.5">
+                <button type="button" class="hero-nav" data-prev aria-label="이전 슬라이드">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="hero-nav" data-toggle aria-label="일시정지">
+                    <svg data-icon-pause width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+                    <svg data-icon-play hidden width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+                </button>
+                <button type="button" class="hero-nav" data-next aria-label="다음 슬라이드">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
             </div>
         </div>
     </section>
@@ -323,71 +526,77 @@
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Industry 1 -->
-                <div
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group">
+                <a href="./services/construction.html"
+                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
                     <div
                         class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">construction</span>
+                        <span class="material-symbols-outlined text-[32px]">engineering</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">건설업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed">복잡한 면허 유지 요건 및 노무비 관리, 현장별 실행 예산 편성을
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">복잡한 면허 유지 요건 및 노무비 관리, 현장별 실행 예산 편성을
                         통한 전문적인 관리를 지원합니다.</p>
-                </div>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                </a>
                 <!-- Industry 2 -->
-                <div
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group">
+                <a href="./services/trade.html"
+                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
                     <div
                         class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">sailing</span>
+                        <span class="material-symbols-outlined text-[32px]">directions_boat</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">수출입업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed">영세율 적용 검토, 관세 환급 및 외국환 거래법 위반 리스크 관리
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">영세율 적용 검토, 관세 환급 및 외국환 거래법 위반 리스크 관리
                         등 글로벌 비즈니스 특화 서비스를 제공합니다.</p>
-                </div>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                </a>
                 <!-- Industry 3 -->
-                <div
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group">
+                <a href="./services/manufacturing.html"
+                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
                     <div
                         class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">factory</span>
+                        <span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">제조업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed">원가 계산의 고도화 및 R&amp;D 세액공제, 기업부설연구소
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">원가 계산의 고도화 및 R&amp;D 세액공제, 기업부설연구소
                         설립 지원 등 제조 환경에 맞는 절세를 실현합니다.</p>
-                </div>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                </a>
                 <!-- Industry 4 -->
-                <div
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group">
+                <a href="./services/retail.html"
+                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
                     <div
                         class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
                         <span class="material-symbols-outlined text-[32px]">storefront</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">도소매업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed">온라인 플랫폼 매출 통합 관리 및 재고 자산 관리 시스템을 통해
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">온라인 플랫폼 매출 통합 관리 및 재고 자산 관리 시스템을 통해
                         투명하고 정확한 신고를 지원합니다.</p>
-                </div>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                </a>
                 <!-- Industry 5 -->
-                <div
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group">
+                <a href="./services/academy.html"
+                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
                     <div
                         class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">school</span>
+                        <span class="material-symbols-outlined text-[32px]">menu_book</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">학원업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed">면세 사업자 수입금액 신고 및 강사료 원천세 관리, 교육청 기준
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">면세 사업자 수입금액 신고 및 강사료 원천세 관리, 교육청 기준
                         매출 검토 등 안정적인 운영을 돕습니다.</p>
-                </div>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                </a>
                 <!-- Industry 6 -->
-                <div
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group">
+                <a href="./services/restaurant.html"
+                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
                     <div
                         class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
                         <span class="material-symbols-outlined text-[32px]">restaurant</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">음식점업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed">의제매입세액 공제 극대화, 배달 앱 매출 정산 관리 등 효율적인
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">의제매입세액 공제 극대화, 배달 앱 매출 정산 관리 등 효율적인
                         비용 관리 솔루션을 제공합니다.</p>
-                </div>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                </a>
             </div>
         </div>
     </section>
@@ -395,9 +604,7 @@
     <section class="py-xl bg-surface-container-low">
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
             <div class="text-center mb-16">
-                <h2 class="text-headline-lg text-on-background mb-4">세무 전문가의 깊이 있는 인사이트</h2>
-                <p class="text-on-surface-variant text-body-md max-w-2xl mx-auto">복잡한 세무 정책과 절세 전략, 가치 세무회계가 알기 쉽게
-                    풀어드립니다.</p>
+                <h2 class="text-headline-lg text-on-background mb-4"> 가치 세무회계 인사이트</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog Post 1 -->
@@ -570,7 +777,7 @@
                     class="lg:col-span-8 h-[450px] rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30">
                     <a href="https://naver.me/GDafxAVF" target="_blank" rel="noopener noreferrer"
                         class="block w-full h-full bg-surface-container relative group cursor-pointer">
-                        <img alt="Location Map"
+                        <img alt="가치 세무회계 건물 전경"
                             class="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500"
                             src="./source/그림1.png" />
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -601,6 +808,112 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var hero = document.querySelector('[data-hero]');
+            if (!hero) return;
+            var slides = [].slice.call(hero.querySelectorAll('[data-slide]'));
+            var n = slides.length;
+            if (!n) return;
+            var DUR = 6000;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var bar = hero.querySelector('[data-progress]');
+            var curEl = hero.querySelector('[data-cur]');
+            var totalEl = hero.querySelector('[data-total]');
+            var toggleBtn = hero.querySelector('[data-toggle]');
+            var iconPause = hero.querySelector('[data-icon-pause]');
+            var iconPlay = hero.querySelector('[data-icon-play]');
+            var prevBtn = hero.querySelector('[data-prev]');
+            var nextBtn = hero.querySelector('[data-next]');
+
+            var i = 0;
+            var timer = null;
+            var wantPlay = !reduce;   // 재생 여부 (일시정지 버튼으로만 제어)
+
+            if (totalEl) totalEl.textContent = n;
+
+            function running() { return wantPlay && !document.hidden; }
+            function clearTimer() { if (timer) { clearTimeout(timer); timer = null; } }
+
+            function barReset() {
+                if (!bar) return;
+                bar.style.transition = 'none';
+                bar.style.width = '0%';
+                void bar.offsetWidth;
+            }
+            function barRun() {
+                if (!bar) return;
+                bar.style.transition = 'width ' + DUR + 'ms linear';
+                bar.style.width = '100%';
+            }
+            function barFreeze() {
+                if (!bar) return;
+                var w = getComputedStyle(bar).width;
+                bar.style.transition = 'none';
+                bar.style.width = w;
+            }
+
+            function render() {
+                slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+                if (curEl) curEl.textContent = (i + 1);
+            }
+
+            function startCycle() {
+                clearTimer();
+                barReset();
+                barRun();
+                timer = setTimeout(function () {
+                    i = (i + 1) % n;
+                    render();
+                    startCycle();
+                }, DUR);
+            }
+
+            function apply() {
+                if (running()) startCycle();
+                else { clearTimer(); barFreeze(); }
+            }
+
+            function go(next) {
+                i = (next + n) % n;
+                render();
+                if (running()) startCycle();
+                else { clearTimer(); barReset(); }
+            }
+
+            function setToggleUI() {
+                if (iconPause) iconPause.hidden = !wantPlay;
+                if (iconPlay) iconPlay.hidden = wantPlay;
+                if (toggleBtn) toggleBtn.setAttribute('aria-label', wantPlay ? '일시정지' : '재생');
+            }
+
+            if (toggleBtn) toggleBtn.addEventListener('click', function () {
+                wantPlay = !wantPlay;
+                setToggleUI();
+                apply();
+            });
+            if (prevBtn) prevBtn.addEventListener('click', function () { go(i - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { go(i + 1); });
+
+            // 다른 탭으로 이동하면 잠시 멈췄다가 돌아오면 재개 (재생 상태였을 때만)
+            document.addEventListener('visibilitychange', function () { apply(); });
+
+            render();
+            setToggleUI();
+            apply();
+        })();
+
+        // 스크롤하면 상단 내비를 흰 배경으로 전환
+        (function () {
+            var nav = document.getElementById('nav');
+            if (!nav) return;
+            function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 40); }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+    </script>
 </body>
 
 </html>
