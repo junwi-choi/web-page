@@ -793,15 +793,16 @@
                     class="lg:col-span-8 aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[450px] rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30">
                     <a href="https://naver.me/GDafxAVF" target="_blank" rel="noopener noreferrer"
                         class="block w-full h-full bg-surface-container relative group cursor-pointer">
-                        <img alt="가치 세무회계 위치 (네이버 지도)" loading="lazy"
-                            class="lg:hidden w-full h-full object-cover" src="./source/naver-map-mobile.png" />
                         <img alt="가치 세무회계 건물 전경"
-                            class="hidden lg:block w-full h-full object-cover grayscale-[0.35] group-hover:opacity-0 transition-opacity duration-500"
+                            class="w-full h-full object-cover grayscale-[0.35] group-hover:opacity-0 transition-opacity duration-500"
                             src="./source/그림1.png" />
+                        <img alt="가치 세무회계 위치 (네이버 지도)" loading="lazy"
+                            class="lg:hidden absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            src="./source/naver-map-mobile.png" />
                         <img alt="가치 세무회계 위치 (네이버 지도)" loading="lazy"
                             class="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                             src="./source/naver-map.png" />
-                        <div class="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                             <div
                                 class="bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce group-hover:bg-primary transition-colors duration-300">
                                 <span
