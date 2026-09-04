@@ -763,44 +763,45 @@
     <!-- Location Section -->
     <section id="location" class="py-xl bg-background">
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-gutter">
                 <div class="lg:col-span-4 flex flex-col justify-center">
-                    <h2 class="text-headline-lg text-on-background mb-6">오시는 길</h2>
-                    <div class="space-y-8">
-                        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <h2 class="text-headline-lg text-on-background mb-6 md:mb-8">오시는 길</h2>
+                    <dl class="space-y-6">
+                        <div class="flex items-start gap-3.5">
                             <div
-                                class="w-10 h-10 bg-secondary-container rounded-full flex items-center justify-center text-primary shrink-0">
-                                <span class="material-symbols-outlined">pin_drop</span>
+                                class="w-10 h-10 bg-secondary-container rounded-full flex items-center justify-center text-primary shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-[20px]">pin_drop</span>
                             </div>
                             <div>
-                                <h4 class="text-body-md font-bold text-on-background mb-1">주소</h4>
-                                <p class="text-on-surface-variant text-body-sm">서울 금천구 가산디지털2로 135<br />가산어반워크 1동 302호
-                                </p>
+                                <dt class="text-label-md font-bold text-primary mb-1">주소</dt>
+                                <dd class="text-on-surface-variant text-body-md leading-normal">서울 금천구 가산디지털2로 135<br />가산어반워크 1동 302호</dd>
                             </div>
                         </div>
-                        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <div class="flex items-start gap-3.5">
                             <div
-                                class="w-10 h-10 bg-secondary-container rounded-full flex items-center justify-center text-primary shrink-0">
-                                <span class="material-symbols-outlined">directions_subway</span>
+                                class="w-10 h-10 bg-secondary-container rounded-full flex items-center justify-center text-primary shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-[20px]">directions_subway</span>
                             </div>
                             <div>
-                                <h4 class="text-body-md font-bold text-on-background mb-1">지하철</h4>
-                                <p class="text-on-surface-variant text-body-sm">1, 7호선 가산디지털단지역 8번 출구 도보 5분</p>
+                                <dt class="text-label-md font-bold text-primary mb-1">지하철</dt>
+                                <dd class="text-on-surface-variant text-body-md leading-normal">1·7호선 가산디지털단지역<br />8번 출구에서 도보 5분</dd>
                             </div>
                         </div>
-                    </div>
+                    </dl>
                 </div>
                 <div
-                    class="lg:col-span-8 h-[450px] rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30">
+                    class="lg:col-span-8 aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[450px] rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30">
                     <a href="https://naver.me/GDafxAVF" target="_blank" rel="noopener noreferrer"
                         class="block w-full h-full bg-surface-container relative group cursor-pointer">
+                        <img alt="가치 세무회계 위치 (네이버 지도)" loading="lazy"
+                            class="lg:hidden w-full h-full object-cover" src="./source/naver-map-mobile.png" />
                         <img alt="가치 세무회계 건물 전경"
-                            class="w-full h-full object-cover grayscale-[0.35] group-hover:opacity-0 transition-opacity duration-500"
+                            class="hidden lg:block w-full h-full object-cover grayscale-[0.35] group-hover:opacity-0 transition-opacity duration-500"
                             src="./source/그림1.png" />
                         <img alt="가치 세무회계 위치 (네이버 지도)" loading="lazy"
-                            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            class="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                             src="./source/naver-map.png" />
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none">
                             <div
                                 class="bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce group-hover:bg-primary transition-colors duration-300">
                                 <span
