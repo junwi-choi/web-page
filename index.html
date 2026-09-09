@@ -160,6 +160,72 @@
             z-index: 2;
         }
 
+        /* 히어로 배경 사진 — 슬라이드가 활성화되는 동안 천천히 확대·이동(켄번스) */
+        .hero-slide img {
+            transform: scale(1.04);
+            will-change: transform;
+        }
+
+        .hero-slide.is-active img {
+            animation: hero-kenburns-zoom 7200ms ease-out forwards;
+        }
+
+        .hero-slide:nth-of-type(2).is-active img {
+            animation-name: hero-kenburns-left;
+        }
+
+        .hero-slide:nth-of-type(3).is-active img {
+            animation-name: hero-kenburns-right;
+        }
+
+        .hero-slide:nth-of-type(4).is-active img {
+            animation-name: hero-kenburns-up;
+        }
+
+        .hero-slide:nth-of-type(5).is-active img {
+            animation-name: hero-kenburns-left;
+        }
+
+        @keyframes hero-kenburns-zoom {
+            from { transform: scale(1.04); }
+            to   { transform: scale(1.17); }
+        }
+
+        @keyframes hero-kenburns-left {
+            from { transform: scale(1.12) translate(1.8%, 0); }
+            to   { transform: scale(1.18) translate(-1.8%, -1%); }
+        }
+
+        @keyframes hero-kenburns-right {
+            from { transform: scale(1.12) translate(-1.8%, 0); }
+            to   { transform: scale(1.18) translate(1.8%, -1%); }
+        }
+
+        @keyframes hero-kenburns-up {
+            from { transform: scale(1.12) translate(0, 2%); }
+            to   { transform: scale(1.19) translate(0, -2%); }
+        }
+
+        /* 히어로 문구 — 슬라이드가 바뀔 때마다 아래에서 위로 순차 등장 */
+        .hero-slide [data-copy] > * {
+            opacity: 0;
+            transform: translateY(26px);
+        }
+
+        .hero-slide.is-active [data-copy] > * {
+            animation: hero-copy-in 720ms cubic-bezier(.22, .61, .36, 1) both;
+        }
+
+        .hero-slide.is-active [data-copy] > *:nth-child(1) { animation-delay: 120ms; }
+        .hero-slide.is-active [data-copy] > *:nth-child(2) { animation-delay: 260ms; }
+        .hero-slide.is-active [data-copy] > *:nth-child(3) { animation-delay: 400ms; }
+        .hero-slide.is-active [data-copy] > *:nth-child(4) { animation-delay: 540ms; }
+
+        @keyframes hero-copy-in {
+            from { opacity: 0; transform: translateY(26px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
         .hero-progress {
             width: 120px;
             height: 3px;
@@ -207,6 +273,19 @@
         @media (prefers-reduced-motion: reduce) {
             .hero-slide {
                 transition: none;
+            }
+
+            .hero-slide img,
+            .hero-slide.is-active img {
+                animation: none;
+                transform: none;
+            }
+
+            .hero-slide [data-copy] > *,
+            .hero-slide.is-active [data-copy] > * {
+                animation: none;
+                opacity: 1;
+                transform: none;
             }
         }
 
@@ -272,6 +351,17 @@
         #nav.is-scrolled .nav-link.is-current {
             color: #0055c9;
             border-color: #0055c9;
+        }
+
+        /* 블로그 썸네일 — 기본은 선명하게, 호버/클릭 시 원래의 은은한 느낌으로 */
+        .blog-thumb {
+            filter: saturate(1.45) contrast(1.1) brightness(0.95);
+            transition: filter .45s ease, transform .5s ease;
+        }
+
+        .group:hover .blog-thumb,
+        .group:active .blog-thumb {
+            filter: none;
         }
     </style>
     <script id="tailwind-config">
@@ -401,7 +491,7 @@
                 src="./source/theanandthakur-building-6011756_1920.jpg" />
             <div class="absolute inset-0 bg-black/45"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
-                <div class="max-w-2xl text-white">
+                <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Premium Tax Service</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         대표님들의 가치를<br />최우선으로 생각하는<br /><span class="text-primary-fixed-dim">든든한 사업 파트너</span></h1>
@@ -417,7 +507,7 @@
             <img alt="수출 컨테이너 항만" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-2-trade.jpg" />
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
-                <div class="max-w-2xl text-white">
+                <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">수출입 세무 전문</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         수출 기업의 세금은<br /><span class="text-primary-fixed-dim">가치 세무회계</span></h1>
@@ -433,7 +523,7 @@
             <img alt="건설 현장" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-3-construction.jpg" />
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
-                <div class="max-w-2xl text-white">
+                <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">건설업 세무 전문</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         건설업 세무,<br /><span class="text-primary-fixed-dim">현장을 아는 세무사에게</span></h1>
@@ -449,7 +539,7 @@
             <img alt="고객 자문 미팅" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-4-knowhow.jpg" />
             <div class="absolute inset-0 bg-black/55"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
-                <div class="max-w-2xl text-white">
+                <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">검증된 실적</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         수백 곳의 사업장과<br /><span class="text-primary-fixed-dim">함께 쌓아온 노하우</span></h1>
@@ -465,7 +555,7 @@
             <img alt="업종별 맞춤 세무 자문" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-5-industry.jpg" />
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
-                <div class="max-w-2xl text-white">
+                <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">업종별 맞춤 대응</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         업종이 다르면<br /><span class="text-primary-fixed-dim">세무 전략도 달라야 합니다</span></h1>
@@ -499,7 +589,8 @@
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
             <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
                 <div class="w-full md:w-5/12 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative group">
-                    <img alt="Tax Accountant Portrait" class="w-full h-full object-cover"
+                    <img alt="Tax Accountant Portrait"
+                        class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                         src="./source/KakaoTalk_20260509_163026753.jpg" />
                     <div class="absolute inset-0 border-[12px] border-white/20 pointer-events-none"></div>
                 </div>
@@ -629,7 +720,7 @@
                     href="https://blog.naver.com/tax_lecture/223844051586" target="_blank">
                     <div class="aspect-video relative overflow-hidden">
                         <img alt="중계무역과 중개무역의 차이와 세금"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="blog-thumb w-full h-full object-cover group-hover:scale-105"
                             src="./source/blog-1-trade.jpg" />
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -656,7 +747,7 @@
                     href="https://blog.naver.com/tax_lecture/223601031618" target="_blank">
                     <div class="aspect-video relative overflow-hidden">
                         <img alt="수출 부가세 환급 절차 및 필요서류"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="blog-thumb w-full h-full object-cover group-hover:scale-105"
                             src="./source/blog-2-export.png" />
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -683,7 +774,7 @@
                     href="https://blog.naver.com/tax_lecture/224377722465" target="_blank">
                     <div class="aspect-video relative overflow-hidden">
                         <img alt="광명시흥 토지보상공고, 수용 보상 양도소득세 절세 전략"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="blog-thumb w-full h-full object-cover group-hover:scale-105"
                             src="./source/blog-3-landcomp.jpg" />
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
