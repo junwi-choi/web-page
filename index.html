@@ -707,8 +707,10 @@
            상단바에서는 카톡 버튼과 오시는 길 아이콘을 빼고
            (둘 다 햄버거 메뉴 안에 있다) 나머지를 한 단계 줄인다. */
         @media (max-width: 767px) {
-            .nav-kakao { display: none; }
-            .nav-icon[aria-label="오시는 길"] { display: none; }
+            /* Tailwind CDN 이 런타임에 뒤쪽에 스타일을 주입하므로
+               같은 우선순위(.inline-flex)에 밀린다. #nav 를 붙여 우선순위를 올린다. */
+            #nav .nav-kakao { display: none; }
+            #nav .nav-icon[aria-label="오시는 길"] { display: none; }
 
             .nav-bar {
                 height: 84px;
