@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth scroll-pt-24" lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- 파비콘 -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <title>상담 신청 | 가치 세무회계 · 최준위 세무사</title>
+    <meta name="description" content="가치 세무회계 최준위 세무사 상담 신청 — 기장대리·신고대리·양도/상속/증여·세무조사 대응까지, 남겨주신 연락처로 영업일 1일 이내에 연락드립니다." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vtax.kr/contact.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="상담 신청 | 가치 세무회계 · 최준위 세무사" />
+    <meta property="og:description" content="세무 관련 궁금한 점을 남겨주시면 최준위 세무사가 영업일 1일 이내에 직접 연락드립니다." />
+    <meta property="og:url" content="https://vtax.kr/contact.html" />
+    <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
+    <meta property="og:site_name" content="가치 세무회계" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        /* 상단 배경 사진 — 페이지가 열려 있는 동안 아주 천천히 확대·이동(켄번스) */
+        .page-hero > img {
+            transform: scale(1.02);
+            will-change: transform;
+            animation: page-hero-kenburns 22s ease-out forwards;
+        }
+
+        @keyframes page-hero-kenburns {
+            from { transform: scale(1.02) translate(0, 0); }
+            to   { transform: scale(1.14) translate(-1.2%, -1.6%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-hero > img { animation: none; }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        html, body {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
+                'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                font-size: clamp(26px, 7.2vw, 32px);
+                line-height: 1.25;
+            }
+
+            h2.text-headline-lg,
+            h3.text-headline-lg {
+                font-size: 26px;
+                line-height: 1.32;
+            }
+        }
+
+        /* 상단 고정 내비 — 히어로 위에서는 투명 + 흰 글자, 스크롤하면 흰 배경 */
+        #nav {
+            background: transparent;
+            transition: background .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+
+        #nav::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+            transition: opacity .3s ease;
+        }
+
+        #nav.is-scrolled {
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(194, 198, 215, .35);
+            box-shadow: 0 2px 14px rgba(0, 0, 0, .06);
+        }
+
+        #nav.is-scrolled::before {
+            opacity: 0;
+        }
+
+        #nav .logo-color {
+            display: none;
+        }
+
+        #nav.is-scrolled .logo-white {
+            display: none;
+        }
+
+        #nav.is-scrolled .logo-color {
+            display: block;
+        }
+
+        #nav .nav-link {
+            color: #fff;
+            border-bottom-color: transparent;
+            transition: color .2s ease, border-color .2s ease;
+        }
+
+        #nav .nav-link:hover {
+            color: rgba(255, 255, 255, .75);
+        }
+
+        #nav .nav-link.is-current {
+            color: #fff;
+            border-color: #fff;
+            font-weight: 700;
+        }
+
+        #nav.is-scrolled .nav-link {
+            color: #424655;
+        }
+
+        #nav.is-scrolled .nav-link:hover {
+            color: #0055c9;
+        }
+
+        #nav.is-scrolled .nav-link.is-current {
+            color: #0055c9;
+            border-color: #0055c9;
+        }
+
+        /* 보수 안내 탭 */
+        .fee-tab {
+            border: 1px solid rgba(194, 198, 215, .6);
+            background: #fff;
+            color: #424655;
+            border-radius: 9999px;
+            padding: .55rem 1.15rem;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background .2s ease, color .2s ease, border-color .2s ease;
+        }
+
+        .fee-tab:hover {
+            border-color: #0055c9;
+            color: #0055c9;
+        }
+
+        .fee-tab.is-active {
+            background: #0055c9;
+            border-color: #0055c9;
+            color: #fff;
+        }
+
+        .fee-tab:focus-visible {
+            outline: 2px solid #0055c9;
+            outline-offset: 2px;
+        }
+
+        .fee-panel[hidden] {
+            display: none;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .fee-table th,
+        .fee-table td {
+            padding: .8rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .fee-table thead th {
+            background: #d5e0f8;
+            color: #38485d;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .fee-table tbody tr {
+            border-top: 1px solid rgba(194, 198, 215, .4);
+        }
+
+        .fee-table tbody tr:nth-child(even) {
+            background: #f7f9fb;
+        }
+
+        .fee-table .fee-amount {
+            font-weight: 700;
+            color: #191c1e;
+            white-space: nowrap;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#4d5d73",
+                        "primary": "#0055c9",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#d5e0f8",
+                        "on-surface-variant": "#424655",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "secondary": "#545f73",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#66768d",
+                        "surface-container-high": "#e6e8ea",
+                        "background": "#f7f9fb",
+                        "outline": "#727786",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#d8e3fb",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-primary-container": "#fefcff",
+                        "inverse-primary": "#b1c5ff",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-tertiary-container": "#fdfcff",
+                        "surface-tint": "#0057ce",
+                        "surface": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d7",
+                        "on-primary-fixed-variant": "#00419e",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-container": "#586377",
+                        "primary-fixed": "#dae2ff",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#111c2d",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#001946",
+                        "primary-container": "#1a6cf4",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "1rem",
+                        "gutter": "1.5rem",
+                        "xs": "0.5rem",
+                        "margin-desktop": "2.5rem",
+                        "base": "4px",
+                        "margin-mobile": "1rem",
+                        "md": "1.5rem",
+                        "xl": "3rem",
+                        "lg": "2rem"
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary/10">
+    <!-- TopNavBar -->
+    <nav id="nav" class="fixed inset-x-0 top-0 z-50 h-24">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-4 md:px-margin-desktop h-full">
+            <a href="index.html" class="shrink-0">
+                <img src="./source/logo-full-white.png" alt="가치 세무회계 · VALUE Tax &amp; Accounting"
+                    class="logo-white h-16 md:h-[4.5rem] w-auto" />
+                <img src="./source/logo-full.png" alt="" aria-hidden="true"
+                    class="logo-color h-16 md:h-[4.5rem] w-auto" />
+                <span class="sr-only">가치 세무회계 최준위 세무사</span>
+            </a>
+            <div class="hidden md:flex items-center gap-5 lg:gap-8">
+                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="index.html#home">홈</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="index.html#about">인사말</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="index.html#services">업무 분야</a>
+                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="contact.html">문의하기</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="index.html#location">오시는길</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="price.html">보수안내</a>
+            </div>
+            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                class="inline-block bg-[#FEE500] text-[#191919] px-6 py-2.5 rounded-lg text-label-md font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95 flex items-center gap-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                </svg>
+                카톡 상담하기
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-hero relative min-h-[380px] md:min-h-[460px] flex items-end overflow-hidden bg-inverse-surface">
+        <img src="./source/hero-5-industry.jpg" alt="세무 상담" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/40"></div>
+        <div class="relative z-10 w-full max-w-[1200px] mx-auto px-4 md:px-margin-desktop pb-12 md:pb-16 pt-32 text-white">
+            <nav class="text-label-sm text-white/70 mb-4">
+                <a href="index.html" class="hover:text-white">홈</a><span class="mx-1.5">/</span><span class="text-white">상담 신청</span>
+            </nav>
+            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">CONTACT</p>
+            <h1 class="text-headline-lg-mobile md:text-display-lg font-bold leading-tight tracking-tight mb-4">상담 신청</h1>
+            <p class="text-body-md md:text-body-lg text-white/90 max-w-2xl leading-relaxed">세무 관련 궁금한 점을 남겨주시면 최준위 세무사가 직접 확인하고 영업일 1일 이내에 연락드립니다. 상담 자체에는 비용이 발생하지 않습니다.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-xl">
+            <div class="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-14 items-start">
+
+                <!-- 왼쪽: 연락처 안내 -->
+                <div>
+                    <p class="text-primary font-bold text-sm tracking-widest mb-3">CONTACT INFO</p>
+                    <h2 class="text-headline-md font-bold text-on-background mb-5 tracking-tight">직접 연락도 가능합니다</h2>
+                    <p class="text-on-surface-variant text-body-md leading-loose mb-8">양식 작성이 번거로우시면 전화나 카카오톡으로 바로 문의하셔도 됩니다. 사업자등록 전 단계의 상담도 환영합니다.</p>
+
+                    <ul class="space-y-5 mb-8">
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined bg-secondary-container text-on-secondary-container p-2 rounded-lg shrink-0">call</span>
+                            <div>
+                                <p class="text-label-md text-on-surface-variant mb-0.5">전화</p>
+                                <a href="tel:01046235076" class="text-body-lg font-bold text-on-background hover:text-primary transition-colors">010-4623-5076</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined bg-secondary-container text-on-secondary-container p-2 rounded-lg shrink-0">mail</span>
+                            <div>
+                                <p class="text-label-md text-on-surface-variant mb-0.5">이메일</p>
+                                <a href="mailto:tax0829@naver.com" class="text-body-lg font-bold text-on-background hover:text-primary transition-colors">tax0829@naver.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined bg-secondary-container text-on-secondary-container p-2 rounded-lg shrink-0">location_on</span>
+                            <div>
+                                <p class="text-label-md text-on-surface-variant mb-0.5">사무소</p>
+                                <p class="text-body-md font-bold text-on-background leading-snug">서울 금천구 가산디지털2로 135<br />가산어반워크 1동 302호</p>
+                                <a href="index.html#location" class="inline-block mt-1.5 text-label-md text-primary font-bold hover:underline underline-offset-4">오시는 길 보기 →</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-body-md hover:bg-primary hover:text-white shadow-md transition-all duration-200 active:scale-[0.98]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                        </svg>
+                        카카오톡으로 상담하기
+                    </a>
+                </div>
+
+                <!-- 오른쪽: 신청 양식 -->
+                <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-3xl shadow-lg p-6 md:p-9">
+                    <h2 class="text-headline-md font-bold text-on-background mb-2">상담 신청서</h2>
+                    <p class="text-on-surface-variant text-body-sm mb-7">남겨주신 연락처로 영업일 1일 이내에 연락드립니다.</p>
+
+                    <!-- 접수 완료 안내 -->
+                    <div id="consult-success"
+                        class="hidden mb-5 rounded-xl border border-green-300 bg-green-50 px-5 py-4 text-green-800 text-body-sm leading-relaxed">
+                        상담 신청이 접수되었습니다. 영업일 1일 이내에 연락드리겠습니다.
+                    </div>
+                    <!-- 오류 안내 -->
+                    <div id="consult-error"
+                        class="hidden mb-5 rounded-xl border border-red-300 bg-red-50 px-5 py-4 text-red-800 text-body-sm leading-relaxed">
+                    </div>
+
+                    <form id="consult-form" class="grid gap-4" novalidate>
+                        <!-- 허니팟: 사람에게는 보이지 않는다. 값이 채워져 있으면 봇으로 보고 전송하지 않는다. -->
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+                        <input type="checkbox" name="botcheck" tabindex="-1" class="hidden" aria-hidden="true" />
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="cf-name" class="block text-label-md font-bold text-on-background mb-1.5">이름 <span class="text-error">*</span></label>
+                                <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="홍길동"
+                                    class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary" />
+                            </div>
+                            <div>
+                                <label for="cf-phone" class="block text-label-md font-bold text-on-background mb-1.5">연락처 <span class="text-error">*</span></label>
+                                <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="010-0000-0000"
+                                    class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="cf-email" class="block text-label-md font-bold text-on-background mb-1.5">이메일</label>
+                            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="example@email.com"
+                                class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary" />
+                        </div>
+
+                        <div>
+                            <label for="cf-service" class="block text-label-md font-bold text-on-background mb-1.5">상담 분야</label>
+                            <select id="cf-service" name="service"
+                                class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background focus:border-primary focus:ring-1 focus:ring-primary">
+                                <option value="">선택해 주세요</option>
+                                <option value="기장대리">기장대리</option>
+                                <option value="부가가치세 신고">부가가치세 신고</option>
+                                <option value="종합소득세 신고">종합소득세 신고</option>
+                                <option value="법인세 신고">법인세 신고</option>
+                                <option value="양도·상속·증여">양도·상속·증여</option>
+                                <option value="세무조사 대응">세무조사 대응</option>
+                                <option value="조세불복">조세불복</option>
+                                <option value="업종별 세무 상담">업종별 세무 상담</option>
+                                <option value="기타 문의">기타 문의</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="cf-message" class="block text-label-md font-bold text-on-background mb-1.5">문의 내용 <span class="text-error">*</span></label>
+                            <textarea id="cf-message" name="message" rows="6" required placeholder="업종과 사업 형태, 궁금하신 점을 자유롭게 적어주세요."
+                                class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                        </div>
+
+                        <label class="flex items-start gap-2.5 text-on-surface-variant text-label-md leading-relaxed cursor-pointer">
+                            <input type="checkbox" name="privacy" required
+                                class="mt-0.5 shrink-0 rounded border-outline-variant text-primary focus:ring-primary" />
+                            <span>개인정보 수집·이용에 동의합니다. 수집한 이름·연락처·이메일은 상담 답변 목적으로만 이용하며, 답변 완료 후 파기합니다. <span class="text-error">*</span></span>
+                        </label>
+
+                        <button type="submit" id="cf-submit"
+                            class="w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-body-md shadow-lg hover:brightness-110 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200">
+                            상담 신청하기
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-inverse-surface text-white/65">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-12 text-body-sm leading-relaxed">
+            <div class="text-white font-bold text-headline-md mb-3">가치 세무회계 <span class="font-medium text-white/45">| 최준위 세무사</span></div>
+            <p>서울특별시 금천구 가산디지털2로 135 가산어반워크 1동 302호<br />
+                대표: 최준위 · 사업자등록번호 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
+            <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-white/50">
+                <a href="index.html" class="hover:text-white">홈</a>
+                <a href="index.html#about" class="hover:text-white">인사말</a>
+                <a href="index.html#services" class="hover:text-white">업무 분야</a>
+                <a href="contact.html" class="hover:text-white">문의하기</a>
+                <a href="price.html" class="hover:text-white">보수안내</a>
+                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">블로그</a>
+            </p>
+            <p class="mt-6 text-white/40">&copy; 2024 가치 세무회계. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 스크롤하면 상단 내비를 흰 배경으로 전환
+        (function () {
+            var nav = document.getElementById('nav');
+            if (!nav) return;
+            function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 40); }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+
+        // 상담 신청 폼 전송
+        (function () {
+            // Web3Forms Access Key (공개되어도 무방한 전송 전용 키. 수신 주소는 tax0829@naver.com)
+            var ACCESS_KEY = '46ef5d01-38b6-43d7-b4ab-bae5c0a1a744';
+
+            var form = document.getElementById('consult-form');
+            if (!form) return;
+
+            var okBox = document.getElementById('consult-success');
+            var errBox = document.getElementById('consult-error');
+            var btn = document.getElementById('cf-submit');
+            var el = function (n) { return form.elements[n]; };
+            var show = function (box, msg) { if (msg) box.textContent = msg; box.classList.remove('hidden'); };
+            var hide = function (box) { box.classList.add('hidden'); };
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                hide(okBox); hide(errBox);
+
+                // 허니팟이 채워졌다면 봇이므로 조용히 무시한다
+                if (el('website').value || el('botcheck').checked) return;
+
+                if (!form.checkValidity()) { form.reportValidity(); return; }
+
+                var data = new FormData(form);
+                data.delete('website');
+                data.delete('botcheck');
+                data.append('access_key', ACCESS_KEY);
+                data.append('from_name', '가치 세무회계 홈페이지');
+                data.append('subject', '[vtax.kr] 상담 신청 - ' + el('name').value);
+
+                btn.disabled = true;
+                btn.textContent = '전송 중...';
+
+                fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+                    .then(function (r) { return r.json(); })
+                    .then(function (j) {
+                        if (j && j.success) {
+                            form.reset();
+                            form.classList.add('hidden');
+                            show(okBox);
+                        } else {
+                            show(errBox, '전송에 실패했습니다. 잠시 후 다시 시도하시거나 카카오톡으로 문의해 주세요.');
+                        }
+                    })
+                    .catch(function () {
+                        show(errBox, '네트워크 오류로 전송하지 못했습니다. 카카오톡으로 문의해 주세요.');
+                    })
+                    .then(function () {
+                        btn.disabled = false;
+                        btn.textContent = '상담 신청하기';
+                    });
+            });
+        })();
+    </script>
+</body>
+
+</html>

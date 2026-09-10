@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>건설업 세무 | 가치 세무회계 · 최준위 세무사</title>
     <meta name="description" content="건설업 세무 — 기성고 수익인식, 현장 노무비 증빙, 건설업 등록기준 재무비율 관리까지. 가산디지털단지 가치 세무회계 최준위 세무사." />
@@ -23,6 +24,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <style>
+        /* 상단 배경 사진 — 페이지가 열려 있는 동안 아주 천천히 확대·이동(켄번스) */
+        .page-hero > img {
+            transform: scale(1.02);
+            will-change: transform;
+            animation: page-hero-kenburns 22s ease-out forwards;
+        }
+
+        @keyframes page-hero-kenburns {
+            from { transform: scale(1.02) translate(0, 0); }
+            to   { transform: scale(1.14) translate(-1.2%, -1.6%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-hero > img { animation: none; }
+        }
+
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         html, body { overflow-x: hidden; }
         body {
@@ -86,7 +103,7 @@
                 <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#home">홈</a>
                 <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#about">인사말</a>
                 <a class="nav-link is-current font-bold text-[15px] border-b-2 pb-1 transition-colors" href="../index.html#services">업무 분야</a>
-                <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#contact">문의하기</a>
+                <a class="nav-link font-medium text-[15px] transition-colors" href="../contact.html">문의하기</a>
                 <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#location">오시는길</a>
                 <a class="nav-link font-medium text-[15px] transition-colors" href="../price.html">보수안내</a>
             </div>
@@ -98,7 +115,7 @@
         </div>
     </nav>
 
-    <header class="relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
+    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
         <img src="../source/hero-3-construction.jpg" alt="건설업 현장" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
         <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
@@ -302,6 +319,7 @@
                 <a href="../index.html" class="hover:text-white">홈</a>
                 <a href="../index.html#about" class="hover:text-white">인사말</a>
                 <a href="../index.html#services" class="hover:text-white">업무 분야</a>
+                <a href="../contact.html" class="hover:text-white">문의하기</a>
                 <a href="../price.html" class="hover:text-white">보수안내</a>
                 <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">블로그</a>
             </p>

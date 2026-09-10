@@ -110,6 +110,9 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <style>
+        /* 인사말 - 학력·경력 타임라인 (마지막 항목은 세로선 제거) */
+        .timeline > li:last-child .timeline-line { display: none; }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -226,8 +229,105 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* 첫 화면은 뷰포트를 가득 채운다. svh 를 쓰면 모바일 주소창이 접혀도 높이가 튀지 않는다. */
+        #home {
+            height: 100vh;
+            min-height: 560px;
+        }
+
+        @supports (height: 100svh) {
+            #home {
+                height: 100svh;
+            }
+        }
+
+        /* 히어로 오버레이 — 문구가 왼쪽에 놓이므로 왼쪽만 짙게 덮어
+           사진의 초점이 오른쪽에 남도록 한다. 하단은 컨트롤 가독성용. */
+        .hero-scrim {
+            background:
+                linear-gradient(to right,
+                    rgba(0, 0, 0, .82) 0%,
+                    rgba(0, 0, 0, .70) 30%,
+                    rgba(0, 0, 0, .34) 60%,
+                    rgba(0, 0, 0, .14) 100%),
+                linear-gradient(to top,
+                    rgba(0, 0, 0, .50) 0%,
+                    rgba(0, 0, 0, 0) 36%);
+        }
+
+        /* 모바일은 문구가 화면 폭을 다 쓰므로 고르게 덮는다 */
+        @media (max-width: 767px) {
+            .hero-scrim {
+                background:
+                    linear-gradient(to bottom,
+                        rgba(0, 0, 0, .55) 0%,
+                        rgba(0, 0, 0, .50) 55%,
+                        rgba(0, 0, 0, .68) 100%);
+            }
+        }
+
+        /* 하단 SCROLL 안내 — 세로 글씨 + 아래로 흐르는 선 */
+        .hero-scroll {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: 20;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, .78);
+            transition: color .2s ease;
+        }
+
+        .hero-scroll:hover {
+            color: #fff;
+        }
+
+        .hero-scroll-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .22em;
+        }
+
+        .hero-scroll-line {
+            position: relative;
+            display: block;
+            width: 1px;
+            height: 58px;
+            background: rgba(255, 255, 255, .3);
+            overflow: hidden;
+        }
+
+        .hero-scroll-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -58px;
+            width: 1px;
+            height: 58px;
+            background: #fff;
+            animation: hero-scroll-run 2.1s cubic-bezier(.4, 0, .2, 1) infinite;
+        }
+
+        @keyframes hero-scroll-run {
+            from { transform: translateY(0); }
+            to   { transform: translateY(116px); }
+        }
+
+        @media (min-width: 768px) {
+            .hero-scroll { display: flex; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-scroll-line::after { animation: none; }
+        }
+
         .hero-progress {
-            width: 120px;
+            width: 150px;
             height: 3px;
             border-radius: 3px;
             background: rgba(255, 255, 255, .28);
@@ -241,33 +341,56 @@
             background: #fff;
         }
 
+        /* 슬라이더 조작 버튼 — 한눈에 눌러야 할 것으로 보이도록 크게, 테두리를 줘서 배경 사진과 분리 */
         .hero-nav {
-            width: 34px;
-            height: 34px;
+            width: 46px;
+            height: 46px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 0;
+            border: 1.5px solid rgba(255, 255, 255, .55);
             border-radius: 9999px;
-            background: rgba(255, 255, 255, .16);
+            background: rgba(0, 0, 0, .22);
+            backdrop-filter: blur(4px);
             color: #fff;
             cursor: pointer;
-            transition: background .2s ease;
+            transition: background .2s ease, border-color .2s ease, transform .2s ease;
         }
 
         .hero-nav:hover {
-            background: rgba(255, 255, 255, .32);
+            background: #fff;
+            border-color: #fff;
+            color: #191c1e;
+            transform: scale(1.06);
+        }
+
+        .hero-nav:active {
+            transform: scale(.96);
         }
 
         .hero-nav:focus-visible {
             outline: 2px solid #fff;
-            outline-offset: 2px;
+            outline-offset: 3px;
+        }
+
+        /* 재생/일시정지는 주 조작이므로 한 단계 더 크게 */
+        .hero-nav[data-toggle] {
+            width: 54px;
+            height: 54px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-nav { width: 52px; height: 52px; }
+            .hero-nav[data-toggle] { width: 62px; height: 62px; }
         }
 
         @media (max-width: 640px) {
             .hero-progress {
-                width: 76px;
+                width: 64px;
             }
+
+            .hero-nav { width: 42px; height: 42px; }
+            .hero-nav[data-toggle] { width: 50px; height: 50px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -471,7 +594,7 @@
                 <a class="nav-link is-current border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="#home">홈</a>
                 <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="#about">인사말</a>
                 <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="#services">업무 분야</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="#contact">문의하기</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="./contact.html">문의하기</a>
                 <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="#location">오시는길</a>
                 <a class="nav-link border-b-2 border-transparent pb-1 font-medium text-body-sm lg:text-body-md" href="./price.html">보수안내</a>
             </div>
@@ -486,107 +609,173 @@
         </div>
     </nav>
     <!-- Hero Section (auto-rotating) -->
-    <section id="home" class="relative min-h-[560px] md:min-h-[700px] overflow-hidden bg-inverse-surface" data-hero
+    <section id="home" class="relative overflow-hidden bg-inverse-surface" data-hero
         aria-roledescription="carousel" aria-label="가치 세무회계 소개">
 
         <!-- Slide 1 -->
         <div class="hero-slide is-active absolute inset-0 flex items-center" data-slide>
             <img alt="가산디지털단지 오피스 전경" class="absolute inset-0 w-full h-full object-cover"
                 src="./source/theanandthakur-building-6011756_1920.jpg" />
-            <div class="absolute inset-0 bg-black/45"></div>
+            <div class="hero-scrim absolute inset-0"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Premium Tax Service</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         대표님들의 가치를<br />최우선으로 생각하는<br /><span class="text-primary-fixed-dim">든든한 사업 파트너</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">프리미엄 세무서비스 제공. 업종별 최적의 절세 솔루션을 제시하며 사업의 시작부터 성장까지 함께합니다.</p>
-                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="./contact.html"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-primary bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-white hover:text-primary hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            상담 신청
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-[#FEE500] bg-[#FEE500] text-[#191919] px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-primary hover:border-primary hover:text-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                            </svg>
+                            카카오톡 상담
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 2 · 수출입 -->
         <div class="hero-slide absolute inset-0 flex items-center" data-slide>
-            <img alt="수출 컨테이너 항만" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-2-trade.jpg" />
-            <div class="absolute inset-0 bg-black/50"></div>
+            <img alt="수출 컨테이너 항만" class="absolute inset-0 w-full h-full object-cover object-[62%_45%]" src="./source/hero-2-trade.jpg" />
+            <div class="hero-scrim absolute inset-0"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">수출입 세무 전문</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         수출 기업의 세금은<br /><span class="text-primary-fixed-dim">가치 세무회계</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">영세율 적용, 부가세 조기환급, 외국환 거래·관세 이슈까지<br />수출입 실무에 정통한 대표 세무사가 직접 챙깁니다.</p>
-                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="./contact.html"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-primary bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-white hover:text-primary hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            상담 신청
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-[#FEE500] bg-[#FEE500] text-[#191919] px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-primary hover:border-primary hover:text-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                            </svg>
+                            카카오톡 상담
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 3 · 건설업 -->
         <div class="hero-slide absolute inset-0 flex items-center" data-slide>
-            <img alt="건설 현장" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-3-construction.jpg" />
-            <div class="absolute inset-0 bg-black/50"></div>
+            <img alt="건설 현장" class="absolute inset-0 w-full h-full object-cover object-[62%_64%]" src="./source/hero-3-construction.jpg" />
+            <div class="hero-scrim absolute inset-0"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">건설업 세무 전문</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         건설업 세무,<br /><span class="text-primary-fixed-dim">현장을 아는 세무사에게</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">기성고 수익인식, 하도급 노무비 적격증빙, 면허 유지 재무비율 관리까지 건설업 특유의 리스크를 선제적으로 대응합니다.</p>
-                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="./contact.html"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-primary bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-white hover:text-primary hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            상담 신청
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-[#FEE500] bg-[#FEE500] text-[#191919] px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-primary hover:border-primary hover:text-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                            </svg>
+                            카카오톡 상담
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 4 · 노하우 -->
         <div class="hero-slide absolute inset-0 flex items-center" data-slide>
-            <img alt="고객 자문 미팅" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-4-knowhow.jpg" />
-            <div class="absolute inset-0 bg-black/55"></div>
+            <img alt="고객 자문 미팅" class="absolute inset-0 w-full h-full object-cover object-[68%_52%]" src="./source/hero-4-knowhow.jpg" />
+            <div class="hero-scrim absolute inset-0"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">검증된 실적</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         수백 곳의 사업장과<br /><span class="text-primary-fixed-dim">함께 쌓아온 노하우</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">다양한 업종과 규모의 고객을 자문해 온 경험이, 대표님 사업에 가장 현실적인 해답을 만듭니다.</p>
-                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="./contact.html"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-primary bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-white hover:text-primary hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            상담 신청
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-[#FEE500] bg-[#FEE500] text-[#191919] px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-primary hover:border-primary hover:text-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                            </svg>
+                            카카오톡 상담
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 5 · 업종별 대응 -->
         <div class="hero-slide absolute inset-0 flex items-center" data-slide>
-            <img alt="업종별 맞춤 세무 자문" class="absolute inset-0 w-full h-full object-cover" src="./source/hero-5-industry.jpg" />
-            <div class="absolute inset-0 bg-black/50"></div>
+            <img alt="업종별 맞춤 세무 자문" class="absolute inset-0 w-full h-full object-cover object-[70%_42%]" src="./source/hero-5-industry.jpg" />
+            <div class="hero-scrim absolute inset-0"></div>
             <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop relative z-10 w-full">
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">업종별 맞춤 대응</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg leading-[1.2] mb-6 text-white">
                         업종이 다르면<br /><span class="text-primary-fixed-dim">세무 전략도 달라야 합니다</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">건설·수출입·제조·도소매·학원·외식 등 업종별로 특화된 절세 전략과 회계 관리를 제공합니다.</p>
-                    <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">무료 상담 신청하기</a>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="./contact.html"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-primary bg-primary text-on-primary px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-white hover:text-primary hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            상담 신청
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-[#FEE500] bg-[#FEE500] text-[#191919] px-6 py-3 md:px-8 md:py-4 w-full sm:w-auto rounded-xl text-body-lg font-bold shadow-lg hover:bg-primary hover:border-primary hover:text-white hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                            </svg>
+                            카카오톡 상담
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Controls -->
-        <div class="hero-ctrl absolute bottom-7 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 text-white">
+        <div class="hero-ctrl absolute bottom-8 md:bottom-32 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 md:gap-5 text-white">
             <div class="hero-progress" aria-hidden="true"><span data-progress></span></div>
-            <span class="text-sm font-semibold tabular-nums tracking-wide select-none whitespace-nowrap"><span data-cur>1</span><span class="opacity-50"> / </span><span data-total>5</span></span>
-            <div class="flex items-center gap-1.5">
+            <span class="text-base md:text-lg font-bold tabular-nums tracking-wide select-none whitespace-nowrap"><span data-cur>1</span><span class="opacity-50"> / </span><span data-total>5</span></span>
+            <div class="flex items-center gap-2 md:gap-2.5">
                 <button type="button" class="hero-nav" data-prev aria-label="이전 슬라이드">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 </button>
                 <button type="button" class="hero-nav" data-toggle aria-label="일시정지">
-                    <svg data-icon-pause width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
-                    <svg data-icon-play hidden width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+                    <svg data-icon-pause width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+                    <svg data-icon-play hidden width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                 </button>
                 <button type="button" class="hero-nav" data-next aria-label="다음 슬라이드">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
             </div>
         </div>
+
+        <!-- 아래로 스크롤 안내 -->
+        <a href="#about" class="hero-scroll" aria-label="아래로 스크롤">
+            <span class="hero-scroll-text">SCROLL</span>
+            <span class="hero-scroll-line" aria-hidden="true"></span>
+        </a>
     </section>
     <!-- CEO Introduction -->
     <section id="about" class="py-xl bg-surface-container-lowest">
@@ -606,23 +795,31 @@
                             파트너가 되겠습니다.</p>
                         <p>전문지식과 신뢰를 바탕으로 고객님의 소중한 자산을 지키고, 사업 성장에만 집중하실 수 있도록 최상의 세무 환경을 조성해 드립니다. <strong>가치 세무회계 최준위 세무사</strong>가 함께하겠습니다.</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-y-8 border-t border-outline-variant/30 pt-8">
-                        <div>
-                            <span class="block text-label-md text-outline mb-2">Career</span>
-                            <span class="text-title-lg font-bold text-on-background">5년의 실무 경력</span>
-                        </div>
-                        <div>
-                            <span class="block text-label-md text-outline mb-2">Background</span>
-                            <span class="text-title-lg font-bold text-on-background">국민은행 근무</span>
-                        </div>
-                        <div>
-                            <span class="block text-label-md text-outline mb-2">Education</span>
-                            <span class="text-title-lg font-bold text-on-background">경희대학교 경제학과 졸업</span>
-                        </div>
-                        <div>
-                            <span class="block text-label-md text-outline mb-2">Background</span>
-                            <span class="text-title-lg font-bold text-on-background">세무법인 다승 여의도지점 근무</span>
-                        </div>
+                    <div class="border-t border-outline-variant/30 pt-8">
+                        <p class="text-label-md text-outline mb-6 tracking-wider">학력 · 경력</p>
+                        <ol class="timeline">
+                            <li class="relative pl-7 pb-7 last:pb-0">
+                                <span class="timeline-line absolute left-1 top-4 bottom-0 w-0.5 bg-outline-variant/60"></span>
+                                <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></span>
+                                <span class="block text-title-lg font-bold text-on-background leading-snug">경희대학교 경제학과 졸업</span>
+                            </li>
+                            <li class="relative pl-7 pb-7 last:pb-0">
+                                <span class="timeline-line absolute left-1 top-4 bottom-0 w-0.5 bg-outline-variant/60"></span>
+                                <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></span>
+                                <span class="block text-title-lg font-bold text-on-background leading-snug">국민은행 근무</span>
+                            </li>
+                            <li class="relative pl-7 pb-7 last:pb-0">
+                                <span class="timeline-line absolute left-1 top-4 bottom-0 w-0.5 bg-outline-variant/60"></span>
+                                <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></span>
+                                <span class="block text-title-lg font-bold text-on-background leading-snug">세무법인 다승 여의도지점 근무</span>
+                            </li>
+                            <li class="relative pl-7 pb-7 last:pb-0">
+                                <span class="timeline-line absolute left-1 top-4 bottom-0 w-0.5 bg-outline-variant/60"></span>
+                                <span class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+                                <span class="block text-title-lg font-bold text-on-background leading-snug">가치 세무회계 대표 세무사</span>
+                                <span class="block text-on-surface-variant text-body-sm mt-1.5">실무 경력 <span data-since="2021">6</span>년차 (2021~)</span>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -645,8 +842,7 @@
                         <span class="material-symbols-outlined text-[32px]">engineering</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">건설업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">복잡한 면허 유지 요건 및 노무비 관리, 현장별 실행 예산 편성을
-                        통한 전문적인 관리를 지원합니다.</p>
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">공사 진행률에 따른 손익 귀속과 현장 일용직 노무비 증빙을 현장 단위로 관리합니다. 결산 전에 실질자본과 재무비율을 점검해 건설업 등록기준 유지까지 함께 살핍니다.</p>
                     <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 2 -->
@@ -657,8 +853,7 @@
                         <span class="material-symbols-outlined text-[32px]">directions_boat</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">수출입업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">영세율 적용 검토, 관세 환급 및 외국환 거래법 위반 리스크 관리
-                        등 글로벌 비즈니스 특화 서비스를 제공합니다.</p>
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">영세율 적용 요건과 선적서류를 정비하고, 조기환급을 정례화해 자금 부담을 줄입니다. 중계무역·위탁가공처럼 과세 방식이 달라지는 거래는 계약 단계에서 구조를 검토합니다.</p>
                     <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 3 -->
@@ -669,8 +864,7 @@
                         <span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">제조업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">원가 계산의 고도화 및 R&amp;D 세액공제, 기업부설연구소
-                        설립 지원 등 제조 환경에 맞는 절세를 실현합니다.</p>
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">제조원가명세서가 실제 생산 흐름을 반영하도록 원가 체계를 설계합니다. 연구·인력개발비 세액공제와 통합투자세액공제는 요건을 지출 시점부터 관리해 결산에서 부인되지 않도록 합니다.</p>
                     <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 4 -->
@@ -681,8 +875,7 @@
                         <span class="material-symbols-outlined text-[32px]">storefront</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">도소매업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">온라인 플랫폼 매출 통합 관리 및 재고 자산 관리 시스템을 통해
-                        투명하고 정확한 신고를 지원합니다.</p>
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">오픈마켓·자사몰·오프라인으로 흩어진 매출을 하나의 기준으로 통합합니다. 플랫폼 정산 내역과 세금계산서 발행 시점을 대사해 신고 매출과 실제 입금액의 차이를 설명할 수 있게 정리합니다.</p>
                     <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 5 -->
@@ -693,8 +886,7 @@
                         <span class="material-symbols-outlined text-[32px]">menu_book</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">학원업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">면세 사업자 수입금액 신고 및 강사료 원천세 관리, 교육청 기준
-                        매출 검토 등 안정적인 운영을 돕습니다.</p>
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">교습비와 교재비를 면세·과세로 나누는 기준을 세우고, 강사 계약 형태를 실질에 맞게 정비합니다. 사업장현황신고와 종합소득세 신고가 하나의 수입금액 기준 위에서 이어지도록 관리합니다.</p>
                     <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 6 -->
@@ -705,8 +897,7 @@
                         <span class="material-symbols-outlined text-[32px]">restaurant</span>
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">음식점업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">의제매입세액 공제 극대화, 배달 앱 매출 정산 관리 등 효율적인
-                        비용 관리 솔루션을 제공합니다.</p>
+                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">의제매입세액공제를 최대한 활용하도록 매입 증빙 수취 방식부터 정비합니다. 카드·현금·배달 매출을 POS 기록과 대사해 신고 매출의 근거를 남기고, 중개수수료는 별도 비용으로 인식합니다.</p>
                     <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
             </div>
@@ -851,6 +1042,8 @@
                         </svg>
                         상담 신청
                     </a>
+                    <a href="./contact.html"
+                        class="mt-6 text-primary font-bold text-body-sm hover:underline underline-offset-4">양식으로 상담 신청하기 →</a>
                 </div>
             </div>
         </div>
@@ -925,6 +1118,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- 실무 경력 년차 자동 계산 (data-since 연도 기준). JS가 없어도 HTML 기본값이 표시된다. -->
+    <script>
+        (function () {
+            var el = document.querySelector("[data-since]");
+            if (!el) return;
+            var since = parseInt(el.getAttribute("data-since"), 10);
+            if (!since) return;
+            var years = new Date().getFullYear() - since + 1;
+            if (years > 0) el.textContent = years;
+        })();
+    </script>
 
     <script>
         (function () {
@@ -1081,6 +1286,7 @@
             }
         })();
     </script>
+
 </body>
 
 </html>
