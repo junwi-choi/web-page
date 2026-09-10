@@ -363,8 +363,8 @@
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
         {"@type":"Question","name":"How should open marketplace sales be reported?","acceptedAnswer":{"@type":"Answer","text":"The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales."}},
         {"@type":"Question","name":"Does a mismatch between stock and the books cause tax problems?","acceptedAnswer":{"@type":"Answer","text":"A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence."}},
-        {"@type":"Question","name":"Is there a tax credit for card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the credit for card and equivalent sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
-        {"@type":"Question","name":"Is simplified or ordinary taxation more favourable?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, ordinary taxation, which allows refunds, may be more favourable."}},
+        {"@type":"Question","name":"Is there a tax credit for card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
+        {"@type":"Question","name":"Is simplified or general VAT taxation more favourable?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable."}},
         {"@type":"Question","name":"Which expenses cannot be credited as input VAT?","acceptedAnswer":{"@type":"Answer","text":"Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage."}}
     ]}
     </script>
@@ -503,7 +503,7 @@
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
                         <div>
                             <h3 class="font-bold text-[17px] mb-2 leading-snug">Distribution-related tax credits</h3>
-                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the credit for card and equivalent sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
+                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the VAT credit for credit-card and similar sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
                         </div>
                     </li>
                 </ol>
@@ -574,15 +574,15 @@
                             <span class="flex-1">Is there a tax credit for card sales?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the credit for card and equivalent sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Is simplified or ordinary taxation more favourable?</span>
+                            <span class="flex-1">Is simplified or general VAT taxation more favourable?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, ordinary taxation, which allows refunds, may be more favourable.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
@@ -684,12 +684,12 @@
 
             // ---- Site search (정적 색인) ----
             var INDEX = [
-                { t: "Construction Tax", d: "Percentage-of-completion revenue · On-site labour documentation · Maintaining construction registration", u: "../services/construction.html" },
+                { t: "Construction Tax", d: "Revenue recognition based on percentage of completion · On-site labour documentation · Maintaining construction registration", u: "../services/construction.html" },
                 { t: "Import & Export Tax", d: "Zero-rating requirements · Early VAT refund · Foreign Exchange Transactions Act filing", u: "../services/trade.html" },
-                { t: "Manufacturing Tax", d: "Inventory valuation and cost · R&D tax credit · Plant investment credit", u: "../services/manufacturing.html" },
+                { t: "Manufacturing Tax", d: "Inventory valuation and cost · R&D and human resources development tax credit · Plant investment credit", u: "../services/manufacturing.html" },
                 { t: "Wholesale & Retail Tax", d: "Channel-level sales aggregation · Settlement reconciliation · Inventory management", u: "../services/retail.html" },
-                { t: "Private Academy Tax", d: "Exempt tuition classification · Instructor fee withholding · Business status return", u: "../services/academy.html" },
-                { t: "Restaurant Tax", d: "Deemed input VAT credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
+                { t: "Private Academy Tax", d: "Exempt tuition classification · Instructor fee withholding · Business establishment status return", u: "../services/academy.html" },
+                { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
                 { t: "Fee Guide", d: "Bookkeeping · Tax filing · Capital gains, inheritance and gift · Tax appeal fees", u: "../price.html" },
                 { t: "Contact", d: "Consultation request form · Phone · Email · KakaoTalk", u: "../contact.html" },
                 { t: "About", d: "Education and career of Choi Jun-wi, CTA", u: "../index.html#about" },
