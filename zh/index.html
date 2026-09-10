@@ -702,27 +702,13 @@
         #nav.is-search .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
         #nav.is-search .nav-burger span { background: #191c1e; }
 
-        /* ── 모바일 스크롤 성능 ──────────────────────────────
-           휴대폰에서는 아래 세 가지가 스크롤을 끊기게 만든다.
-           1) backdrop-filter(블러) — 고정 헤더 뒤를 매 프레임 다시 합성한다
-           2) 화면을 꽉 채운 배경 사진의 확대·이동 애니메이션
-           3) will-change 로 상시 승격된 대형 레이어
-           데스크톱에서는 그대로 두고, 좁은 화면에서만 끈다. */
+        /* ── 모바일 상단바 ─────────────────────────────
+           좁은 화면에서 咨询 버튼이 잘리던 문제.
+           상단바에서는 咨询 버튼과 交通路线 아이콘을 빼고
+           (둘 다 햄버거 메뉴 안에 있다) 나머지를 한 단계 줄인다. */
         @media (max-width: 767px) {
-            /* 모바일 브라우저는 스크롤할 때 地址창이 접히며 뷰포트가 커진다.
-               히어로 높이를 뷰포트에 묶어두면 그때마다 전체 레이아웃이 다시 계산되어
-               스크롤이 끊긴다. 진입 시점 높이를 --hero-h 에 한 번 재서 고정한다. */
-            #home {
-                height: var(--hero-h, 100svh);
-                min-height: 480px;
-            }
-
-            /* 상단바 폭이 좁아 咨询 버튼이 잘리던 문제.
-               交通路线 아이콘은 메뉴 안에 이미 있으므로 상단바에서는 감추고,
-               로고와 아이콘을 한 단계 줄여 자리를 만든다. */
-            .nav-icon[aria-label="交通路线"] {
-                display: none;
-            }
+            .nav-kakao { display: none; }
+            .nav-icon[aria-label="交通路线"] { display: none; }
 
             .nav-bar {
                 height: 84px;
@@ -743,6 +729,42 @@
             }
 
             .nav-burger { width: 38px; }
+        }
+
+        /* 햄버거 메뉴 안의 咨询 버튼 */
+        .nav-menu-kakao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 15px 4px;
+            border: 0;
+            border-radius: 12px;
+            background: #FEE500;
+            color: #191919;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .nav-menu a.nav-menu-kakao { border-bottom: 0; }
+        .nav-menu-kakao:active { background: #0055c9; color: #fff; }
+
+        /* ── 모바일 스크롤 성능 ──────────────────────────────
+           휴대폰에서는 아래 세 가지가 스크롤을 끊기게 만든다.
+           1) backdrop-filter(블러) — 고정 헤더 뒤를 매 프레임 다시 합성한다
+           2) 화면을 꽉 채운 배경 사진의 확대·이동 애니메이션
+           3) will-change 로 상시 승격된 대형 레이어
+           데스크톱에서는 그대로 두고, 좁은 화면에서만 끈다. */
+        @media (max-width: 767px) {
+            /* 모바일 브라우저는 스크롤할 때 地址창이 접히며 뷰포트가 커진다.
+               히어로 높이를 뷰포트에 묶어두면 그때마다 전체 레이아웃이 다시 계산되어
+               스크롤이 끊긴다. 진입 시점 높이를 --hero-h 에 한 번 재서 고정한다. */
+            #home {
+                height: var(--hero-h, 100svh);
+                min-height: 480px;
+            }
+
 
             #nav.is-scrolled,
             #nav.is-open,
@@ -1013,7 +1035,7 @@
                 </a>
 
                 <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                    class="ml-0.5 md:ml-1 inline-flex items-center gap-1.5 md:gap-2 bg-[#FEE500] text-[#191919] px-3 py-2.5 md:px-7 md:py-4 rounded-lg md:rounded-xl text-[13px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
+                    class="nav-kakao ml-0.5 md:ml-1 inline-flex items-center gap-1.5 md:gap-2 bg-[#FEE500] text-[#191919] px-3 py-2.5 md:px-7 md:py-4 rounded-lg md:rounded-xl text-[13px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 md:w-[21px] md:h-[21px]">
                         <path
                             d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
@@ -1059,6 +1081,10 @@
             <a href="#contact">联系我们</a>
             <a href="#location">交通路线</a>
             <a href="price.html">报酬</a>
+            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-menu-kakao">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
+                KakaoTalk
+            </a>
         </div>
     </nav>
     <!-- Hero Section (auto-rotating) -->
