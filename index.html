@@ -717,6 +717,33 @@
                 min-height: 480px;
             }
 
+            /* 상단바 폭이 좁아 카톡 버튼이 잘리던 문제.
+               오시는 길 아이콘은 메뉴 안에 이미 있으므로 상단바에서는 감추고,
+               로고와 아이콘을 한 단계 줄여 자리를 만든다. */
+            .nav-icon[aria-label="오시는 길"] {
+                display: none;
+            }
+
+            .nav-bar {
+                height: 84px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .nav-logo { height: 56px; }
+
+            .nav-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .nav-icon-wide {
+                width: auto;
+                padding: 0 6px;
+            }
+
+            .nav-burger { width: 38px; }
+
             #nav.is-scrolled,
             #nav.is-open,
             #nav.is-search,
@@ -730,21 +757,36 @@
                 background: rgba(0, 0, 0, .38);
             }
 
-            /* 배경 사진은 정지 상태로 두고, 레이어 승격도 해제 */
-            .hero-slide img,
-            .hero-slide.is-active img,
+            /* 배경 사진 확대(켄번스)는 유지한다.
+               transform 만 바꾸는 애니메이션은 합성(compositor) 단계에서 처리되어
+               레이아웃이나 페인트를 다시 하지 않으므로 스크롤과 간섭하지 않는다.
+               버벅임의 원인은 애니메이션이 아니라 위의 뷰포트 높이 변화였다.
+               다만 확대 폭은 줄여 GPU 부담을 낮춘다. */
+            .hero-slide.is-active img {
+                animation-name: hero-kenburns-mobile;
+                animation-duration: 9000ms;
+            }
+
             .hero-slide:nth-of-type(2).is-active img,
             .hero-slide:nth-of-type(3).is-active img,
             .hero-slide:nth-of-type(4).is-active img,
             .hero-slide:nth-of-type(5).is-active img {
-                animation: none;
-                transform: none;
-                will-change: auto;
+                animation-name: hero-kenburns-mobile;
+            }
+
+            @keyframes hero-kenburns-mobile {
+                from { transform: scale(1.03); }
+                to   { transform: scale(1.10); }
             }
 
             /* 슬라이드 전환은 유지하되 그림자·필터 부담을 줄인다 */
             .hero-slide {
                 transition: opacity .5s ease;
+            }
+
+            /* 기기가 모션 최소화를 요청하면 정지 */
+            @media (prefers-reduced-motion: reduce) {
+                .hero-slide.is-active img { animation: none; transform: none; }
             }
         }
 
@@ -971,12 +1013,12 @@
                 </a>
 
                 <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                    class="ml-1 inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-3.5 md:px-7 md:py-4 rounded-xl text-[15px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
-                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
+                    class="ml-0.5 md:ml-1 inline-flex items-center gap-1.5 md:gap-2 bg-[#FEE500] text-[#191919] px-3 py-2.5 md:px-7 md:py-4 rounded-lg md:rounded-xl text-[13px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 md:w-[21px] md:h-[21px]">
                         <path
                             d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
                     </svg>
-                    <span class="whitespace-nowrap">카톡 상담</span>
+                    <span class="whitespace-nowrap md:hidden">카톡</span><span class="whitespace-nowrap hidden md:inline">카톡 상담</span>
                 </a>
 
                 <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="메뉴 열기"

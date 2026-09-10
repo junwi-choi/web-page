@@ -304,10 +304,15 @@
                 background: #fff;
             }
 
+            /* 배경 확대는 유지한다. transform 만 바뀌는 애니메이션은 합성 단계에서
+               처리되어 레이아웃·페인트를 다시 하지 않는다. 확대 폭만 줄인다. */
             .page-hero > img {
-                animation: none;
-                transform: none;
-                will-change: auto;
+                animation-name: page-hero-kenburns-mobile;
+            }
+
+             page-hero-kenburns-mobile {
+                from { transform: scale(1.02); }
+                to   { transform: scale(1.09); }
             }
         }
 
