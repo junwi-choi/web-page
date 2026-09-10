@@ -293,6 +293,24 @@
         #nav.is-search .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
         #nav.is-search .nav-burger span { background: #191c1e; }
 
+        /* 모바일 스크롤 성능 — 고정 헤더 블러와 배경 사진 애니메이션이
+           휴대폰에서 프레임을 떨어뜨리므로 좁은 화면에서는 끈다. */
+        @media (max-width: 767px) {
+            #nav.is-scrolled,
+            #nav.is-open,
+            #nav.is-search,
+            .search-panel {
+                backdrop-filter: none;
+                background: #fff;
+            }
+
+            .page-hero > img {
+                animation: none;
+                transform: none;
+                will-change: auto;
+            }
+        }
+
         /* 상단 배경 사진 — 페이지가 열려 있는 동안 아주 천천히 확대·이동(켄번스) */
         .page-hero > img {
             transform: scale(1.02);
@@ -579,6 +597,7 @@
                 <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="index.html#services">Practice Areas</a>
                 <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="contact.html">Contact</a>
                 <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="index.html#location">Directions</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="index.html#insights">Insights</a>
                 <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="price.html">Fees</a>
             </div>
 
@@ -631,6 +650,7 @@
             <a href="index.html#services">Practice Areas</a>
             <a href="contact.html">Contact</a>
             <a href="index.html#location">Directions</a>
+            <a href="index.html#insights">Insights</a>
             <a href="price.html">Fees</a>
         </div>
     </nav>
@@ -794,7 +814,19 @@
         (function () {
             var nav = document.getElementById('nav');
             if (!nav) return;
-            function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 40); }
+            // 스크롤 이벤트마다 클래스를 만지면 모바일에서 프레임이 밀리므로
+            // requestAnimationFrame 으로 한 프레임에 한 번만 반영한다.
+            var scrolled = null, ticking = false;
+            function applyNavState() {
+                ticking = false;
+                var next = window.scrollY > 40;
+                if (next !== scrolled) { scrolled = next; nav.classList.toggle("is-scrolled", next); }
+            }
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(applyNavState);
+            }
             onScroll();
             window.addEventListener('scroll', onScroll, { passive: true });
         })();
