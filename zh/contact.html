@@ -634,13 +634,13 @@
                 <label for="search-input" class="sr-only">搜索词</label>
                 <div class="search-field">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-                    <input type="search" id="search-input" placeholder="请按行业或税务项目搜索（例：建设业、增值税、报酬）" autocomplete="off" />
+                    <input type="search" id="search-input" placeholder="按行业或税务项目检索 — 建设业、增值税、报酬" autocomplete="off" />
                     <button type="button" id="search-close" aria-label="关闭搜索">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>没有搜索结果。</p>
+                <p id="search-empty" class="search-empty" hidden>未找到相关结果。</p>
             </div>
         </div>
 
@@ -675,8 +675,8 @@
                 <!-- 왼쪽: 联系电话 안내 -->
                 <div>
                     <p class="text-primary font-bold text-sm tracking-widest mb-3">CONTACT INFO</p>
-                    <h2 class="text-headline-md font-bold text-on-background mb-5 tracking-tight">也可直接联系我们</h2>
-                    <p class="text-on-surface-variant text-body-md leading-loose mb-8">若填写表格不便，也可直接致电或通过KakaoTalk咨询。我们同样欢迎尚未办理营业执照阶段的咨询。</p>
+                    <h2 class="text-headline-md font-bold text-on-background mb-5 tracking-tight">直接联系方式</h2>
+                    <p class="text-on-surface-variant text-body-md leading-loose mb-8">亦可以电话或KakaoTalk代替表格提出咨询。办理营业执照之前的咨询同样欢迎。</p>
 
                     <ul class="space-y-5 mb-8">
                         <li class="flex items-start gap-4">
@@ -698,7 +698,7 @@
                             <div>
                                 <p class="text-label-md text-on-surface-variant mb-0.5">办公室</p>
                                 <p class="text-body-md font-bold text-on-background leading-snug">首尔衿川区加山数码2路135号<br />加山Urban Work 1栋302室</p>
-                                <a href="index.html#location" class="inline-block mt-1.5 text-label-md text-primary font-bold hover:underline underline-offset-4">查看路线 →</a>
+                                <a href="index.html#location" class="inline-block mt-1.5 text-label-md text-primary font-bold hover:underline underline-offset-4">查看交通路线 →</a>
                             </div>
                         </li>
                     </ul>
@@ -736,7 +736,7 @@
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div>
                                 <label for="cf-name" class="block text-label-md font-bold text-on-background mb-1.5">姓名 <span class="text-error">*</span></label>
-                                <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="张三"
+                                <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="洪吉童"
                                     class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary" />
                             </div>
                             <div>
@@ -771,7 +771,7 @@
 
                         <div>
                             <label for="cf-message" class="block text-label-md font-bold text-on-background mb-1.5">咨询内容 <span class="text-error">*</span></label>
-                            <textarea id="cf-message" name="message" rows="6" required placeholder="请自由填写您的行业、经营形态与想咨询的问题。"
+                            <textarea id="cf-message" name="message" rows="6" required placeholder="请填写您所属行业、经营形态及欲咨询的事项。"
                                 class="w-full rounded-lg border border-outline-variant bg-white px-4 py-3 text-body-sm text-on-background placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
                         </div>
 

@@ -709,6 +709,14 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
            3) will-change 로 상시 승격된 대형 레이어
            데스크톱에서는 그대로 두고, 좁은 화면에서만 끈다. */
         @media (max-width: 767px) {
+            /* 모바일 브라우저는 스크롤할 때 Address창이 접히며 뷰포트가 커진다.
+               히어로 높이를 뷰포트에 묶어두면 그때마다 전체 레이아웃이 다시 계산되어
+               스크롤이 끊긴다. 진입 시점 높이를 --hero-h 에 한 번 재서 고정한다. */
+            #home {
+                height: var(--hero-h, 100svh);
+                min-height: 480px;
+            }
+
             #nav.is-scrolled,
             #nav.is-open,
             #nav.is-search,
@@ -988,7 +996,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         <circle cx="11" cy="11" r="7"></circle>
                         <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
                     </svg>
-                    <input type="search" id="search-input" placeholder="Search by industry or tax topic (e.g. construction, VAT, fees)"
+                    <input type="search" id="search-input" placeholder="Search by industry or tax topic — construction, VAT, fees"
                         autocomplete="off" />
                     <button type="button" id="search-close" aria-label="Close search">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -996,7 +1004,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>No results found.</p>
+                <p id="search-empty" class="search-empty" hidden>No matching results.</p>
             </div>
         </div>
 
@@ -1052,7 +1060,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Import &amp; export tax specialists</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg lg:text-[56px] leading-[1.18] mb-6 text-white">
-                        For exporters, tax<br /><span class="text-primary-fixed-dim">VALUE Tax &amp; Accounting</span></h1>
+                        Taxation for exporters<br /><span class="text-primary-fixed-dim">VALUE Tax &amp; Accounting</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">Zero rating, early VAT refunds, foreign exchange and customs issues<br />Handled personally by a principal who knows trade practice inside out.</p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="./contact.html"
@@ -1080,7 +1088,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Construction tax specialists</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg lg:text-[56px] leading-[1.18] mb-6 text-white">
-                        Construction tax —<br /><span class="text-primary-fixed-dim">To a tax accountant who knows the site</span></h1>
+                        Construction tax —<br /><span class="text-primary-fixed-dim">Entrust it to an adviser who knows the site</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">From revenue recognition based on percentage of completion to qualified supporting documentation for subcontract labour and the financial ratios that keep your licence, we get ahead of the risks specific to construction.</p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="./contact.html"
@@ -1136,7 +1144,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">Industry-tailored response</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg lg:text-[56px] leading-[1.18] mb-6 text-white">
-                        When the industry differs,<br /><span class="text-primary-fixed-dim">the tax strategy must differ too</span></h1>
+                        Where the industry differs,<br /><span class="text-primary-fixed-dim">the tax strategy must differ accordingly</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">We provide tax-saving strategies and accounting management specialised by industry: construction, trade, manufacturing, distribution, education and food service.</p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="./contact.html"
@@ -1192,7 +1200,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                 </div>
                 <div class="w-full md:w-7/12">
                     <h2 class="text-primary font-bold text-[25px] leading-tight mb-4 tracking-widest">About</h2>
-                    <h3 class="text-headline-lg md:text-[36px] md:leading-[46px] lg:text-[40px] lg:leading-[52px] text-on-background mb-8">An honest tax partner — Choi Jun-wi, CTA.</h3>
+                    <h3 class="text-headline-lg md:text-[36px] md:leading-[46px] lg:text-[40px] lg:leading-[52px] text-on-background mb-8">Choi Jun-wi, CTA — an honest tax partner</h3>
                     <div class="space-y-6 text-on-surface-variant text-body-md mb-10">
                         <p>For the many tax questions you meet while running a business, VALUE Tax &amp; Accounting offers the clearest answers. Beyond simply recording numbers, we aim to be the strategic
                             partner that grows the value of your business.</p>
@@ -1246,7 +1254,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">Construction</h4>
                     <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We manage the attribution of profit by percentage of completion and the documentation of on-site daily labour at site level. Before closing we check substantive capital and financial ratios, so that construction registration is maintained as well.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn more<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 2 -->
                 <a href="./services/trade.html"
@@ -1257,7 +1265,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">Import &amp; Export</h4>
                     <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We put the zero-rating requirements and shipping documents in order and make early refunds routine to ease cash pressure. Transactions taxed differently, such as intermediary trade and consignment processing, are reviewed at the contract stage.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn more<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 3 -->
                 <a href="./services/manufacturing.html"
@@ -1268,7 +1276,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">Manufacturing</h4>
                     <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We design a cost structure so that the statement of cost of goods manufactured reflects how production actually flows. For the R&amp;D and integrated investment tax credits, we manage the requirements from the moment each expense arises so nothing is disallowed at closing.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn more<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 4 -->
                 <a href="./services/retail.html"
@@ -1279,7 +1287,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">Wholesale &amp; Retail</h4>
                     <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We consolidate sales scattered across open marketplaces, own-brand stores and offline outlets onto a single basis. Platform settlement records are reconciled against tax invoice dates so that any gap between reported sales and actual deposits can be explained.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn more<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 5 -->
                 <a href="./services/academy.html"
@@ -1290,7 +1298,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">Private Academy</h4>
                     <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We set the criteria for splitting tuition and materials between exempt and taxable supplies and align instructor contracts with their substance. The business establishment status return and the global income tax return are managed so that both rest on a single revenue figure.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn more<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
                 <!-- Industry 6 -->
                 <a href="./services/restaurant.html"
@@ -1301,7 +1309,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     </div>
                     <h4 class="text-title-lg text-on-background mb-3">Food Service</h4>
                     <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We start by fixing how purchase documentation is obtained so the deemed input tax credit can be used to the fullest. Card, cash and delivery sales are reconciled against POS records to evidence reported revenue, and platform commissions are recognised as a separate cost.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn more<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                 </a>
             </div>
         </div>
@@ -1324,7 +1332,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-label-sm font-bold text-primary px-2.5 py-1 bg-primary/10 rounded-full">Tax saving
-                                Tips</span>
+                                Practical Tips</span>
                             <span class="text-label-sm text-outline">2025.04.23</span>
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3 group-hover:text-primary transition-colors">
@@ -1334,7 +1342,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         <div class="mt-auto">
                             <div
                                 class="text-label-md text-primary flex items-center gap-1 font-bold hover:gap-2 transition-all">
-                                Learn more
+                                View details
                                 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                             </div>
                         </div>
@@ -1361,7 +1369,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         <div class="mt-auto">
                             <div
                                 class="text-label-md text-primary flex items-center gap-1 font-bold hover:gap-2 transition-all">
-                                Learn more
+                                View details
                                 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                             </div>
                         </div>
@@ -1388,7 +1396,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         <div class="mt-auto">
                             <div
                                 class="text-label-md text-primary flex items-center gap-1 font-bold hover:gap-2 transition-all">
-                                Learn more
+                                View details
                                 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                             </div>
                         </div>
@@ -1398,7 +1406,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
             <div class="mt-12 text-center">
                 <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer"
                     class="inline-flex text-on-surface-variant font-bold text-body-md hover:text-primary items-center gap-2 transition-colors">
-                    See more insights
+                    View all insights
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </a>
             </div>
@@ -1410,7 +1418,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
             <div class="bg-surface-container-lowest rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 p-6 lg:p-12 bg-primary text-on-primary flex flex-col justify-between">
                     <div>
-                        <h2 class="text-headline-lg md:text-[34px] md:leading-[44px] font-bold mb-6">Start your consultation now</h2>
+                        <h2 class="text-headline-lg md:text-[34px] md:leading-[44px] font-bold mb-6">Request a consultation</h2>
                         <p class="text-secondary-fixed text-body-lg mb-12">Complex tax worries can be resolved with a single piece of expert advice. Leave your name and
                             contact details and we will advise you with the greatest care.</p>
                         <div class="space-y-6">
@@ -1429,14 +1437,14 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         </div>
                     </div>
                     <div class="mt-12 pt-8 border-t border-white/20">
-                        <p class="text-label-sm opacity-80 italic">"A choice of value makes your success."</p>
+                        <p class="text-label-sm opacity-80 italic">"A choice of value builds your success."</p>
                     </div>
                 </div>
                 <div
                     class="lg:w-1/2 p-6 lg:p-12 bg-surface-container-lowest flex flex-col items-center justify-center text-center">
-                    <h3 class="text-headline-md font-bold text-on-background mb-4">Fast and simple on KakaoTalk</h3>
-                    <p class="text-on-surface-variant text-body-md mb-10">Have a question?<br />Skip the forms and start your consultation
-                        right away on KakaoTalk.</p>
+                    <h3 class="text-headline-md font-bold text-on-background mb-4">Consult conveniently via KakaoTalk</h3>
+                    <p class="text-on-surface-variant text-body-md mb-10">For any enquiry<br />Consultation is also available directly via KakaoTalk,
+                        without completing a form.</p>
                     <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FEE500] text-[#191919] px-10 py-5 rounded-xl font-bold text-body-lg hover:bg-primary hover:text-white active:bg-primary active:text-white shadow-lg transition-all duration-200 active:scale-[0.98]">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -1446,7 +1454,7 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         Contact
                     </a>
                     <a href="./contact.html"
-                        class="mt-6 text-primary font-bold text-body-sm hover:underline underline-offset-4">Request a consultation by form →</a>
+                        class="mt-6 text-primary font-bold text-body-sm hover:underline underline-offset-4">Submit a consultation request →</a>
                 </div>
             </div>
         </div>
@@ -1521,6 +1529,22 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
             </div>
         </div>
     </footer>
+
+    <!-- 모바일 히어로 높이 고정 -->
+    <script>
+        (function () {
+            // Address창이 접히며 발생하는 resize 로 히어로가 커지지 않도록,
+            // 진입 시점의 뷰포트 높이를 한 번만 재서 고정한다.
+            // 방향 전환처럼 실제로 화면이 달라질 때만 다시 잰다.
+            function setHeroHeight() {
+                document.documentElement.style.setProperty("--hero-h", window.innerHeight + "px");
+            }
+            setHeroHeight();
+            window.addEventListener("orientationchange", function () {
+                window.setTimeout(setHeroHeight, 300);
+            });
+        })();
+    </script>
 
     <!-- Practice experience 년차 자동 계산 (data-since 연도 기준). JS가 없어도 HTML 기본값이 표시된다. -->
 

@@ -709,6 +709,14 @@
            3) will-change 로 상시 승격된 대형 레이어
            데스크톱에서는 그대로 두고, 좁은 화면에서만 끈다. */
         @media (max-width: 767px) {
+            /* 모바일 브라우저는 스크롤할 때 地址창이 접히며 뷰포트가 커진다.
+               히어로 높이를 뷰포트에 묶어두면 그때마다 전체 레이아웃이 다시 계산되어
+               스크롤이 끊긴다. 진입 시점 높이를 --hero-h 에 한 번 재서 고정한다. */
+            #home {
+                height: var(--hero-h, 100svh);
+                min-height: 480px;
+            }
+
             #nav.is-scrolled,
             #nav.is-open,
             #nav.is-search,
@@ -988,7 +996,7 @@
                         <circle cx="11" cy="11" r="7"></circle>
                         <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
                     </svg>
-                    <input type="search" id="search-input" placeholder="请按行业或税务项目搜索（例：建设业、增值税、报酬）"
+                    <input type="search" id="search-input" placeholder="按行业或税务项目检索 — 建设业、增值税、报酬"
                         autocomplete="off" />
                     <button type="button" id="search-close" aria-label="关闭搜索">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -996,7 +1004,7 @@
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>没有搜索结果。</p>
+                <p id="search-empty" class="search-empty" hidden>未找到相关结果。</p>
             </div>
         </div>
 
@@ -1052,7 +1060,7 @@
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">进出口税务专长</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg lg:text-[56px] leading-[1.18] mb-6 text-white">
-                        出口企业的税，<br /><span class="text-primary-fixed-dim">VALUE税务会计</span></h1>
+                        出口企业的税务<br /><span class="text-primary-fixed-dim">VALUE税务会计</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">零税率适用、增值税提前退税、外汇交易与关税问题<br />由精通进出口实务的主理税务师亲自负责。</p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="./contact.html"
@@ -1080,7 +1088,7 @@
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">建设业税务专长</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg lg:text-[56px] leading-[1.18] mb-6 text-white">
-                        建设业税务，<br /><span class="text-primary-fixed-dim">交给了解现场的税务师</span></h1>
+                        建设业税务，<br /><span class="text-primary-fixed-dim">委托了解现场的税务师</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">从完工进度（履约进度）收入确认、分包劳务费合格证明文件，到维持资质的财务比率管理，我们对建设业特有的风险主动应对。</p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="./contact.html"
@@ -1136,7 +1144,7 @@
                 <div class="max-w-2xl text-white" data-copy>
                     <span class="inline-block py-1.5 px-4 rounded-full bg-primary text-white text-label-md tracking-wide mb-6">分行业定制应对</span>
                     <h1 class="text-headline-lg-mobile md:text-display-lg lg:text-[56px] leading-[1.18] mb-6 text-white">
-                        行业不同，<br /><span class="text-primary-fixed-dim">税务策略也应有所不同</span></h1>
+                        行业不同，<br /><span class="text-primary-fixed-dim">税务策略亦应随之不同</span></h1>
                     <p class="text-body-lg text-white/90 mb-10 max-w-lg">我们按建设、进出口、制造、批发零售、教育、餐饮等行业，提供专门化的节税策略与会计管理。</p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="./contact.html"
@@ -1192,7 +1200,7 @@
                 </div>
                 <div class="w-full md:w-7/12">
                     <h2 class="text-primary font-bold text-[25px] leading-tight mb-4 tracking-widest">致辞</h2>
-                    <h3 class="text-headline-lg md:text-[36px] md:leading-[46px] lg:text-[40px] lg:leading-[52px] text-on-background mb-8">诚实的税务伙伴——Choi Jun-wi税务师。</h3>
+                    <h3 class="text-headline-lg md:text-[36px] md:leading-[46px] lg:text-[40px] lg:leading-[52px] text-on-background mb-8">Choi Jun-wi 税务师 — 诚实的税务伙伴</h3>
                     <div class="space-y-6 text-on-surface-variant text-body-md mb-10">
                         <p>对于您在经营中遇到的种种税务问题，VALUE税务会计将给出最清晰的答案。我们不止于记录数字，更愿成为提升贵公司事业价值的战略
                             伙伴。</p>
@@ -1324,7 +1332,7 @@
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="text-label-sm font-bold text-primary px-2.5 py-1 bg-primary/10 rounded-full">节税
-                                贴士</span>
+                                实务提示</span>
                             <span class="text-label-sm text-outline">2025.04.23</span>
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3 group-hover:text-primary transition-colors">
@@ -1398,7 +1406,7 @@
             <div class="mt-12 text-center">
                 <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer"
                     class="inline-flex text-on-surface-variant font-bold text-body-md hover:text-primary items-center gap-2 transition-colors">
-                    查看更多洞察
+                    查看全部洞察
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </a>
             </div>
@@ -1410,7 +1418,7 @@
             <div class="bg-surface-container-lowest rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 p-6 lg:p-12 bg-primary text-on-primary flex flex-col justify-between">
                     <div>
-                        <h2 class="text-headline-lg md:text-[34px] md:leading-[44px] font-bold mb-6">立即开始咨询</h2>
+                        <h2 class="text-headline-lg md:text-[34px] md:leading-[44px] font-bold mb-6">申请咨询</h2>
                         <p class="text-secondary-fixed text-body-lg mb-12">复杂的税务烦恼，一句专家建议即可化解。留下您的姓名与联系方式，
                             我们将竭诚为您提供咨询。</p>
                         <div class="space-y-6">
@@ -1434,9 +1442,9 @@
                 </div>
                 <div
                     class="lg:w-1/2 p-6 lg:p-12 bg-surface-container-lowest flex flex-col items-center justify-center text-center">
-                    <h3 class="text-headline-md font-bold text-on-background mb-4">通过KakaoTalk，快捷又简便！</h3>
-                    <p class="text-on-surface-variant text-body-md mb-10">有什么想了解的吗？<br />无需填写繁琐表格，直接通过KakaoTalk
-                        开始咨询。</p>
+                    <h3 class="text-headline-md font-bold text-on-background mb-4">通过KakaoTalk便捷咨询</h3>
+                    <p class="text-on-surface-variant text-body-md mb-10">如有疑问<br />亦可通过KakaoTalk直接咨询，
+                        无需填写表格。</p>
                     <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FEE500] text-[#191919] px-10 py-5 rounded-xl font-bold text-body-lg hover:bg-primary hover:text-white active:bg-primary active:text-white shadow-lg transition-all duration-200 active:scale-[0.98]">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -1446,7 +1454,7 @@
                         咨询申请
                     </a>
                     <a href="./contact.html"
-                        class="mt-6 text-primary font-bold text-body-sm hover:underline underline-offset-4">通过表格申请咨询 →</a>
+                        class="mt-6 text-primary font-bold text-body-sm hover:underline underline-offset-4">提交咨询申请 →</a>
                 </div>
             </div>
         </div>
@@ -1521,6 +1529,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- 모바일 히어로 높이 고정 -->
+    <script>
+        (function () {
+            // 地址창이 접히며 발생하는 resize 로 히어로가 커지지 않도록,
+            // 진입 시점의 뷰포트 높이를 한 번만 재서 고정한다.
+            // 방향 전환처럼 실제로 화면이 달라질 때만 다시 잰다.
+            function setHeroHeight() {
+                document.documentElement.style.setProperty("--hero-h", window.innerHeight + "px");
+            }
+            setHeroHeight();
+            window.addEventListener("orientationchange", function () {
+                window.setTimeout(setHeroHeight, 300);
+            });
+        })();
+    </script>
 
     <!-- 实务经验 년차 자동 계산 (data-since 연도 기준). JS가 없어도 HTML 기본값이 표시된다. -->
 

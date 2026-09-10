@@ -361,11 +361,11 @@
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"免税采购的农水产品也能获得抵扣吗？","acceptedAnswer":{"@type":"Answer","text":"通过拟制进项税额扣除，可将免税农、畜、水产品采购额的一定比例作为进项税额抵扣。抵扣率与限额因个人与法人、征税类型而异，且必须持有发票等凭证，因此须从采购环节即着手准备。"}},
-        {"@type":"Question","name":"外卖平台的销售额应如何申报？","acceptedAnswer":{"@type":"Answer","text":"收入是消费者支付的总额，而非平台结算的金额。中介手续费与配送费属另行采购处理，因此若仅将结算入账额计为收入，便直接构成销售额遗漏。"}},
+        {"@type":"Question","name":"免税采购的农水产品可否适用扣除？","acceptedAnswer":{"@type":"Answer","text":"通过拟制进项税额扣除，可将免税农、畜、水产品采购额的一定比例作为进项税额抵扣。抵扣率与限额因个人与法人、征税类型而异，且必须持有发票等凭证，因此须从采购环节即着手准备。"}},
+        {"@type":"Question","name":"外卖平台销售额应如何申报？","acceptedAnswer":{"@type":"Answer","text":"收入是消费者支付的总额，而非平台结算的金额。中介手续费与配送费属另行采购处理，因此若仅将结算入账额计为收入，便直接构成销售额遗漏。"}},
         {"@type":"Question","name":"现金收据是否必须开具？","acceptedAnswer":{"@type":"Answer","text":"餐饮业可能属于现金收据强制开具行业，此时单笔10万韩元以上的现金交易，即使对方未要求也须开具。未开具时按交易金额的20%课征加算税，负担相当沉重。"}},
-        {"@type":"Question","name":"兼职人员的人工费应如何处理？","acceptedAnswer":{"@type":"Answer","text":"须按日雇劳动者申报并按月提交收入支付明细表，同时留存银行转账记录。若以现金支付且遗漏申报，人工费本身将不被认定为费用，税负反而加重。"}},
-        {"@type":"Question","name":"装修费用可以一次性计入费用吗？","acceptedAnswer":{"@type":"Answer","text":"承租门店的装修，原则上应作为设施装置资本化后按耐用年限计提折旧。但若租赁期限已定，也可按该期限摊销，因此应一并确认合同条件。"}}
+        {"@type":"Question","name":"兼职人员人工费应如何处理？","acceptedAnswer":{"@type":"Answer","text":"须按日雇劳动者申报并按月提交收入支付明细表，同时留存银行转账记录。若以现金支付且遗漏申报，人工费本身将不被认定为费用，税负反而加重。"}},
+        {"@type":"Question","name":"装修费用可否一次性计入费用？","acceptedAnswer":{"@type":"Answer","text":"承租门店的装修，原则上应作为设施装置资本化后按耐用年限计提折旧。但若租赁期限已定，也可按该期限摊销，因此应一并确认合同条件。"}}
     ]}
     </script>
 </head>
@@ -422,13 +422,13 @@
                 <label for="search-input" class="sr-only">搜索词</label>
                 <div class="search-field">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-                    <input type="search" id="search-input" placeholder="请按行业或税务项目搜索（例：建设业、增值税、报酬）" autocomplete="off" />
+                    <input type="search" id="search-input" placeholder="按行业或税务项目检索 — 建设业、增值税、报酬" autocomplete="off" />
                     <button type="button" id="search-close" aria-label="关闭搜索">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>没有搜索结果。</p>
+                <p id="search-empty" class="search-empty" hidden>未找到相关结果。</p>
             </div>
         </div>
 
@@ -555,7 +555,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">免税采购的农水产品也能获得抵扣吗？</span>
+                            <span class="flex-1">免税采购的农水产品可否适用扣除？</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">通过拟制进项税额扣除，可将免税农、畜、水产品采购额的一定比例作为进项税额抵扣。抵扣率与限额因个人与法人、征税类型而异，且必须持有发票等凭证，因此须从采购环节即着手准备。</p>
@@ -563,7 +563,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">外卖平台的销售额应如何申报？</span>
+                            <span class="flex-1">外卖平台销售额应如何申报？</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">收入是消费者支付的总额，而非平台结算的金额。中介手续费与配送费属另行采购处理，因此若仅将结算入账额计为收入，便直接构成销售额遗漏。</p>
@@ -579,7 +579,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">兼职人员的人工费应如何处理？</span>
+                            <span class="flex-1">兼职人员人工费应如何处理？</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">须按日雇劳动者申报并按月提交收入支付明细表，同时留存银行转账记录。若以现金支付且遗漏申报，人工费本身将不被认定为费用，税负反而加重。</p>
@@ -587,7 +587,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">装修费用可以一次性计入费用吗？</span>
+                            <span class="flex-1">装修费用可否一次性计入费用？</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">承租门店的装修，原则上应作为设施装置资本化后按耐用年限计提折旧。但若租赁期限已定，也可按该期限摊销，因此应一并确认合同条件。</p>
@@ -599,7 +599,7 @@
         <section class="bg-surface-container-low border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
-                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">也请了解其他行业</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">其他业务领域</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
@@ -628,8 +628,8 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">餐饮业税务，立即咨询</h2>
-            <p class="text-white/85 mb-8 text-[17px]">无需繁琐表格，即可通过KakaoTalk直接与Choi Jun-wi税务师咨询。</p>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">餐饮业税务咨询</h2>
+            <p class="text-white/85 mb-8 text-[17px]">无需填写表格，即可通过KakaoTalk直接与Choi Jun-wi税务师咨询。</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>

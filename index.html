@@ -709,6 +709,14 @@
            3) will-change 로 상시 승격된 대형 레이어
            데스크톱에서는 그대로 두고, 좁은 화면에서만 끈다. */
         @media (max-width: 767px) {
+            /* 모바일 브라우저는 스크롤할 때 주소창이 접히며 뷰포트가 커진다.
+               히어로 높이를 뷰포트에 묶어두면 그때마다 전체 레이아웃이 다시 계산되어
+               스크롤이 끊긴다. 진입 시점 높이를 --hero-h 에 한 번 재서 고정한다. */
+            #home {
+                height: var(--hero-h, 100svh);
+                min-height: 480px;
+            }
+
             #nav.is-scrolled,
             #nav.is-open,
             #nav.is-search,
@@ -1521,6 +1529,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- 모바일 히어로 높이 고정 -->
+    <script>
+        (function () {
+            // 주소창이 접히며 발생하는 resize 로 히어로가 커지지 않도록,
+            // 진입 시점의 뷰포트 높이를 한 번만 재서 고정한다.
+            // 방향 전환처럼 실제로 화면이 달라질 때만 다시 잰다.
+            function setHeroHeight() {
+                document.documentElement.style.setProperty("--hero-h", window.innerHeight + "px");
+            }
+            setHeroHeight();
+            window.addEventListener("orientationchange", function () {
+                window.setTimeout(setHeroHeight, 300);
+            });
+        })();
+    </script>
 
     <!-- 실무 경력 년차 자동 계산 (data-since 연도 기준). JS가 없어도 HTML 기본값이 표시된다. -->
 

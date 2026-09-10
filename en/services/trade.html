@@ -361,11 +361,11 @@
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"Do exporters pay no VAT at all?","acceptedAnswer":{"@type":"Answer","text":"Exports are zero rated, so output VAT is nil, but the filing obligation does not disappear with it. The return must be filed properly with the zero-rating attachments; if documents are missing, a penalty applies for improper reporting of the zero-rated tax base."}},
-        {"@type":"Question","name":"Can I recover input VAT before the export proceeds arrive?","acceptedAnswer":{"@type":"Answer","text":"A business subject to zero rating may apply for an early refund. Applications can be made monthly, which greatly eases cash pressure when raw-material purchases are concentrated, so it is better to use it than to wait for the final return."}},
+        {"@type":"Question","name":"Are exports entirely relieved of VAT?","acceptedAnswer":{"@type":"Answer","text":"Exports are zero rated, so output VAT is nil, but the filing obligation does not disappear with it. The return must be filed properly with the zero-rating attachments; if documents are missing, a penalty applies for improper reporting of the zero-rated tax base."}},
+        {"@type":"Question","name":"May input tax be recovered before the export proceeds are received?","acceptedAnswer":{"@type":"Answer","text":"A business subject to zero rating may apply for an early refund. Applications can be made monthly, which greatly eases cash pressure when raw-material purchases are concentrated, so it is better to use it than to wait for the final return."}},
         {"@type":"Question","name":"At what point should export revenue be recognised?","acceptedAnswer":{"@type":"Answer","text":"For an export that takes domestic goods out of the country, the time of supply is the shipping date. Using the contract date or the date of payment throws off the tax period, so the sales ledger should follow the shipping date on the export declaration certificate."}},
-        {"@type":"Question","name":"At what exchange rate is revenue received in foreign currency translated?","acceptedAnswer":{"@type":"Answer","text":"If the amount was converted into won before the time of supply, use the converted amount; otherwise translate at the base rate or arbitrated rate on the date of supply. Applying the rate on the date of deposit changes the tax base, so take care."}},
-        {"@type":"Question","name":"Can the VAT paid to customs on import also be reduced?","acceptedAnswer":{"@type":"Answer","text":"Export-oriented SMEs that meet the requirements can defer payment of import VAT, settling it at the time of filing instead of paying at import and reclaiming later. The eligibility requirements must be confirmed and approval applied for in advance."}}
+        {"@type":"Question","name":"At what exchange rate is revenue denominated in foreign currency translated?","acceptedAnswer":{"@type":"Answer","text":"If the amount was converted into won before the time of supply, use the converted amount; otherwise translate at the base rate or arbitrated rate on the date of supply. Applying the rate on the date of deposit changes the tax base, so take care."}},
+        {"@type":"Question","name":"May the VAT payable to customs on importation also be relieved?","acceptedAnswer":{"@type":"Answer","text":"Export-oriented SMEs that meet the requirements can defer payment of import VAT, settling it at the time of filing instead of paying at import and reclaiming later. The eligibility requirements must be confirmed and approval applied for in advance."}}
     ]}
     </script>
 </head>
@@ -422,13 +422,13 @@
                 <label for="search-input" class="sr-only">Search term</label>
                 <div class="search-field">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-                    <input type="search" id="search-input" placeholder="Search by industry or tax topic (e.g. construction, VAT, fees)" autocomplete="off" />
+                    <input type="search" id="search-input" placeholder="Search by industry or tax topic — construction, VAT, fees" autocomplete="off" />
                     <button type="button" id="search-close" aria-label="Close search">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>No results found.</p>
+                <p id="search-empty" class="search-empty" hidden>No matching results.</p>
             </div>
         </div>
 
@@ -555,7 +555,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Do exporters pay no VAT at all?</span>
+                            <span class="flex-1">Are exports entirely relieved of VAT?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">Exports are zero rated, so output VAT is nil, but the filing obligation does not disappear with it. The return must be filed properly with the zero-rating attachments; if documents are missing, a penalty applies for improper reporting of the zero-rated tax base.</p>
@@ -563,7 +563,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Can I recover input VAT before the export proceeds arrive?</span>
+                            <span class="flex-1">May input tax be recovered before the export proceeds are received?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">A business subject to zero rating may apply for an early refund. Applications can be made monthly, which greatly eases cash pressure when raw-material purchases are concentrated, so it is better to use it than to wait for the final return.</p>
@@ -579,7 +579,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">At what exchange rate is revenue received in foreign currency translated?</span>
+                            <span class="flex-1">At what exchange rate is revenue denominated in foreign currency translated?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">If the amount was converted into won before the time of supply, use the converted amount; otherwise translate at the base rate or arbitrated rate on the date of supply. Applying the rate on the date of deposit changes the tax base, so take care.</p>
@@ -587,7 +587,7 @@
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Can the VAT paid to customs on import also be reduced?</span>
+                            <span class="flex-1">May the VAT payable to customs on importation also be relieved?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
                         <p class="text-on-surface-variant leading-loose mt-3 pl-7">Export-oriented SMEs that meet the requirements can defer payment of import VAT, settling it at the time of filing instead of paying at import and reclaiming later. The eligibility requirements must be confirmed and approval applied for in advance.</p>
@@ -599,7 +599,7 @@
         <section class="bg-surface-container-low border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
-                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">Explore other industries</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">Other practice areas</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
@@ -628,12 +628,12 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Import and export tax — talk to us today</h2>
-            <p class="text-white/85 mb-8 text-[17px]">Consult Choi Jun-wi, CTA directly on KakaoTalk, with no forms to fill in.</p>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Import &amp; Export Tax Consultation</h2>
+            <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
-                Request a consultation on KakaoTalk
+                Request a consultation via KakaoTalk
             </a>
         </div>
     </section>
