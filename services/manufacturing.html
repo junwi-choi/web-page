@@ -31,6 +31,7 @@
             word-break: keep-all; overflow-wrap: break-word;
         }
         .step-line { min-height: 1.5rem; }
+        summary::-webkit-details-marker { display: none; }
         .flow > div:last-child .step-line { display: none; }
         #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
         #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
@@ -54,6 +55,23 @@
             "secondary-container": "#d5e0f8", "on-secondary-container": "#586377",
             "on-surface-variant": "#424655", "outline": "#727786", "outline-variant": "#c2c6d7", "inverse-surface": "#2d3133"
         } } } };
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"홈","item":"https://vtax.kr/"},
+        {"@type":"ListItem","position":2,"name":"주요서비스","item":"https://vtax.kr/#services"},
+        {"@type":"ListItem","position":3,"name":"제조업","item":"https://vtax.kr/services/manufacturing.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"재고자산 평가방법은 꼭 신고해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"신고하지 않으면 선입선출법으로 평가하게 됩니다. 원자재 가격 변동이 큰 업종은 어떤 방법을 택하느냐에 따라 매출원가와 세부담이 달라지므로, 사업 초기에 유리한 방법을 정해 신고해 두는 것이 좋습니다."}},
+        {"@type":"Question","name":"기계장치를 구입했는데 한 번에 비용으로 처리할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"원칙적으로 내용연수에 걸쳐 감가상각합니다. 다만 설비 투자에 대해서는 통합투자세액공제를 적용받거나 감가상각 방법과 내용연수 선택으로 초기 비용을 앞당길 수 있으므로, 투자 시기와 공제 요건을 함께 검토해야 합니다."}},
+        {"@type":"Question","name":"제조업도 중소기업 특별세액감면을 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"제조업은 대표적인 감면 대상 업종입니다. 사업장 소재지와 기업 규모에 따라 감면율이 달라지고 고용 인원에 따른 한도도 적용되므로, 다른 세액공제와 어느 조합이 유리한지 비교해 선택해야 합니다."}},
+        {"@type":"Question","name":"연구개발비도 세액공제를 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"연구전담부서나 기업부설연구소를 인정받으면 연구·인력개발비 세액공제를 적용할 수 있습니다. 다만 인건비 배분 근거와 연구노트 같은 증빙이 남아 있어야 하므로, 공제를 염두에 두었다면 지출 시점부터 기록을 관리해야 합니다."}},
+        {"@type":"Question","name":"외주가공비 처리에서 자주 문제가 되는 부분은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"실제 가공 사실을 증명하지 못하는 경우입니다. 세금계산서와 함께 발주서, 입출고 내역, 대금 지급 흐름이 일관되게 남아 있어야 매입세액 공제와 경비 인정이 유지됩니다."}}
+    ]}
     </script>
 </head>
 
@@ -171,6 +189,55 @@
                         <h3 class="font-bold text-[18px] mb-1.5">지원금·설비 회계 처리</h3>
                         <p class="text-on-surface-variant leading-relaxed">보조금 수령과 설비 취득의 세무 처리를 연계해 일시적인 세부담 급증을 방지합니다.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">제조업 세무 자주 묻는 질문</h2>
+                <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">재고자산 평가방법은 꼭 신고해야 하나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">신고하지 않으면 선입선출법으로 평가하게 됩니다. 원자재 가격 변동이 큰 업종은 어떤 방법을 택하느냐에 따라 매출원가와 세부담이 달라지므로, 사업 초기에 유리한 방법을 정해 신고해 두는 것이 좋습니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">기계장치를 구입했는데 한 번에 비용으로 처리할 수 있나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">원칙적으로 내용연수에 걸쳐 감가상각합니다. 다만 설비 투자에 대해서는 통합투자세액공제를 적용받거나 감가상각 방법과 내용연수 선택으로 초기 비용을 앞당길 수 있으므로, 투자 시기와 공제 요건을 함께 검토해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">제조업도 중소기업 특별세액감면을 받을 수 있나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">제조업은 대표적인 감면 대상 업종입니다. 사업장 소재지와 기업 규모에 따라 감면율이 달라지고 고용 인원에 따른 한도도 적용되므로, 다른 세액공제와 어느 조합이 유리한지 비교해 선택해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">연구개발비도 세액공제를 받을 수 있나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">연구전담부서나 기업부설연구소를 인정받으면 연구·인력개발비 세액공제를 적용할 수 있습니다. 다만 인건비 배분 근거와 연구노트 같은 증빙이 남아 있어야 하므로, 공제를 염두에 두었다면 지출 시점부터 기록을 관리해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">외주가공비 처리에서 자주 문제가 되는 부분은 무엇인가요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">실제 가공 사실을 증명하지 못하는 경우입니다. 세금계산서와 함께 발주서, 입출고 내역, 대금 지급 흐름이 일관되게 남아 있어야 매입세액 공제와 경비 인정이 유지됩니다.</p>
+                    </details>
                 </div>
             </div>
         </section>

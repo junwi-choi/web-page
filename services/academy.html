@@ -31,6 +31,7 @@
             word-break: keep-all; overflow-wrap: break-word;
         }
         .step-line { min-height: 1.5rem; }
+        summary::-webkit-details-marker { display: none; }
         .flow > div:last-child .step-line { display: none; }
         #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
         #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
@@ -54,6 +55,23 @@
             "secondary-container": "#d5e0f8", "on-secondary-container": "#586377",
             "on-surface-variant": "#424655", "outline": "#727786", "outline-variant": "#c2c6d7", "inverse-surface": "#2d3133"
         } } } };
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"홈","item":"https://vtax.kr/"},
+        {"@type":"ListItem","position":2,"name":"주요서비스","item":"https://vtax.kr/#services"},
+        {"@type":"ListItem","position":3,"name":"학원업","item":"https://vtax.kr/services/academy.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"학원 교습비에도 부가가치세가 붙나요?","acceptedAnswer":{"@type":"Answer","text":"학원의 설립·운영 및 과외교습에 관한 법률에 따라 등록한 학원이 제공하는 교육용역은 부가가치세가 면세됩니다. 다만 면세사업자도 신고 의무는 있어 매년 사업장현황신고를 해야 합니다."}},
+        {"@type":"Question","name":"교재비나 부교재 판매도 면세인가요?","acceptedAnswer":{"@type":"Answer","text":"교육용역에 통상적으로 부수되는 범위인지에 따라 갈립니다. 수강생에게 실비로 제공하는 교재는 부수 재화로 보아 면세될 수 있지만, 별도로 마진을 붙여 판매하면 과세 대상이 되어 과세·면세 겸업 신고가 필요합니다."}},
+        {"@type":"Question","name":"강사에게 지급하는 강사료는 어떻게 신고하나요?","acceptedAnswer":{"@type":"Answer","text":"근로계약에 따라 지휘와 감독을 받으면 근로소득으로, 독립된 자격으로 용역을 제공하면 사업소득으로 원천징수합니다. 실질과 다르게 처리하면 4대보험과 퇴직금 문제로 번지므로 계약 형태부터 정리해야 합니다."}},
+        {"@type":"Question","name":"사업장현황신고를 놓치면 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"면세사업자는 매년 2월 10일까지 직전 연도 수입금액을 신고해야 하며, 누락하면 가산세가 부과될 수 있습니다. 이 신고 내용이 5월 종합소득세 신고의 기초가 되므로 수입금액 검토를 함께 진행하는 것이 좋습니다."}},
+        {"@type":"Question","name":"학원 차량 운행 비용은 경비로 인정되나요?","acceptedAnswer":{"@type":"Answer","text":"통학용으로 실제 운행한 차량이라면 경비로 인정됩니다. 다만 업무용 승용차는 운행기록부 작성 여부에 따라 인정되는 한도가 달라지므로, 차량을 어느 명의로 보유할지부터 함께 검토하는 것이 좋습니다."}}
+    ]}
     </script>
 </head>
 
@@ -171,6 +189,55 @@
                         <h3 class="font-bold text-[18px] mb-1.5">수입금액 사전 검토</h3>
                         <p class="text-on-surface-variant leading-relaxed">사업장현황신고 전에 현금·카드·계좌 수입을 대사해 소명 리스크를 낮춥니다.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">학원업 세무 자주 묻는 질문</h2>
+                <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">학원 교습비에도 부가가치세가 붙나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">학원의 설립·운영 및 과외교습에 관한 법률에 따라 등록한 학원이 제공하는 교육용역은 부가가치세가 면세됩니다. 다만 면세사업자도 신고 의무는 있어 매년 사업장현황신고를 해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">교재비나 부교재 판매도 면세인가요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">교육용역에 통상적으로 부수되는 범위인지에 따라 갈립니다. 수강생에게 실비로 제공하는 교재는 부수 재화로 보아 면세될 수 있지만, 별도로 마진을 붙여 판매하면 과세 대상이 되어 과세·면세 겸업 신고가 필요합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">강사에게 지급하는 강사료는 어떻게 신고하나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">근로계약에 따라 지휘와 감독을 받으면 근로소득으로, 독립된 자격으로 용역을 제공하면 사업소득으로 원천징수합니다. 실질과 다르게 처리하면 4대보험과 퇴직금 문제로 번지므로 계약 형태부터 정리해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">사업장현황신고를 놓치면 어떻게 되나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">면세사업자는 매년 2월 10일까지 직전 연도 수입금액을 신고해야 하며, 누락하면 가산세가 부과될 수 있습니다. 이 신고 내용이 5월 종합소득세 신고의 기초가 되므로 수입금액 검토를 함께 진행하는 것이 좋습니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">학원 차량 운행 비용은 경비로 인정되나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">통학용으로 실제 운행한 차량이라면 경비로 인정됩니다. 다만 업무용 승용차는 운행기록부 작성 여부에 따라 인정되는 한도가 달라지므로, 차량을 어느 명의로 보유할지부터 함께 검토하는 것이 좋습니다.</p>
+                    </details>
                 </div>
             </div>
         </section>

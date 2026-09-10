@@ -31,6 +31,7 @@
             word-break: keep-all; overflow-wrap: break-word;
         }
         .step-line { min-height: 1.5rem; }
+        summary::-webkit-details-marker { display: none; }
         .flow > div:last-child .step-line { display: none; }
         #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
         #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
@@ -54,6 +55,23 @@
             "secondary-container": "#d5e0f8", "on-secondary-container": "#586377",
             "on-surface-variant": "#424655", "outline": "#727786", "outline-variant": "#c2c6d7", "inverse-surface": "#2d3133"
         } } } };
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"홈","item":"https://vtax.kr/"},
+        {"@type":"ListItem","position":2,"name":"주요서비스","item":"https://vtax.kr/#services"},
+        {"@type":"ListItem","position":3,"name":"도소매업","item":"https://vtax.kr/services/retail.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"온라인 오픈마켓 매출은 어떻게 신고하나요?","acceptedAnswer":{"@type":"Answer","text":"플랫폼이 정산해 준 금액이 아니라 소비자에게 판매한 총액이 과세표준입니다. 판매수수료는 별도로 매입세액을 공제받는 구조이므로, 정산 입금액만 매출로 잡으면 그대로 매출 누락이 됩니다."}},
+        {"@type":"Question","name":"재고가 장부와 맞지 않으면 세무상 문제가 되나요?","acceptedAnswer":{"@type":"Answer","text":"장부상 재고와 실제 재고가 크게 어긋나면 매출 누락이나 가공 매입을 의심받는 대표적인 단서가 됩니다. 정기적으로 실사해 차이 원인을 기록으로 남겨 두는 것이 가장 확실한 방어입니다."}},
+        {"@type":"Question","name":"신용카드 매출에도 세액공제가 있나요?","acceptedAnswer":{"@type":"Answer","text":"일정 규모 이하의 개인사업자는 신용카드 등 매출세액 공제를 받을 수 있습니다. 연간 한도가 있고 직전 연도 공급가액을 기준으로 대상 여부가 갈리므로, 매년 적용 가능 여부를 확인해야 합니다."}},
+        {"@type":"Question","name":"간이과세와 일반과세 중 어느 쪽이 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"매출 규모뿐 아니라 매입세액 규모와 거래처가 세금계산서를 요구하는지에 따라 답이 달라집니다. 초기 시설 투자나 재고 매입이 많다면 환급이 가능한 일반과세가 유리할 수 있습니다."}},
+        {"@type":"Question","name":"매입세액을 공제받지 못하는 지출에는 어떤 것이 있나요?","acceptedAnswer":{"@type":"Answer","text":"접대비 관련 지출, 비영업용 승용차의 구입과 유지비, 사업과 무관한 지출은 세금계산서를 받아도 공제되지 않습니다. 공제 대상인 줄 알고 처리했다가 경정 단계에서 한꺼번에 추징되는 경우가 많습니다."}}
+    ]}
     </script>
 </head>
 
@@ -171,6 +189,55 @@
                         <h3 class="font-bold text-[18px] mb-1.5">공제 항목 점검</h3>
                         <p class="text-on-surface-variant leading-relaxed">업종에 맞는 매입세액·세액공제를 빠짐없이 반영해 실효세율을 낮춥니다.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">도소매업 세무 자주 묻는 질문</h2>
+                <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">온라인 오픈마켓 매출은 어떻게 신고하나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">플랫폼이 정산해 준 금액이 아니라 소비자에게 판매한 총액이 과세표준입니다. 판매수수료는 별도로 매입세액을 공제받는 구조이므로, 정산 입금액만 매출로 잡으면 그대로 매출 누락이 됩니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">재고가 장부와 맞지 않으면 세무상 문제가 되나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">장부상 재고와 실제 재고가 크게 어긋나면 매출 누락이나 가공 매입을 의심받는 대표적인 단서가 됩니다. 정기적으로 실사해 차이 원인을 기록으로 남겨 두는 것이 가장 확실한 방어입니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">신용카드 매출에도 세액공제가 있나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">일정 규모 이하의 개인사업자는 신용카드 등 매출세액 공제를 받을 수 있습니다. 연간 한도가 있고 직전 연도 공급가액을 기준으로 대상 여부가 갈리므로, 매년 적용 가능 여부를 확인해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">간이과세와 일반과세 중 어느 쪽이 유리한가요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">매출 규모뿐 아니라 매입세액 규모와 거래처가 세금계산서를 요구하는지에 따라 답이 달라집니다. 초기 시설 투자나 재고 매입이 많다면 환급이 가능한 일반과세가 유리할 수 있습니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">매입세액을 공제받지 못하는 지출에는 어떤 것이 있나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">접대비 관련 지출, 비영업용 승용차의 구입과 유지비, 사업과 무관한 지출은 세금계산서를 받아도 공제되지 않습니다. 공제 대상인 줄 알고 처리했다가 경정 단계에서 한꺼번에 추징되는 경우가 많습니다.</p>
+                    </details>
                 </div>
             </div>
         </section>

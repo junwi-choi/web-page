@@ -31,6 +31,7 @@
             word-break: keep-all; overflow-wrap: break-word;
         }
         .step-line { min-height: 1.5rem; }
+        summary::-webkit-details-marker { display: none; }
         .flow > div:last-child .step-line { display: none; }
         #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
         #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
@@ -54,6 +55,23 @@
             "secondary-container": "#d5e0f8", "on-secondary-container": "#586377",
             "on-surface-variant": "#424655", "outline": "#727786", "outline-variant": "#c2c6d7", "inverse-surface": "#2d3133"
         } } } };
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"홈","item":"https://vtax.kr/"},
+        {"@type":"ListItem","position":2,"name":"주요서비스","item":"https://vtax.kr/#services"},
+        {"@type":"ListItem","position":3,"name":"건설업","item":"https://vtax.kr/services/construction.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"건설업 면허 유지에 필요한 실질자본금은 언제 판단하나요?","acceptedAnswer":{"@type":"Answer","text":"매 결산기 재무제표를 기준으로 판단합니다. 결산이 끝난 뒤에는 되돌리기 어렵기 때문에, 기중에 가지급금이나 부실채권이 쌓이지 않도록 관리하고 결산 전에 미리 시뮬레이션해 보는 것이 안전합니다."}},
+        {"@type":"Question","name":"현장 일용직 노무비는 어떤 서류를 갖춰야 하나요?","acceptedAnswer":{"@type":"Answer","text":"일용근로소득 지급명세서를 매월 제출하고, 출역일보와 실제 계좌이체 내역이 서로 맞아떨어져야 합니다. 명세서만 있고 자금 흐름이 없으면 가공 인건비로 보아 경비가 부인되고 원천세까지 함께 추징될 수 있습니다."}},
+        {"@type":"Question","name":"기성금을 받았는데 세금계산서는 언제 발행해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"장기 도급공사는 대금을 실제로 받은 날이 아니라 계약상 기성고를 확인한 날이 공급시기입니다. 발주처 검수 일정과 발행 시기가 어긋나면 지연발행 가산세가 붙으므로 계약서상 기성 확인 조건을 먼저 확인해야 합니다."}},
+        {"@type":"Question","name":"하도급 대금을 지급했는데 세금계산서를 받지 못했습니다.","acceptedAnswer":{"@type":"Answer","text":"적격증빙 없이 지급한 금액은 매입세액을 공제받지 못하고 증빙불비 가산세 대상이 됩니다. 상대방이 발행을 거부하면 매입자발행 세금계산서 제도를 활용할 수 있으니 지급 시점부터 빠르게 대응해야 합니다."}},
+        {"@type":"Question","name":"건설업도 중소기업 특별세액감면을 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"건설업은 감면 대상 업종에 포함됩니다. 다만 사업장 소재지와 기업 규모에 따라 감면율이 달라지고 다른 세액공제와 중복 적용이 제한되는 경우가 있어, 어떤 조합이 유리한지 계산해 보고 선택해야 합니다."}}
+    ]}
     </script>
 </head>
 
@@ -171,6 +189,55 @@
                         <h3 class="font-bold text-[18px] mb-1.5">등록기준 재무비율 사전 점검</h3>
                         <p class="text-on-surface-variant leading-relaxed">결산 전에 실질자본·자본금 요건을 시뮬레이션해 면허 유지 리스크를 미리 제거합니다.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">건설업 세무 자주 묻는 질문</h2>
+                <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">건설업 면허 유지에 필요한 실질자본금은 언제 판단하나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">매 결산기 재무제표를 기준으로 판단합니다. 결산이 끝난 뒤에는 되돌리기 어렵기 때문에, 기중에 가지급금이나 부실채권이 쌓이지 않도록 관리하고 결산 전에 미리 시뮬레이션해 보는 것이 안전합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">현장 일용직 노무비는 어떤 서류를 갖춰야 하나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">일용근로소득 지급명세서를 매월 제출하고, 출역일보와 실제 계좌이체 내역이 서로 맞아떨어져야 합니다. 명세서만 있고 자금 흐름이 없으면 가공 인건비로 보아 경비가 부인되고 원천세까지 함께 추징될 수 있습니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">기성금을 받았는데 세금계산서는 언제 발행해야 하나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">장기 도급공사는 대금을 실제로 받은 날이 아니라 계약상 기성고를 확인한 날이 공급시기입니다. 발주처 검수 일정과 발행 시기가 어긋나면 지연발행 가산세가 붙으므로 계약서상 기성 확인 조건을 먼저 확인해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">하도급 대금을 지급했는데 세금계산서를 받지 못했습니다.</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">적격증빙 없이 지급한 금액은 매입세액을 공제받지 못하고 증빙불비 가산세 대상이 됩니다. 상대방이 발행을 거부하면 매입자발행 세금계산서 제도를 활용할 수 있으니 지급 시점부터 빠르게 대응해야 합니다.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">건설업도 중소기업 특별세액감면을 받을 수 있나요?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">건설업은 감면 대상 업종에 포함됩니다. 다만 사업장 소재지와 기업 규모에 따라 감면율이 달라지고 다른 세액공제와 중복 적용이 제한되는 경우가 있어, 어떤 조합이 유리한지 계산해 보고 선택해야 합니다.</p>
+                    </details>
                 </div>
             </div>
         </section>
