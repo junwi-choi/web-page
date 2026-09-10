@@ -24,6 +24,266 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <style>
+        /* 상단바는 화면 끝까지 펼쳐진 채 고정한다.
+           스크롤하든 메뉴를 누르든 로고 크기와 바 높이는 변하지 않는다. */
+        .nav-bar {
+            height: 96px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .nav-logo {
+            height: 70px;
+            width: auto;
+        }
+
+        @media (min-width: 768px) {
+            .nav-bar {
+                height: 124px;
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+
+            .nav-logo { height: 96px; }
+        }
+
+        /* 상단바 아이콘 버튼 (검색 · 언어 · 오시는 길) */
+        .nav-icon {
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            border: 0;
+            background: transparent;
+            border-radius: 9999px;
+            color: #fff;
+            cursor: pointer;
+            padding: 0;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .nav-icon-wide { width: auto; padding: 0 10px; }
+
+        .nav-icon-label {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .04em;
+        }
+
+        .nav-icon:hover { background: rgba(255, 255, 255, .18); }
+
+        #nav.is-scrolled .nav-icon,
+        #nav.is-open .nav-icon { color: #424655; }
+
+        #nav.is-scrolled .nav-icon:hover,
+        #nav.is-open .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
+
+        /* 언어 선택 */
+        .nav-lang { position: relative; }
+
+        .nav-lang-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            padding: 6px;
+            background: #fff;
+            border: 1px solid rgba(194, 198, 215, .55);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+            z-index: 60;
+        }
+
+        .nav-lang-menu[hidden] { display: none; }
+
+        .nav-lang-menu a {
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #424655;
+            white-space: nowrap;
+        }
+
+        .nav-lang-menu a:hover { background: #f2f4f6; color: #0055c9; }
+        .nav-lang-menu a.is-current { color: #0055c9; background: rgba(0, 85, 201, .08); }
+
+        /* 검색 패널 */
+        .search-panel {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(194, 198, 215, .5);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .12);
+        }
+
+        .search-panel[hidden] { display: none; }
+
+        .search-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 18px 16px 22px;
+        }
+
+        .search-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border: 1.5px solid rgba(194, 198, 215, .8);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .search-field:focus-within { border-color: #0055c9; }
+
+        .search-field input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            color: #191c1e;
+            background: transparent;
+            min-width: 0;
+        }
+
+        .search-field button {
+            border: 0;
+            background: transparent;
+            color: #727786;
+            cursor: pointer;
+            display: inline-flex;
+            padding: 2px;
+        }
+
+        .search-field button:hover { color: #191c1e; }
+
+        .search-results {
+            margin-top: 10px;
+            max-height: 46vh;
+            overflow-y: auto;
+        }
+
+        .search-results a {
+            display: block;
+            padding: 12px 14px;
+            border-radius: 10px;
+        }
+
+        .search-results a:hover { background: #f2f4f6; }
+
+        .search-results .r-title {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            color: #191c1e;
+        }
+
+        .search-results .r-desc {
+            display: block;
+            margin-top: 3px;
+            font-size: 13px;
+            color: #424655;
+        }
+
+        .search-empty {
+            margin-top: 14px;
+            padding: 0 14px;
+            font-size: 14px;
+            color: #727786;
+        }
+
+        .search-empty[hidden] { display: none; }
+
+        /* 모바일 햄버거 */
+        .nav-burger {
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #fff;
+            transition: transform .25s ease, opacity .2s ease, background .3s ease;
+        }
+
+        #nav.is-scrolled .nav-burger span,
+        #nav.is-open .nav-burger span {
+            background: #191c1e;
+        }
+
+        #nav.is-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #nav.is-open .nav-burger span:nth-child(2) { opacity: 0; }
+        #nav.is-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* 모바일 메뉴 패널 */
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-top: 1px solid rgba(194, 198, 215, .5);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .12);
+            padding: 4px 16px 18px;
+            max-height: calc(100vh - 96px);
+            overflow-y: auto;
+        }
+
+        .nav-menu[hidden] {
+            display: none;
+        }
+
+        .nav-menu a {
+            padding: 17px 4px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #191c1e;
+            border-bottom: 1px solid rgba(194, 198, 215, .35);
+        }
+
+        .nav-menu a:last-child { border-bottom: 0; }
+        .nav-menu a:active { color: #0055c9; }
+
+        /* 메뉴가 열리면 상단바도 흰 배경으로 (로고·햄버거 대비 확보) */
+        #nav.is-open {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+        }
+
+        #nav.is-open::before { opacity: 0; }
+        #nav.is-open .logo-white { display: none; }
+        #nav.is-open .logo-color { display: block; }
+
+        /* 검색 패널이 열려 있을 때도 상단바를 흰 배경으로 (아이콘·로고 대비 확보) */
+        #nav.is-search {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+        }
+
+        #nav.is-search::before { opacity: 0; }
+        #nav.is-search .logo-white { display: none; }
+        #nav.is-search .logo-color { display: block; }
+        #nav.is-search .nav-link { color: #424655; }
+        #nav.is-search .nav-link:hover { color: #0055c9; }
+        #nav.is-search .nav-link.is-current { color: #0055c9; border-color: #0055c9; }
+        #nav.is-search .nav-icon { color: #424655; }
+        #nav.is-search .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
+        #nav.is-search .nav-burger span { background: #191c1e; }
+
         /* 상단 배경 사진 — 페이지가 열려 있는 동안 아주 천천히 확대·이동(켄번스) */
         .page-hero > img {
             transform: scale(1.02);
@@ -93,25 +353,73 @@
 </head>
 
 <body class="bg-background text-on-background">
-    <nav id="nav" class="fixed inset-x-0 top-0 z-50 h-24">
-        <div class="max-w-[1100px] mx-auto flex justify-between items-center px-5 h-full">
-            <a href="../index.html" class="shrink-0">
-                <img src="../source/logo-full-white.png" alt="가치 세무회계" class="logo-white h-14 md:h-16 w-auto" />
-                <img src="../source/logo-full.png" alt="" aria-hidden="true" class="logo-color h-14 md:h-16 w-auto" />
+    <nav id="nav" class="fixed inset-x-0 top-0 z-50">
+        <div class="nav-bar flex justify-between items-center gap-3">
+            <a href="../index.html" class="shrink-0 flex items-center" aria-label="가치 세무회계 홈">
+                <img src="../source/logo-full-white.png" alt="가치 세무회계 · VALUE Tax &amp; Accounting" class="logo-white nav-logo w-auto" />
+                <img src="../source/logo-full.png" alt="" aria-hidden="true" class="logo-color nav-logo w-auto" />
+                <span class="sr-only">가치 세무회계 최준위 세무사</span>
             </a>
-            <div class="hidden md:flex items-center gap-8 lg:gap-11">
-                <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#home">홈</a>
-                <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#about">인사말</a>
-                <a class="nav-link is-current font-bold text-[15px] border-b-2 pb-1 transition-colors" href="../index.html#services">업무 분야</a>
-                <a class="nav-link font-medium text-[15px] transition-colors" href="../contact.html">문의하기</a>
-                <a class="nav-link font-medium text-[15px] transition-colors" href="../index.html#location">오시는길</a>
-                <a class="nav-link font-medium text-[15px] transition-colors" href="../price.html">보수안내</a>
+
+            <div class="hidden md:flex items-center gap-10 lg:gap-16 xl:gap-20">
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">홈</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">인사말</a>
+                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">업무 분야</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../contact.html">문의하기</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">오시는길</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">보수안내</a>
             </div>
-            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-2.5 rounded-lg text-[14px] font-bold shadow-md hover:bg-primary hover:text-white transition-colors duration-200">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
-                카톡 상담
-            </a>
+
+            <div class="flex items-center gap-0.5 md:gap-1.5 shrink-0">
+                <button type="button" id="search-toggle" class="nav-icon" aria-label="사이트 검색" aria-expanded="false" aria-controls="search-panel">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+                </button>
+                <div class="nav-lang">
+                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="언어 선택" aria-expanded="false" aria-controls="lang-menu">
+                        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg>
+                        <span class="nav-icon-label">KO</span>
+                    </button>
+                    <div id="lang-menu" class="nav-lang-menu" hidden>
+                        <a href="../index.html" class="is-current" lang="ko">한국어</a>
+                        <a href="../en/index.html" lang="en">English</a>
+                        <a href="../zh/index.html" lang="zh">中文</a>
+                    </div>
+                </div>
+                <a href="../index.html#location" class="nav-icon" aria-label="오시는 길">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+                </a>
+                <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="ml-1 inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-3.5 md:px-7 md:py-4 rounded-xl text-[15px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
+                    <span class="whitespace-nowrap">카톡 상담</span>
+                </a>
+                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="search-panel" class="search-panel" hidden>
+            <div class="search-inner">
+                <label for="search-input" class="sr-only">검색어</label>
+                <div class="search-field">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+                    <input type="search" id="search-input" placeholder="업종, 세무 항목을 검색해 보세요 (예: 건설업, 부가세, 보수)" autocomplete="off" />
+                    <button type="button" id="search-close" aria-label="검색 닫기">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+                    </button>
+                </div>
+                <ul id="search-results" class="search-results"></ul>
+                <p id="search-empty" class="search-empty" hidden>검색 결과가 없습니다.</p>
+            </div>
+        </div>
+
+        <div id="nav-menu" class="nav-menu md:hidden" hidden>
+            <a href="../index.html#home">홈</a>
+            <a href="../index.html#about">인사말</a>
+            <a href="../index.html#services">업무 분야</a>
+            <a href="../contact.html">문의하기</a>
+            <a href="../index.html#location">오시는길</a>
+            <a href="../price.html">보수안내</a>
         </div>
     </nav>
 
@@ -336,6 +644,122 @@
             window.addEventListener('scroll', onScroll, { passive: true });
         })();
     </script>
+    <!-- 상단바 검색 · 언어 선택 -->
+    <script>
+        (function () {
+            var nav = document.getElementById("nav");
+            if (!nav) return;
+
+            // ---- 사이트 검색 (정적 색인) ----
+            var INDEX = [
+                { t: "건설업 세무", d: "기성고 수익인식 · 현장 노무비 증빙 · 건설업 등록기준 유지", u: "../services/construction.html" },
+                { t: "수출입업 세무", d: "영세율 적용 요건 · 부가세 조기환급 · 외국환거래법 신고", u: "../services/trade.html" },
+                { t: "제조업 세무", d: "재고 평가와 원가 · 연구인력개발비 세액공제 · 설비 투자 공제", u: "../services/manufacturing.html" },
+                { t: "도소매업 세무", d: "채널별 매출 집계 · 정산 내역 대사 · 재고자산 관리", u: "../services/retail.html" },
+                { t: "학원업 세무", d: "교습비 면세 구분 · 강사료 원천징수 · 사업장현황신고", u: "../services/academy.html" },
+                { t: "음식점업 세무", d: "의제매입세액공제 · 배달앱 매출 · 현금영수증 의무발행", u: "../services/restaurant.html" },
+                { t: "보수 안내", d: "기장대리 · 신고대리 · 양도 상속 증여 · 조세불복 기준 보수", u: "../price.html" },
+                { t: "상담 신청", d: "상담 신청서 작성 · 전화 · 이메일 · 카카오톡 문의", u: "../contact.html" },
+                { t: "인사말", d: "최준위 세무사 학력과 경력 소개", u: "../index.html#about" },
+                { t: "업무 분야", d: "업종별 맞춤 세무 솔루션 여섯 가지", u: "../index.html#services" },
+                { t: "오시는 길", d: "서울 금천구 가산디지털2로 135 가산어반워크 1동 302호", u: "../index.html#location" }
+            ];
+
+            var sBtn = document.getElementById("search-toggle");
+            var sPanel = document.getElementById("search-panel");
+            var sInput = document.getElementById("search-input");
+            var sClose = document.getElementById("search-close");
+            var sList = document.getElementById("search-results");
+            var sEmpty = document.getElementById("search-empty");
+
+            function render(q) {
+                var query = (q || "").trim().toLowerCase();
+                sList.innerHTML = "";
+                if (!query) { sEmpty.hidden = true; return; }
+                var hits = INDEX.filter(function (it) {
+                    return (it.t + " " + it.d).toLowerCase().indexOf(query) !== -1;
+                });
+                sEmpty.hidden = hits.length > 0;
+                hits.forEach(function (it) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.href = it.u;
+                    a.innerHTML = '<span class="r-title"></span><span class="r-desc"></span>';
+                    a.querySelector(".r-title").textContent = it.t;
+                    a.querySelector(".r-desc").textContent = it.d;
+                    li.appendChild(a);
+                    sList.appendChild(li);
+                });
+            }
+
+            function setSearch(open) {
+                if (!sPanel) return;
+                sPanel.hidden = !open;
+                nav.classList.toggle("is-search", open);
+                sBtn.setAttribute("aria-expanded", open ? "true" : "false");
+                if (open) { sInput.focus(); } else { sInput.value = ""; render(""); }
+            }
+
+            if (sBtn && sPanel) {
+                sBtn.addEventListener("click", function () { setSearch(sPanel.hidden); });
+                sClose.addEventListener("click", function () { setSearch(false); });
+                sInput.addEventListener("input", function () { render(sInput.value); });
+                sList.addEventListener("click", function (e) { if (e.target.closest("a")) setSearch(false); });
+            }
+
+            // ---- 언어 선택 ----
+            var lBtn = document.getElementById("lang-toggle");
+            var lMenu = document.getElementById("lang-menu");
+
+            function setLang(open) {
+                if (!lMenu) return;
+                lMenu.hidden = !open;
+                lBtn.setAttribute("aria-expanded", open ? "true" : "false");
+            }
+
+            if (lBtn && lMenu) {
+                lBtn.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    setLang(lMenu.hidden);
+                });
+                document.addEventListener("click", function (e) {
+                    if (!e.target.closest(".nav-lang")) setLang(false);
+                });
+            }
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") { setSearch(false); setLang(false); }
+            });
+        })();
+    </script>
+    <!-- 모바일 메뉴 열고 닫기 -->
+    <script>
+        (function () {
+            var nav = document.getElementById("nav");
+            var btn = document.getElementById("nav-toggle");
+            var menu = document.getElementById("nav-menu");
+            if (!nav || !btn || !menu) return;
+
+            function setOpen(open) {
+                nav.classList.toggle("is-open", open);
+                menu.hidden = !open;
+                btn.setAttribute("aria-expanded", open ? "true" : "false");
+                btn.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+            }
+
+            btn.addEventListener("click", function () { setOpen(menu.hidden); });
+            menu.addEventListener("click", function (e) {
+                if (e.target.closest("a")) setOpen(false);
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") setOpen(false);
+            });
+            window.addEventListener("resize", function () {
+                if (window.innerWidth >= 768) setOpen(false);
+            });
+        })();
+    </script>
+
 </body>
 
 </html>

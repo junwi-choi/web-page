@@ -65,9 +65,10 @@ foreach ($rel in $files) {
     $up = if ($isDeep) { '../../' } else { '../' }
     $here = if ($isDeep) { '../' } else { './' }
     $other = if ($Lang -eq 'en') { 'zh' } else { 'en' }
-    $t = $t.Replace('href="./index.html" class="is-current" lang="ko"', ('href="' + $up + 'index.html" lang="ko"'))
-    $t = $t.Replace('href="./en/index.html" lang="en"', $(if ($Lang -eq 'en') { 'href="' + $here + 'index.html" class="is-current" lang="en"' } else { 'href="' + $up + 'en/index.html" lang="en"' }))
-    $t = $t.Replace('href="./zh/index.html" lang="zh"', $(if ($Lang -eq 'zh') { 'href="' + $here + 'index.html" class="is-current" lang="zh"' } else { 'href="' + $up + 'zh/index.html" lang="zh"' }))
+    # 원문은 페이지 깊이에 따라 ./ 또는 ../ 로 적혀 있으므로 둘 다 받는다
+    $t = $t -replace 'href="(?:\./|\.\./)index\.html" class="is-current" lang="ko"', ('href="' + $up + 'index.html" lang="ko"')
+    $t = $t -replace 'href="(?:\./|\.\./)en/index\.html" lang="en"', $(if ($Lang -eq 'en') { 'href="' + $here + 'index.html" class="is-current" lang="en"' } else { 'href="' + $up + 'en/index.html" lang="en"' })
+    $t = $t -replace 'href="(?:\./|\.\./)zh/index\.html" lang="zh"', $(if ($Lang -eq 'zh') { 'href="' + $here + 'index.html" class="is-current" lang="zh"' } else { 'href="' + $up + 'zh/index.html" lang="zh"' })
     $t = $t.Replace('<span class="nav-icon-label">KO</span>', ('<span class="nav-icon-label">' + $Lang.ToUpper() + '</span>'))
 
     # ---- 5-b) 검색 색인은 textContent 로 들어가므로 HTML 엔티티를 실제 문자로 되돌린다 ----
