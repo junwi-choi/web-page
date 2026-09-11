@@ -85,7 +85,10 @@
         "founder": {
             "@type": "Person",
             "name": "최준위",
-            "jobTitle": "세무사"
+            "jobTitle": "세무사",
+            "image": "https://vtax.kr/source/KakaoTalk_20260509_163026753.jpg",
+            "worksFor": { "@type": "AccountingService", "name": "가치 세무회계" },
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "경희대학교" }
         },
         "areaServed": {
             "@type": "Place",
@@ -1589,11 +1592,56 @@
     </section>
     <!-- Footer -->
     <footer class="bg-inverse-surface text-on-secondary-fixed mt-xl">
-        <div
-            class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-gutter">
-            <div class="flex flex-col gap-4">
-                <div class="text-headline-md font-bold text-surface-container-lowest">가치 세무회계 <span class="font-medium text-outline-variant">| 최준위 세무사</span></div>
-                <p class="text-outline-variant text-label-sm max-w-lg leading-relaxed">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-14">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+
+                <div class="md:col-span-5 flex flex-col gap-4">
+                    <img src="./source/logo-full-white.png" alt="가치 세무회계" class="h-16 w-auto self-start" />
+                    <p class="text-outline-variant text-body-sm leading-relaxed max-w-sm">업종별 특성을 정확히 이해하고 최적의 절세 방안을 설계하는 가산디지털단지 세무사무소입니다.</p>
+                    <dl class="mt-2 space-y-1.5 text-body-sm">
+                        <div class="flex gap-3">
+                            <dt class="text-outline-variant shrink-0 w-12">전화</dt>
+                            <dd><a href="tel:01046235076" class="text-surface-container-lowest hover:text-primary-fixed-dim transition-colors">010-4623-5076</a></dd>
+                        </div>
+                        <div class="flex gap-3">
+                            <dt class="text-outline-variant shrink-0 w-12">이메일</dt>
+                            <dd><a href="mailto:tax0829@naver.com" class="text-surface-container-lowest hover:text-primary-fixed-dim transition-colors">tax0829@naver.com</a></dd>
+                        </div>
+                        <div class="flex gap-3">
+                            <dt class="text-outline-variant shrink-0 w-12">주소</dt>
+                            <dd class="text-surface-container-lowest">서울 금천구 가산디지털2로 135 302호</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <nav class="md:col-span-4" aria-label="업무 분야">
+                    <h2 class="text-surface-container-lowest font-bold text-body-md mb-4">업무 분야</h2>
+                    <ul class="grid grid-cols-2 gap-y-2.5 gap-x-4 text-body-sm">
+                        <li><a href="./services/construction.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">건설업 세무</a></li>
+                        <li><a href="./services/trade.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">수출입업 세무</a></li>
+                        <li><a href="./services/manufacturing.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">제조업 세무</a></li>
+                        <li><a href="./services/retail.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">도소매업 세무</a></li>
+                        <li><a href="./services/academy.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">학원업 세무</a></li>
+                        <li><a href="./services/restaurant.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">음식점업 세무</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="md:col-span-3" aria-label="바로가기">
+                    <h2 class="text-surface-container-lowest font-bold text-body-md mb-4">바로가기</h2>
+                    <ul class="space-y-2.5 text-body-sm">
+                        <li><a href="#about" class="text-outline-variant hover:text-surface-container-lowest transition-colors">인사말</a></li>
+                        <li><a href="./price.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">보수안내</a></li>
+                        <li><a href="./contact.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">상담 신청</a></li>
+                        <li><a href="#insights" class="text-outline-variant hover:text-surface-container-lowest transition-colors">인사이트</a></li>
+                        <li><a href="#location" class="text-outline-variant hover:text-surface-container-lowest transition-colors">오시는 길</a></li>
+                        <li><a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="text-outline-variant hover:text-surface-container-lowest transition-colors">블로그</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <p class="text-outline-variant text-label-sm leading-relaxed">
                     © 2024 가치 세무회계. All rights reserved. 사업자등록번호: 662-45-01114 | 대표: 최준위<br />서울특별시 금천구 가산디지털2로 135 302호
                 </p>
             </div>

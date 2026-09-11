@@ -85,7 +85,10 @@
         "founder": {
             "@type": "Person",
             "name": "崔埈伟",
-            "jobTitle": "税务师"
+            "jobTitle": "税务师",
+            "image": "https://vtax.kr/source/KakaoTalk_20260509_163026753.jpg",
+            "worksFor": { "@type": "AccountingService", "name": "VALUE税务会计" },
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "경희대학교" }
         },
         "areaServed": {
             "@type": "Place",
@@ -1589,11 +1592,56 @@
     </section>
     <!-- Footer -->
     <footer class="bg-inverse-surface text-on-secondary-fixed mt-xl">
-        <div
-            class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-gutter">
-            <div class="flex flex-col gap-4">
-                <div class="text-headline-md font-bold text-surface-container-lowest">VALUE税务会计 <span class="font-medium text-outline-variant">| 崔埈伟税务师</span></div>
-                <p class="text-outline-variant text-label-sm max-w-lg leading-relaxed">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop py-14">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+
+                <div class="md:col-span-5 flex flex-col gap-4">
+                    <img src="../source/logo-full-white.png" alt="VALUE税务会计" class="h-16 w-auto self-start" />
+                    <p class="text-outline-variant text-body-sm leading-relaxed max-w-sm">位于加山数码园区的税务事务所，准确理解各行业特性并设计最优节税方案。</p>
+                    <dl class="mt-2 space-y-1.5 text-body-sm">
+                        <div class="flex gap-3">
+                            <dt class="text-outline-variant shrink-0 w-12">电话</dt>
+                            <dd><a href="tel:01046235076" class="text-surface-container-lowest hover:text-primary-fixed-dim transition-colors">010-4623-5076</a></dd>
+                        </div>
+                        <div class="flex gap-3">
+                            <dt class="text-outline-variant shrink-0 w-12">电子邮箱</dt>
+                            <dd><a href="mailto:tax0829@naver.com" class="text-surface-container-lowest hover:text-primary-fixed-dim transition-colors">tax0829@naver.com</a></dd>
+                        </div>
+                        <div class="flex gap-3">
+                            <dt class="text-outline-variant shrink-0 w-12">地址</dt>
+                            <dd class="text-surface-container-lowest">首尔衿川区加山数码2路135号 302室</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <nav class="md:col-span-4" aria-label="业务领域">
+                    <h2 class="text-surface-container-lowest font-bold text-body-md mb-4">业务领域</h2>
+                    <ul class="grid grid-cols-2 gap-y-2.5 gap-x-4 text-body-sm">
+                        <li><a href="./services/construction.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">建设业税务</a></li>
+                        <li><a href="./services/trade.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">进出口业税务</a></li>
+                        <li><a href="./services/manufacturing.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">制造业税务</a></li>
+                        <li><a href="./services/retail.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">批发零售业税务</a></li>
+                        <li><a href="./services/academy.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">补习班税务</a></li>
+                        <li><a href="./services/restaurant.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">餐饮业税务</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="md:col-span-3" aria-label="快捷链接">
+                    <h2 class="text-surface-container-lowest font-bold text-body-md mb-4">快捷链接</h2>
+                    <ul class="space-y-2.5 text-body-sm">
+                        <li><a href="#about" class="text-outline-variant hover:text-surface-container-lowest transition-colors">致辞</a></li>
+                        <li><a href="./price.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">报酬</a></li>
+                        <li><a href="./contact.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">咨询申请</a></li>
+                        <li><a href="#insights" class="text-outline-variant hover:text-surface-container-lowest transition-colors">洞察</a></li>
+                        <li><a href="#location" class="text-outline-variant hover:text-surface-container-lowest transition-colors">交通路线</a></li>
+                        <li><a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="text-outline-variant hover:text-surface-container-lowest transition-colors">博客</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <p class="text-outline-variant text-label-sm leading-relaxed">
                     © 2024 VALUE税务会计. All rights reserved. 营业执照号码：662-45-01114 | 代表：崔埈伟<br />首尔特别市衿川区加山数码2路135号 302室
                 </p>
             </div>
