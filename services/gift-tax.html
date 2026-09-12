@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light scroll-smooth scroll-pt-24" lang="en">
+<html class="light scroll-smooth scroll-pt-24" lang="ko">
 
 <head>
     <meta charset="utf-8" />
@@ -8,17 +8,17 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA</title>
-    <meta name="description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
+    <title>증여세 | 가치 세무회계 · 최준위 세무사</title>
+    <meta name="description" content="증여재산공제와 10년 합산, 재산 평가 방법, 금전 무상 대여와 자금출처조사 대비, 창업자금·가업승계 과세특례까지. 가산디지털단지 가치 세무회계 최준위 세무사." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://vtax.kr/en/services/retail.html" />
+    <link rel="canonical" href="https://vtax.kr/services/gift-tax.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA" />
-    <meta property="og:description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
-    <meta property="og:url" content="https://vtax.kr/en/services/retail.html" />
+    <meta property="og:title" content="증여세 | 가치 세무회계 · 최준위 세무사" />
+    <meta property="og:description" content="언제 무엇을 누구에게 옮길지에 따라 세금이 달라집니다." />
+    <meta property="og:url" content="https://vtax.kr/services/gift-tax.html" />
     <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
-    <meta property="og:site_name" content="VALUE Tax &amp; Accounting" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="가치 세무회계" />
+    <meta property="og:locale" content="ko_KR" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
@@ -47,7 +47,7 @@
             .nav-logo { height: 96px; }
         }
 
-        /* 상단바 아이콘 버튼 (검색 · 언어 · Directions) */
+        /* 상단바 아이콘 버튼 (검색 · 언어 · 오시는 길) */
         .nav-icon {
             width: 46px;
             height: 46px;
@@ -80,7 +80,7 @@
         #nav.is-scrolled .nav-icon:hover,
         #nav.is-open .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
 
-        /* Select language */
+        /* 언어 선택 */
         .nav-lang { position: relative; }
 
         .nav-lang-menu {
@@ -285,14 +285,14 @@
         #nav.is-search .nav-burger span { background: #191c1e; }
 
         /* ── 모바일 상단바 ─────────────────────────────
-           좁은 화면에서 Kakao 버튼이 잘리던 문제.
-           상단바에서는 Kakao 버튼과 Directions 아이콘을 빼고
+           좁은 화면에서 카톡 버튼이 잘리던 문제.
+           상단바에서는 카톡 버튼과 오시는 길 아이콘을 빼고
            (둘 다 햄버거 메뉴 안에 있다) 나머지를 한 단계 줄인다. */
         @media (max-width: 767px) {
             /* Tailwind CDN 이 런타임에 뒤쪽에 스타일을 주입하므로
                같은 우선순위(.inline-flex)에 밀린다. #nav 를 붙여 우선순위를 올린다. */
             #nav .nav-kakao { display: none; }
-            #nav .nav-icon[aria-label="Directions"] { display: none; }
+            #nav .nav-icon[aria-label="오시는 길"] { display: none; }
 
             .nav-bar {
                 height: 84px;
@@ -315,7 +315,7 @@
             .nav-burger { width: 38px; }
         }
 
-        /* 햄버거 메뉴 안의 Kakao 버튼 */
+        /* 햄버거 메뉴 안의 카톡 버튼 */
         .nav-menu-kakao {
             display: flex;
             align-items: center;
@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -408,19 +463,20 @@
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://vtax.kr/en/"},
-        {"@type":"ListItem","position":2,"name":"Practice Areas","item":"https://vtax.kr/en/#services"},
-        {"@type":"ListItem","position":3,"name":"Wholesale &amp; Retail","item":"https://vtax.kr/en/services/retail.html"}
+        {"@type":"ListItem","position":1,"name":"홈","item":"https://vtax.kr/"},
+        {"@type":"ListItem","position":2,"name":"업무 분야","item":"https://vtax.kr/#services"},
+        {"@type":"ListItem","position":3,"name":"상속·증여","item":"https://vtax.kr/services/inheritance.html"},
+        {"@type":"ListItem","position":4,"name":"증여세","item":"https://vtax.kr/services/gift-tax.html"}
     ]}
     </script>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"How should open marketplace revenue be reported?","acceptedAnswer":{"@type":"Answer","text":"The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales."}},
-        {"@type":"Question","name":"Does a discrepancy between stock and the books create a tax exposure?","acceptedAnswer":{"@type":"Answer","text":"A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence."}},
-        {"@type":"Question","name":"Is a tax credit available on card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
-        {"@type":"Question","name":"Which is more advantageous, simplified or general VAT taxation?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable."}},
-        {"@type":"Question","name":"Which expenditures are excluded from the input tax credit?","acceptedAnswer":{"@type":"Answer","text":"Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage."}}
+        {"@type":"Question","name":"자녀에게 얼마까지 세금 없이 줄 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"직계비속에 대한 증여재산공제 한도가 10년 단위로 정해져 있고, 혼인과 출산에 따른 별도 공제도 있습니다. 10년 이내에 이미 증여한 금액이 있으면 합산되므로 과거 이력을 먼저 확인해야 합니다."}},
+        {"@type":"Question","name":"부모 돈을 빌린 것으로 하면 증여가 아닌가요?","acceptedAnswer":{"@type":"Answer","text":"차용증을 쓰는 것만으로는 부족합니다. 적정한 이자를 실제로 지급하고 원금을 상환한 내역이 있어야 대여로 인정됩니다. 그렇지 않으면 증여로 보아 과세될 수 있습니다."}},
+        {"@type":"Question","name":"현금과 부동산 중 무엇을 증여하는 편이 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"앞으로 가치가 오를 가능성이 큰 재산을 먼저 옮기는 편이 유리한 경우가 많습니다. 다만 부동산은 취득세와 평가 문제가 함께 걸리므로 총비용을 계산해 비교해야 합니다."}},
+        {"@type":"Question","name":"증여받은 재산을 팔면 세금이 또 나오나요?","acceptedAnswer":{"@type":"Answer","text":"증여받은 가액이 취득가액이 되어 그 이후의 상승분에 양도소득세가 과세됩니다. 다만 배우자나 직계존비속에게 증여받은 재산을 일정 기간 안에 팔면 증여자의 취득가액을 적용하는 규정이 있으므로 처분 시기를 확인해야 합니다."}},
+        {"@type":"Question","name":"신고하지 않으면 알 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"부동산 등기와 금융 자료, 이후의 자금출처조사 과정에서 확인됩니다. 무신고 가산세와 납부지연 가산세가 더해지므로 기한 내 신고가 유리합니다."}}
     ]}
     </script>
 </head>
@@ -428,45 +484,45 @@
 <body class="bg-background text-on-background">
     <nav id="nav" class="fixed inset-x-0 top-0 z-50">
         <div class="nav-bar flex justify-between items-center gap-3">
-            <a href="../index.html" class="shrink-0 flex items-center" aria-label="VALUE Tax &amp; Accounting home">
-                <img src="../../source/logo-full-white.png" alt="VALUE Tax &amp; Accounting" class="logo-white nav-logo w-auto" />
-                <img src="../../source/logo-full.png" alt="" aria-hidden="true" class="logo-color nav-logo w-auto" />
-                <span class="sr-only">VALUE Tax &amp; Accounting, Choi Jun-wi CTA</span>
+            <a href="../index.html" class="shrink-0 flex items-center" aria-label="가치 세무회계 홈">
+                <img src="../source/logo-full-white.png" alt="가치 세무회계 · VALUE Tax &amp; Accounting" class="logo-white nav-logo w-auto" />
+                <img src="../source/logo-full.png" alt="" aria-hidden="true" class="logo-color nav-logo w-auto" />
+                <span class="sr-only">가치 세무회계 최준위 세무사</span>
             </a>
 
             <div class="hidden md:flex items-center gap-10 lg:gap-16 xl:gap-20">
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">Home</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">About</a>
-                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">Practice Areas</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#insights">Insights</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#contact">Contact</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">Directions</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">Fees</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">홈</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">인사말</a>
+                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">업무 분야</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#insights">인사이트</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#contact">문의하기</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">오시는길</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">보수안내</a>
             </div>
 
             <div class="flex items-center gap-0.5 md:gap-1.5 shrink-0">
-                <button type="button" id="search-toggle" class="nav-icon" aria-label="Site search" aria-expanded="false" aria-controls="search-panel">
+                <button type="button" id="search-toggle" class="nav-icon" aria-label="사이트 검색" aria-expanded="false" aria-controls="search-panel">
                     <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
                 </button>
                 <div class="nav-lang">
-                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="Select language" aria-expanded="false" aria-controls="lang-menu">
+                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="언어 선택" aria-expanded="false" aria-controls="lang-menu">
                         <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg>
-                        <span class="nav-icon-label">EN</span>
+                        <span class="nav-icon-label">KO</span>
                     </button>
                     <div id="lang-menu" class="nav-lang-menu" hidden>
-                        <a href="../../index.html" lang="ko">한국어</a>
-                        <a href="../index.html" class="is-current" lang="en">English</a>
-                        <a href="../../zh/index.html" lang="zh">中文</a>
+                        <a href="../index.html" class="is-current" lang="ko">한국어</a>
+                        <a href="../en/index.html" lang="en">English</a>
+                        <a href="../zh/index.html" lang="zh">中文</a>
                     </div>
                 </div>
-                <a href="../index.html#location" class="nav-icon" aria-label="Directions">
+                <a href="../index.html#location" class="nav-icon" aria-label="오시는 길">
                     <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
                 </a>
                 <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-kakao ml-1 inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-3.5 md:px-7 md:py-4 rounded-xl text-[15px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
                     <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
-                    <span class="whitespace-nowrap">KakaoTalk</span>
+                    <span class="whitespace-nowrap">카톡 상담</span>
                 </a>
-                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -474,95 +530,106 @@
 
         <div id="search-panel" class="search-panel" hidden>
             <div class="search-inner">
-                <label for="search-input" class="sr-only">Search term</label>
+                <label for="search-input" class="sr-only">검색어</label>
                 <div class="search-field">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-                    <input type="search" id="search-input" placeholder="Search by industry or tax topic — construction, VAT, fees" autocomplete="off" />
-                    <button type="button" id="search-close" aria-label="Close search">
+                    <input type="search" id="search-input" placeholder="업종, 세무 항목을 검색해 보세요 (예: 건설업, 부가세, 보수)" autocomplete="off" />
+                    <button type="button" id="search-close" aria-label="검색 닫기">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>No matching results.</p>
+                <p id="search-empty" class="search-empty" hidden>검색 결과가 없습니다.</p>
             </div>
         </div>
 
         <div id="nav-menu" class="nav-menu md:hidden" hidden>
-            <a href="../index.html#home">Home</a>
-            <a href="../index.html#about">About</a>
-            <a href="../index.html#services">Practice Areas</a>
-            <a href="../index.html#insights">Insights</a>
-            <a href="../index.html#contact">Contact</a>
-            <a href="../index.html#location">Directions</a>
-            <a href="../price.html">Fees</a>
+            <a href="../index.html#home">홈</a>
+            <a href="../index.html#about">인사말</a>
+            <a href="../index.html#services">업무 분야</a>
+            <a href="../index.html#insights">인사이트</a>
+            <a href="../index.html#contact">문의하기</a>
+            <a href="../index.html#location">오시는길</a>
+            <a href="../price.html">보수안내</a>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-menu-kakao">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
-                KakaoTalk
+                카톡 상담
             </a>
         </div>
     </nav>
 
-    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
-        <img src="../../source/svc-retail.jpg" alt="Retail site" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
-        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
-            <nav class="text-[13px] text-white/70 mb-4">
-                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><span class="text-white">Wholesale &amp; Retail</span>
+    <header class="sub-hero relative flex items-end overflow-hidden">
+        <span class="material-symbols-outlined sub-hero-mark" aria-hidden="true">card_giftcard</span>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-12 md:pb-14 pt-32 text-white">
+            <nav class="text-[13px] text-white/65 mb-4">
+                <a href="../index.html" class="hover:text-white">홈</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">업무 분야</a><span class="mx-1.5">/</span><a href="./inheritance.html" class="hover:text-white">상속·증여</a><span class="mx-1.5">/</span><span class="text-white">증여세</span>
             </nav>
-            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">Industry tax specialists</p>
-            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">Wholesale &amp; Retail Tax</h1>
-            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Bring sales from every channel onto one basis and keep inventory and settlement transparent. In online distribution, managing data is managing tax.</p>
+            <p class="text-white/70 font-bold text-sm tracking-widest mb-3">상속·증여 세부 분야</p>
+            <h1 class="text-[32px] md:text-[44px] font-bold leading-tight tracking-tight mb-4">증여세</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">증여는 금액보다 순서와 시기의 문제입니다. 10년 단위로 나누어 설계하면 부담이 크게 줄어듭니다.</p>
         </div>
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="상속·증여 세부 분야">
+                    <a href="./inheritance.html" class="subnav-root"><span class="material-symbols-outlined text-[19px]">apps</span>상속·증여 전체</a>
+                    <a href="./inheritance-tax.html"><span class="material-symbols-outlined text-[19px]">family_restroom</span>상속세</a>
+                    <a href="./gift-tax.html" class="is-here"><span class="material-symbols-outlined text-[19px]">card_giftcard</span>증여세</a>
+                    <a href="./gift-burden.html"><span class="material-symbols-outlined text-[19px]">swap_horiz</span>부담부증여</a>
+                    <a href="./low-price-transfer.html"><span class="material-symbols-outlined text-[19px]">price_change</span>저가양도</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
-            <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
+            <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">업무 개요</h2>
             <div class="max-w-3xl space-y-5">
-                <p class="text-on-surface-variant text-[17px] leading-loose">In wholesale, retail and distribution, sales data scatters as channels multiply across open marketplaces, own-brand stores and offline outlets, and because payment-gateway settlement cycles rarely match tax invoice dates, reported sales and actual deposits appear to diverge. Add inventory shrinkage, returns, coupons and loyalty points, and substantiation becomes complicated. Once there is a system that consolidates data across channels, most of the tax risk disappears.</p>
-                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by consolidating sales data scattered across channels onto a single basis. We reconcile platform settlement records against tax invoices and cash receipts so that any gap between reported sales and actual deposits can be explained, and we document the rules for stocktaking and for handling returns and coupons, keeping you ready to respond to a request for substantiation at once.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">증여세는 재산을 받은 사람이 증여일이 속하는 달의 말일부터 3개월 안에 신고하고 납부합니다. 증여재산공제는 증여자 그룹별로 10년을 합산해 적용하므로, 같은 금액이라도 한 번에 옮기는지 기간을 두고 나누는지에 따라 세액이 달라집니다. 부동산이나 비상장주식처럼 시가를 바로 알기 어려운 재산은 평가 방법 자체가 쟁점이 되는 경우가 많습니다.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">가치 세무회계는 자녀의 자금 수요와 재산의 성격을 함께 보고 무엇을 먼저 증여할지 순서를 잡습니다. 앞으로 가치가 오를 재산을 먼저 옮기면 상승분이 수증자에게 귀속되어 전체 세 부담이 줄어듭니다. 현금을 무상으로 빌려주거나 시가보다 싸게 넘기는 거래도 증여로 보는 규정이 있으므로 가족 간 자금 이동은 반드시 사전에 검토합니다. 증여 이후에는 자금출처조사에 대비해 자금 흐름과 증빙을 정리해 둡니다.</p>
             </div>
         </section>
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in wholesale &amp; retail</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">증여세 주요 세무 이슈</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Channel-level sales aggregation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales from open marketplaces, your own store and offline outlets must be brought together and matched to reported revenue. The tax base is the gross amount the customer paid, not the amount the platform settled, so booking only the settled deposit understates sales by the full commission.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">증여재산공제와 10년 합산</h3>
+                            <p class="text-on-surface-variant leading-loose">배우자, 직계존속, 직계비속, 기타 친족은 각각 공제 한도가 다르고 10년 단위로 합산합니다. 동일인에게 받은 증여는 10년 이내의 것을 합쳐 세율을 적용합니다.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Settlement reconciliation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales go unreported unless platform and payment-gateway settlement records are aligned with the dates tax invoices and cash receipts are issued. Where the settlement cycle straddles a tax period, handle it the same way every time so that substantiation is straightforward later.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">재산 평가 방법</h3>
+                            <p class="text-on-surface-variant leading-loose">시가가 원칙이며 유사 매매사례가액이 있으면 그 금액을 씁니다. 감정평가를 받을지 기준시가를 적용할지에 따라 세액이 달라지므로 사전 검토가 필요합니다.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Inventory management</h3>
-                            <p class="text-on-surface-variant leading-loose">You can only substantiate your position if there is a rule for handling differences between counted and book inventory. A large gap between the books and the physical count is a classic trigger for suspicion of omitted sales or fabricated purchases, so record both the counting cycle and the reason for each difference.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">부동산 증여와 취득세</h3>
+                            <p class="text-on-surface-variant leading-loose">증여세 외에 수증자가 부담하는 취득세가 별도로 발생합니다. 조정대상지역의 고가주택을 증여하면 취득세율이 높아지므로 전체 비용을 함께 계산해야 합니다.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Returns and coupon handling</h3>
-                            <p class="text-on-surface-variant leading-loose">Returns, exchanges, coupons and loyalty points require the timing of the sales deduction and the VAT adjustment to be reflected precisely. Whether an amount is deductible at all depends on who funded the discount, so decide the treatment while the promotion is still being designed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">금전 무상 대여와 저가 거래</h3>
+                            <p class="text-on-surface-variant leading-loose">가족에게 돈을 무상으로 빌려주거나 시가보다 낮은 가격에 재산을 넘기면 그 이익을 증여로 봅니다. 차용증만으로는 부족하고 실제 이자 지급과 상환 내역이 있어야 합니다.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Distribution-related tax credits</h3>
-                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the VAT credit for credit-card and similar sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">창업자금·가업승계 과세특례</h3>
+                            <p class="text-on-surface-variant leading-loose">자녀의 창업이나 가업 승계를 위한 증여에는 낮은 세율을 적용하는 특례가 있습니다. 사용 용도와 사후 요건이 엄격하므로 적용 전에 이행 가능성을 따져야 합니다.</p>
                         </div>
                     </li>
                 </ol>
@@ -571,7 +638,7 @@
 
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">HOW WE HELP</p>
-            <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">How VALUE Tax &amp; Accounting responds</h2>
+            <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">가치 세무회계의 대응</h2>
             <div class="flow max-w-2xl">
                 <div class="relative flex gap-5 pb-8 last:pb-0">
                     <div class="relative flex flex-col items-center">
@@ -579,8 +646,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Unified multi-channel sales management</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">증여 계획 수립</h3>
+                        <p class="text-on-surface-variant leading-relaxed">재산 목록과 가족 구성, 10년 이내의 증여 이력을 정리해 무엇을 누구에게 언제 옮길지 순서를 설계합니다.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -589,8 +656,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Inventory and sales deduction clean-up</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">평가와 세액 계산</h3>
+                        <p class="text-on-surface-variant leading-relaxed">재산별 평가 방법을 검토해 증여세와 취득세를 포함한 총비용을 계산하고, 대안별로 비교해 드립니다.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -599,8 +666,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Review of deductible items</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">신고와 사후 증빙 관리</h3>
+                        <p class="text-on-surface-variant leading-relaxed">기한 내에 신고하고, 자금 흐름과 계약서, 이자 지급 내역 등 사후 확인에 대비한 증빙을 정리해 보관하도록 안내합니다.</p>
                     </div>
                 </div>
             </div>
@@ -609,47 +676,47 @@
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Wholesale &amp; retail tax FAQ</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">증여세 자주 묻는 질문</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">How should open marketplace revenue be reported?</span>
+                            <span class="flex-1">자녀에게 얼마까지 세금 없이 줄 수 있나요?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">직계비속에 대한 증여재산공제 한도가 10년 단위로 정해져 있고, 혼인과 출산에 따른 별도 공제도 있습니다. 10년 이내에 이미 증여한 금액이 있으면 합산되므로 과거 이력을 먼저 확인해야 합니다.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Does a discrepancy between stock and the books create a tax exposure?</span>
+                            <span class="flex-1">부모 돈을 빌린 것으로 하면 증여가 아닌가요?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">차용증을 쓰는 것만으로는 부족합니다. 적정한 이자를 실제로 지급하고 원금을 상환한 내역이 있어야 대여로 인정됩니다. 그렇지 않으면 증여로 보아 과세될 수 있습니다.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Is a tax credit available on card sales?</span>
+                            <span class="flex-1">현금과 부동산 중 무엇을 증여하는 편이 유리한가요?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">앞으로 가치가 오를 가능성이 큰 재산을 먼저 옮기는 편이 유리한 경우가 많습니다. 다만 부동산은 취득세와 평가 문제가 함께 걸리므로 총비용을 계산해 비교해야 합니다.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which is more advantageous, simplified or general VAT taxation?</span>
+                            <span class="flex-1">증여받은 재산을 팔면 세금이 또 나오나요?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">증여받은 가액이 취득가액이 되어 그 이후의 상승분에 양도소득세가 과세됩니다. 다만 배우자나 직계존비속에게 증여받은 재산을 일정 기간 안에 팔면 증여자의 취득가액을 적용하는 규정이 있으므로 처분 시기를 확인해야 합니다.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which expenditures are excluded from the input tax credit?</span>
+                            <span class="flex-1">신고하지 않으면 알 수 있나요?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">부동산 등기와 금융 자료, 이후의 자금출처조사 과정에서 확인됩니다. 무신고 가산세와 납부지연 가산세가 더해지므로 기한 내 신고가 유리합니다.</p>
                     </details>
                 </div>
             </div>
@@ -658,35 +725,35 @@
         <section class="bg-surface-container-low border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
-                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">Other practice areas</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">다른 분야도 확인해 보세요</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Construction</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">건설업</span>
                 </a>
                 <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Import &amp; Export</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">수출입업</span>
                 </a>
                 <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">제조업</span>
+                </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">도소매업</span>
                 </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Private Academy</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">학원업</span>
                 </a>
                 <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Food Service</span>
-                </a>
-                <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Inheritance &amp; Gift</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">음식점업</span>
                 </a>
                 <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Capital Gains Tax</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">양도소득세</span>
                 </a>
             </div>
             </div>
@@ -695,30 +762,30 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Wholesale &amp; Retail Tax Consultation</h2>
-            <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">증여세, 지금 바로 상담하세요</h2>
+            <p class="text-white/85 mb-8 text-[17px]">번거로운 양식 없이 카카오톡으로 최준위 세무사와 바로 상담할 수 있습니다.</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
-                Request a consultation via KakaoTalk
+                카톡으로 상담 신청
             </a>
         </div>
     </section>
 
     <footer class="bg-inverse-surface text-white/65">
         <div class="max-w-[1100px] mx-auto px-5 py-12 text-sm leading-relaxed">
-            <div class="text-white font-bold text-lg mb-3">VALUE Tax &amp; Accounting <span class="font-medium text-white/45">| Choi Jun-wi CTA</span></div>
-            <p>Room 302, Building 1, Gasan Urban Work, 135 Gasan Digital 2-ro, Geumcheon-gu, Seoul<br />
-            Representative: Choi Jun-wi · Business registration no. 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
+            <div class="text-white font-bold text-lg mb-3">가치 세무회계 <span class="font-medium text-white/45">| 최준위 세무사</span></div>
+            <p>서울특별시 금천구 가산디지털2로 135 가산어반워크 1동 302호<br />
+            대표: 최준위 · 사업자등록번호 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
             <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-white/50">
-                <a href="../index.html" class="hover:text-white">Home</a>
-                <a href="../index.html#about" class="hover:text-white">About</a>
-                <a href="../index.html#services" class="hover:text-white">Practice Areas</a>
-                <a href="../contact.html" class="hover:text-white">Contact</a>
-                <a href="../price.html" class="hover:text-white">Fees</a>
-                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">Blog</a>
+                <a href="../index.html" class="hover:text-white">홈</a>
+                <a href="../index.html#about" class="hover:text-white">인사말</a>
+                <a href="../index.html#services" class="hover:text-white">업무 분야</a>
+                <a href="../contact.html" class="hover:text-white">문의하기</a>
+                <a href="../price.html" class="hover:text-white">보수안내</a>
+                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">블로그</a>
             </p>
-            <p class="mt-6 text-white/40">&copy; 2024 VALUE Tax &amp; Accounting. All rights reserved.</p>
+            <p class="mt-6 text-white/40">&copy; 2024 가치 세무회계. All rights reserved.</p>
         </div>
     </footer>
 
@@ -743,35 +810,35 @@
             window.addEventListener('scroll', onScroll, { passive: true });
         })();
     </script>
-    <!-- 상단바 검색 · Select language -->
+    <!-- 상단바 검색 · 언어 선택 -->
     <script>
         (function () {
             var nav = document.getElementById("nav");
             if (!nav) return;
 
-            // ---- Site search (정적 색인) ----
+            // ---- 사이트 검색 (정적 색인) ----
             var INDEX = [
-                { t: "Construction Tax", d: "Revenue recognition based on percentage of completion · On-site labour documentation · Maintaining construction registration", u: "../services/construction.html" },
-                { t: "Import & Export Tax", d: "Zero-rating requirements · Early VAT refund · Foreign Exchange Transactions Act filing", u: "../services/trade.html" },
-                { t: "Manufacturing Tax", d: "Inventory valuation and cost · R&D and human resources development tax credit · Plant investment credit", u: "../services/manufacturing.html" },
-                { t: "Wholesale & Retail Tax", d: "Channel-level sales aggregation · Settlement reconciliation · Inventory management", u: "../services/retail.html" },
-                { t: "Private Academy Tax", d: "Exempt tuition classification · Instructor fee withholding · Business establishment status return", u: "../services/academy.html" },
-                { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
-                { t: "Inheritance & Gift Tax", d: "Prior-gift aggregation · Valuation · Spousal deduction · Family business deduction", u: "../services/inheritance.html" },
-                { t: "Capital Gains Tax", d: "Single-house exemption · Expropriation relief · Redevelopment membership rights · Registered rental housing", u: "../services/transfer.html" },
-                { t: "Residential property sales and the single-house exemption", d: "Household determination · Holding and residence requirements · Temporary two houses · Inheritance and marriage relief", u: "../services/transfer-house.html" },
-                { t: "Redevelopment membership rights", d: "Approval of the management and disposal plan · Conversion to an occupancy right · Replacement housing relief · Settlement money", u: "../services/transfer-redevelopment.html" },
-                { t: "Public project expropriation and compensation", d: "Expropriation relief · Bond compensation held to maturity · Deferral on replacement land · Residual land", u: "../services/transfer-expropriation.html" },
-                { t: "Registered rental housing and the resident home", d: "Mandatory rental period · Rent increase limit · Automatic deregistration · Resident home exemption", u: "../services/transfer-rental.html" },
-                { t: "Inheritance tax", d: "Six-month filing deadline · Aggregation of prior gifts · Spousal deduction · Family business deduction", u: "../services/inheritance-tax.html" },
-                { t: "Gift tax", d: "Ten-year gift deduction · Valuation · Interest-free loans · Source-of-funds audit", u: "../services/gift-tax.html" },
-                { t: "Gift with assumed debt", d: "Assumed debt as a transfer · Gift tax and capital gains tax separated · Succession to the lease deposit", u: "../services/gift-burden.html" },
-                { t: "Below-market transfers and above-market purchases", d: "Related-party transactions · Denial of unfair act or calculation · Evidencing market value · Appraisal", u: "../services/low-price-transfer.html" },
-                { t: "Fee Guide", d: "Bookkeeping · Tax filing · Capital gains, inheritance and gift · Tax appeal fees", u: "../price.html" },
-                { t: "Contact", d: "Consultation request form · Phone · Email · KakaoTalk", u: "../contact.html" },
-                { t: "About", d: "Education and career of Choi Jun-wi, CTA", u: "../index.html#about" },
-                { t: "Practice Areas", d: "Six tax solutions tailored by industry", u: "../index.html#services" },
-                { t: "Directions", d: "Room 302, Building 1, Gasan Urban Work, 135 Gasan Digital 2-ro, Geumcheon-gu, Seoul", u: "../index.html#location" }
+                { t: "건설업 세무", d: "기성고 수익인식 · 현장 노무비 증빙 · 건설업 등록기준 유지", u: "../services/construction.html" },
+                { t: "수출입업 세무", d: "영세율 적용 요건 · 부가세 조기환급 · 외국환거래법 신고", u: "../services/trade.html" },
+                { t: "제조업 세무", d: "재고 평가와 원가 · 연구인력개발비 세액공제 · 설비 투자 공제", u: "../services/manufacturing.html" },
+                { t: "도소매업 세무", d: "채널별 매출 집계 · 정산 내역 대사 · 재고자산 관리", u: "../services/retail.html" },
+                { t: "학원업 세무", d: "교습비 면세 구분 · 강사료 원천징수 · 사업장현황신고", u: "../services/academy.html" },
+                { t: "음식점업 세무", d: "의제매입세액공제 · 배달앱 매출 · 현금영수증 의무발행", u: "../services/restaurant.html" },
+                { t: "상속·증여 세무", d: "사전증여 합산 · 재산 평가 · 배우자 상속공제 · 가업상속공제", u: "../services/inheritance.html" },
+                { t: "양도소득세", d: "1세대 1주택 비과세 · 수용 보상 감면 · 재건축 재개발 입주권 · 등록임대주택", u: "../services/transfer.html" },
+                { t: "주택 양도·1세대 1주택 비과세", d: "세대 판정 · 보유 거주 요건 · 일시적 2주택 · 상속 혼인 특례", u: "../services/transfer-house.html" },
+                { t: "재건축·재개발 입주권", d: "관리처분계획 인가 · 입주권 전환 · 대체주택 특례 · 청산금", u: "../services/transfer-redevelopment.html" },
+                { t: "공익사업 수용·보상", d: "수용 감면 · 채권 보상 만기보유 · 대토보상 과세이연 · 잔여지", u: "../services/transfer-expropriation.html" },
+                { t: "등록임대주택·거주주택", d: "임대 의무기간 · 임대료 증액 제한 · 자동말소 · 거주주택 비과세", u: "../services/transfer-rental.html" },
+                { t: "상속세", d: "신고기한 6개월 · 사전증여 합산 · 배우자 상속공제 · 가업상속공제", u: "../services/inheritance-tax.html" },
+                { t: "증여세", d: "증여재산공제 10년 · 재산 평가 · 금전 무상 대여 · 자금출처조사", u: "../services/gift-tax.html" },
+                { t: "부담부증여", d: "채무 인수분 양도 · 증여세와 양도소득세 분리 · 전세보증금 승계", u: "../services/gift-burden.html" },
+                { t: "저가양도·고가양수", d: "특수관계인 거래 · 부당행위계산부인 · 시가 입증 · 감정평가", u: "../services/low-price-transfer.html" },
+                { t: "보수 안내", d: "기장대리 · 신고대리 · 양도 상속 증여 · 조세불복 기준 보수", u: "../price.html" },
+                { t: "상담 신청", d: "상담 신청서 작성 · 전화 · 이메일 · 카카오톡 문의", u: "../contact.html" },
+                { t: "인사말", d: "최준위 세무사 학력과 경력 소개", u: "../index.html#about" },
+                { t: "업무 분야", d: "업종별 맞춤 세무 솔루션 여섯 가지", u: "../index.html#services" },
+                { t: "오시는 길", d: "서울 금천구 가산디지털2로 135 가산어반워크 1동 302호", u: "../index.html#location" }
             ];
 
             var sBtn = document.getElementById("search-toggle");
@@ -816,7 +883,7 @@
                 sList.addEventListener("click", function (e) { if (e.target.closest("a")) setSearch(false); });
             }
 
-            // ---- Select language ----
+            // ---- 언어 선택 ----
             var lBtn = document.getElementById("lang-toggle");
             var lMenu = document.getElementById("lang-menu");
 
@@ -853,7 +920,7 @@
                 nav.classList.toggle("is-open", open);
                 menu.hidden = !open;
                 btn.setAttribute("aria-expanded", open ? "true" : "false");
-                btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+                btn.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
             }
 
             btn.addEventListener("click", function () { setOpen(menu.hidden); });

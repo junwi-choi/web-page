@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -516,12 +571,66 @@
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="Inheritance &amp; gift sub-areas">
+                    <a href="./inheritance.html" class="subnav-root is-here"><span class="material-symbols-outlined text-[19px]">apps</span>Inheritance &amp; gift overview</a>
+                    <a href="./inheritance-tax.html"><span class="material-symbols-outlined text-[19px]">family_restroom</span>Inheritance tax</a>
+                    <a href="./gift-tax.html"><span class="material-symbols-outlined text-[19px]">card_giftcard</span>Gift tax</a>
+                    <a href="./gift-burden.html"><span class="material-symbols-outlined text-[19px]">swap_horiz</span>Gift with assumed debt</a>
+                    <a href="./low-price-transfer.html"><span class="material-symbols-outlined text-[19px]">price_change</span>Below-market transfers</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">Inheritance tax and gift tax share the same rate structure, but the actual burden varies greatly according to what property is transferred, to whom, and when. Gifts made within ten years to an heir, or within five years to a non-heir, are added back to the estate, and for real property the tax base itself changes with the valuation method. It is not uncommon for the assessed tax to change after filing, following a revaluation by the tax office.</p>
                 <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by calculating whether inheritance or gifting is more advantageous, considering the composition of the estate, family relationships and the expected timing together. For real property we compare the tax effect of each valuation method in advance and document the basis, and for demanding reliefs such as the spousal inheritance deduction and the family business inheritance deduction we check eligibility beforehand. We also prepare supporting material in anticipation of post-filing review.</p>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">SUB TOPICS</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-3 tracking-tight">Inheritance &amp; gift sub-areas</h2>
+                <p class="text-on-surface-variant mb-9 max-w-2xl leading-relaxed">Select the item that applies to see it in detail. The provisions that govern each case, and the material required, differ.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="./inheritance-tax.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">family_restroom</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">Inheritance tax</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">The estate must be identified, the deductions structured and the division agreed within the six-month filing deadline.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./gift-tax.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">card_giftcard</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">Gift tax</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">This is a question of sequence rather than amount. We structure the ten-year aggregation and the valuation method together.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./gift-burden.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">swap_horiz</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">Gift with assumed debt</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">The portion matched by assumed debt is a sale; the rest is a gift. We calculate it alongside a straight gift and a sale.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./low-price-transfer.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">price_change</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">Below-market transfers and above-market purchases</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">Gift tax and capital gains tax apply different thresholds. We calculate the price range that clears both.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -759,6 +868,14 @@
                 { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
                 { t: "Inheritance & Gift Tax", d: "Prior-gift aggregation · Valuation · Spousal deduction · Family business deduction", u: "../services/inheritance.html" },
                 { t: "Capital Gains Tax", d: "Single-house exemption · Expropriation relief · Redevelopment membership rights · Registered rental housing", u: "../services/transfer.html" },
+                { t: "Residential property sales and the single-house exemption", d: "Household determination · Holding and residence requirements · Temporary two houses · Inheritance and marriage relief", u: "../services/transfer-house.html" },
+                { t: "Redevelopment membership rights", d: "Approval of the management and disposal plan · Conversion to an occupancy right · Replacement housing relief · Settlement money", u: "../services/transfer-redevelopment.html" },
+                { t: "Public project expropriation and compensation", d: "Expropriation relief · Bond compensation held to maturity · Deferral on replacement land · Residual land", u: "../services/transfer-expropriation.html" },
+                { t: "Registered rental housing and the resident home", d: "Mandatory rental period · Rent increase limit · Automatic deregistration · Resident home exemption", u: "../services/transfer-rental.html" },
+                { t: "Inheritance tax", d: "Six-month filing deadline · Aggregation of prior gifts · Spousal deduction · Family business deduction", u: "../services/inheritance-tax.html" },
+                { t: "Gift tax", d: "Ten-year gift deduction · Valuation · Interest-free loans · Source-of-funds audit", u: "../services/gift-tax.html" },
+                { t: "Gift with assumed debt", d: "Assumed debt as a transfer · Gift tax and capital gains tax separated · Succession to the lease deposit", u: "../services/gift-burden.html" },
+                { t: "Below-market transfers and above-market purchases", d: "Related-party transactions · Denial of unfair act or calculation · Evidencing market value · Appraisal", u: "../services/low-price-transfer.html" },
                 { t: "Fee Guide", d: "Bookkeeping · Tax filing · Capital gains, inheritance and gift · Tax appeal fees", u: "../price.html" },
                 { t: "Contact", d: "Consultation request form · Phone · Email · KakaoTalk", u: "../contact.html" },
                 { t: "About", d: "Education and career of Choi Jun-wi, CTA", u: "../index.html#about" },

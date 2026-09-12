@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -516,12 +571,66 @@
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="상속·증여 세부 분야">
+                    <a href="./inheritance.html" class="subnav-root is-here"><span class="material-symbols-outlined text-[19px]">apps</span>상속·증여 전체</a>
+                    <a href="./inheritance-tax.html"><span class="material-symbols-outlined text-[19px]">family_restroom</span>상속세</a>
+                    <a href="./gift-tax.html"><span class="material-symbols-outlined text-[19px]">card_giftcard</span>증여세</a>
+                    <a href="./gift-burden.html"><span class="material-symbols-outlined text-[19px]">swap_horiz</span>부담부증여</a>
+                    <a href="./low-price-transfer.html"><span class="material-symbols-outlined text-[19px]">price_change</span>저가양도</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">업무 개요</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">상속세와 증여세는 세율 구조가 같지만, 언제 어떤 재산을 누구에게 옮기느냐에 따라 실제 부담은 크게 달라집니다. 사전증여는 상속인에게 준 것은 10년, 상속인이 아닌 사람에게 준 것은 5년 이내의 것이 상속재산에 합산되고, 부동산은 평가 방법에 따라 과세표준 자체가 달라집니다. 신고를 마친 뒤 세무서의 재평가로 세액이 바뀌는 경우도 드물지 않습니다.</p>
                 <p class="text-on-surface-variant text-[17px] leading-loose">가치 세무회계는 재산의 구성과 가족 관계, 예상 시기를 함께 놓고 상속과 증여 중 어느 쪽이 유리한지부터 계산합니다. 부동산은 평가 방법에 따른 세액 차이를 미리 비교해 근거를 남기고, 배우자 상속공제와 가업상속공제처럼 요건이 까다로운 공제는 충족 여부를 사전에 점검합니다. 신고 이후의 검증 가능성까지 감안해 대응 자료를 함께 준비합니다.</p>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">SUB TOPICS</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-3 tracking-tight">상속·증여 세부 분야</h2>
+                <p class="text-on-surface-variant mb-9 max-w-2xl leading-relaxed">해당하는 항목을 눌러 자세한 내용을 확인하세요. 사안마다 적용되는 규정과 준비할 자료가 다릅니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="./inheritance-tax.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">family_restroom</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">상속세</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">6개월 신고기한 안에 재산 범위 확정과 공제 설계, 분할 협의까지 마쳐야 합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./gift-tax.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">card_giftcard</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">증여세</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">무엇을 누구에게 언제 옮길지의 순서 문제입니다. 10년 합산과 평가 방법을 함께 설계합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./gift-burden.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">swap_horiz</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">부담부증여</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">채무 인수분은 양도, 나머지는 증여입니다. 단순 증여·매매와 나란히 계산해 결정합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./low-price-transfer.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">price_change</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">저가양도·고가양수</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">증여세와 양도소득세의 기준이 다릅니다. 두 문턱을 모두 통과하는 가격대를 계산합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -759,6 +868,14 @@
                 { t: "음식점업 세무", d: "의제매입세액공제 · 배달앱 매출 · 현금영수증 의무발행", u: "../services/restaurant.html" },
                 { t: "상속·증여 세무", d: "사전증여 합산 · 재산 평가 · 배우자 상속공제 · 가업상속공제", u: "../services/inheritance.html" },
                 { t: "양도소득세", d: "1세대 1주택 비과세 · 수용 보상 감면 · 재건축 재개발 입주권 · 등록임대주택", u: "../services/transfer.html" },
+                { t: "주택 양도·1세대 1주택 비과세", d: "세대 판정 · 보유 거주 요건 · 일시적 2주택 · 상속 혼인 특례", u: "../services/transfer-house.html" },
+                { t: "재건축·재개발 입주권", d: "관리처분계획 인가 · 입주권 전환 · 대체주택 특례 · 청산금", u: "../services/transfer-redevelopment.html" },
+                { t: "공익사업 수용·보상", d: "수용 감면 · 채권 보상 만기보유 · 대토보상 과세이연 · 잔여지", u: "../services/transfer-expropriation.html" },
+                { t: "등록임대주택·거주주택", d: "임대 의무기간 · 임대료 증액 제한 · 자동말소 · 거주주택 비과세", u: "../services/transfer-rental.html" },
+                { t: "상속세", d: "신고기한 6개월 · 사전증여 합산 · 배우자 상속공제 · 가업상속공제", u: "../services/inheritance-tax.html" },
+                { t: "증여세", d: "증여재산공제 10년 · 재산 평가 · 금전 무상 대여 · 자금출처조사", u: "../services/gift-tax.html" },
+                { t: "부담부증여", d: "채무 인수분 양도 · 증여세와 양도소득세 분리 · 전세보증금 승계", u: "../services/gift-burden.html" },
+                { t: "저가양도·고가양수", d: "특수관계인 거래 · 부당행위계산부인 · 시가 입증 · 감정평가", u: "../services/low-price-transfer.html" },
                 { t: "보수 안내", d: "기장대리 · 신고대리 · 양도 상속 증여 · 조세불복 기준 보수", u: "../price.html" },
                 { t: "상담 신청", d: "상담 신청서 작성 · 전화 · 이메일 · 카카오톡 문의", u: "../contact.html" },
                 { t: "인사말", d: "최준위 세무사 학력과 경력 소개", u: "../index.html#about" },

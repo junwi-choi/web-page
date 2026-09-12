@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -516,12 +571,66 @@
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="转让所得税细分领域">
+                    <a href="./transfer.html" class="subnav-root is-here"><span class="material-symbols-outlined text-[19px]">apps</span>转让所得税总览</a>
+                    <a href="./transfer-house.html"><span class="material-symbols-outlined text-[19px]">home</span>住宅转让</a>
+                    <a href="./transfer-redevelopment.html"><span class="material-symbols-outlined text-[19px]">apartment</span>重建与再开发</a>
+                    <a href="./transfer-expropriation.html"><span class="material-symbols-outlined text-[19px]">account_balance</span>征收与补偿</a>
+                    <a href="./transfer-rental.html"><span class="material-symbols-outlined text-[19px]">home_work</span>登记出租住宅</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">业务概要</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">转让所得税并非在出售时才确定，而是由取得之时起累积的历程所决定。一户一住宅免税取决于持有与居住要件何时满足；因公益事业被征收的土地则适用另行规定的减免。在重建与旧城改造过程中，住宅转为合作社成员入住权后，住宅数量的认定与免税判断又将变得复杂。</p>
                 <p class="text-on-surface-variant text-[17px] leading-loose">VALUE税务会计在签订出售合同之前，先确认持有与居住历程、家庭构成以及是否持有其他住宅。征收补偿的减免率因补偿方式与时点而异，故自协商阶段即着手审查；改造入住权则以管理处分计划核准时点为准判定。对于取得年代久远的不动产，预先备妥取得价额的证明资料，以免必要费用被否认。</p>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">SUB TOPICS</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-3 tracking-tight">转让所得税细分领域</h2>
+                <p class="text-on-surface-variant mb-9 max-w-2xl leading-relaxed">请点击相应项目查看详细内容。各案件所适用的规定与须备齐的资料各不相同。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="./transfer-house.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">home</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">住宅转让与一户一住宅免税</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">从户籍判定到持有与居住要件，以及临时二住宅和继承、婚姻特例。我们在签约前计算免税可适用的时点。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./transfer-redevelopment.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">apartment</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">重建与再开发</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">以管理处分计划批准日为界，住宅与入住权就此分野。我们一并审视替代住宅特例与清算金结算。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./transfer-expropriation.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">account_balance</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">公益事业征收与补偿</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">减免并非自动适用。我们在协商之前计算事业认定公告日要件、补偿方式与减免限额。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./transfer-rental.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">home_work</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">登记出租住宅与自住住宅</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">优惠仅在要件得以遵守期间存续。我们一并核查注销后的处置期限与追征风险。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -759,6 +868,14 @@
                 { t: "餐饮业税务", d: "拟制进项税额扣除 · 外卖平台销售 · 现金收据强制开具", u: "../services/restaurant.html" },
                 { t: "继承与赠与税务", d: "生前赠与并入 · 财产评估 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance.html" },
                 { t: "转让所得税", d: "一户一住宅免税 · 征收补偿减免 · 重建旧改入住权 · 登记出租住宅", u: "../services/transfer.html" },
+                { t: "住宅转让与一户一住宅免税", d: "家庭判定 · 持有与居住要件 · 临时二住宅 · 继承与婚姻特例", u: "../services/transfer-house.html" },
+                { t: "重建与旧改入住权", d: "管理处分计划批准 · 入住权转换 · 替代住宅特例 · 清算金", u: "../services/transfer-redevelopment.html" },
+                { t: "公益事业征收与补偿", d: "征收减免 · 债券补偿持有至到期 · 代土补偿课税递延 · 剩余地", u: "../services/transfer-expropriation.html" },
+                { t: "登记出租住宅与自住住宅", d: "强制出租期间 · 租金增额限制 · 自动注销 · 自住住宅免税", u: "../services/transfer-rental.html" },
+                { t: "继承税", d: "六个月申报期限 · 事前赠与合算 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance-tax.html" },
+                { t: "赠与税", d: "赠与财产扣除十年 · 财产评价 · 无偿借贷资金 · 资金来源调查", u: "../services/gift-tax.html" },
+                { t: "附负担赠与", d: "债务承担部分为转让 · 赠与税与转让所得税分离 · 租赁保证金承继", u: "../services/gift-burden.html" },
+                { t: "低价转让与高价受让", d: "特殊关系人交易 · 不当行为计算否认 · 市价举证 · 鉴定评价", u: "../services/low-price-transfer.html" },
                 { t: "报酬指南", d: "代理记账 · 代理纳税申报 · 转让继承赠与 · 税务争议救济标准报酬", u: "../price.html" },
                 { t: "咨询申请", d: "填写咨询申请表 · 电话 · 邮件 · KakaoTalk咨询", u: "../contact.html" },
                 { t: "致辞", d: "崔埈伟税务师的学历与经历介绍", u: "../index.html#about" },

@@ -8,14 +8,14 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA</title>
-    <meta name="description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
+    <title>Registered rental housing and the resident home exemption | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA</title>
+    <meta name="description" content="Maintaining long-term rental housing requirements, the once-in-a-lifetime resident home exemption, treatment after automatic or voluntary deregistration, and the risk of recovery. VALUE Tax &amp; Accounting, Choi Jun-wi, Certified Tax Accountant, Gasan Digital Complex." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://vtax.kr/en/services/retail.html" />
+    <link rel="canonical" href="https://vtax.kr/en/services/transfer-rental.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA" />
-    <meta property="og:description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
-    <meta property="og:url" content="https://vtax.kr/en/services/retail.html" />
+    <meta property="og:title" content="Registered rental housing and the resident home exemption | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA" />
+    <meta property="og:description" content="The mandatory rental period and the rent increase limit must be observed for the resident home exemption to hold." />
+    <meta property="og:url" content="https://vtax.kr/en/services/transfer-rental.html" />
     <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
     <meta property="og:site_name" content="VALUE Tax &amp; Accounting" />
     <meta property="og:locale" content="en_US" />
@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -410,17 +465,18 @@
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://vtax.kr/en/"},
         {"@type":"ListItem","position":2,"name":"Practice Areas","item":"https://vtax.kr/en/#services"},
-        {"@type":"ListItem","position":3,"name":"Wholesale &amp; Retail","item":"https://vtax.kr/en/services/retail.html"}
+        {"@type":"ListItem","position":3,"name":"Capital Gains Tax","item":"https://vtax.kr/en/services/transfer.html"},
+        {"@type":"ListItem","position":4,"name":"Registered rental housing and the resident home","item":"https://vtax.kr/en/services/transfer-rental.html"}
     ]}
     </script>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"How should open marketplace revenue be reported?","acceptedAnswer":{"@type":"Answer","text":"The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales."}},
-        {"@type":"Question","name":"Does a discrepancy between stock and the books create a tax exposure?","acceptedAnswer":{"@type":"Answer","text":"A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence."}},
-        {"@type":"Question","name":"Is a tax credit available on card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
-        {"@type":"Question","name":"Which is more advantageous, simplified or general VAT taxation?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable."}},
-        {"@type":"Question","name":"Which expenditures are excluded from the input tax credit?","acceptedAnswer":{"@type":"Answer","text":"Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage."}}
+        {"@type":"Question","name":"What happens if the rent is raised above the permitted limit?","acceptedAnswer":{"@type":"Answer","text":"A breach of the increase limit removes that property from the relief, and the resident home exemption already claimed can be recovered. The permitted increase should be calculated before the agreement is renewed."}},
+        {"@type":"Question","name":"If registration lapses automatically, is the benefit lost?","acceptedAnswer":{"@type":"Answer","text":"Automatic deregistration is not itself a breach, so benefits already received are not recovered. A deadline applies, however, within which the resident home must be sold for the exemption to hold."}},
+        {"@type":"Question","name":"Can the resident home exemption be claimed twice?","acceptedAnswer":{"@type":"Answer","text":"In principle it is available once in a lifetime. It cannot be claimed repeatedly by moving between properties, so deciding which property to use it on matters."}},
+        {"@type":"Question","name":"What happens if the rental registration is cancelled voluntarily?","acceptedAnswer":{"@type":"Answer","text":"This depends on the category and the timing. Voluntary deregistration after a specified proportion of the mandatory period has been served is treated as an exception under which the benefit holds; otherwise the benefit is recovered."}},
+        {"@type":"Question","name":"Is there relief when the rental property itself is sold?","acceptedAnswer":{"@type":"Answer","text":"Long-term rental housing that meets the requirements can qualify for a special long-term holding deduction or for tax relief. This depends on the registration category and the rental period and must be confirmed case by case."}}
     ]}
     </script>
 </head>
@@ -502,67 +558,78 @@
         </div>
     </nav>
 
-    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
-        <img src="../../source/svc-retail.jpg" alt="Retail site" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
-        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
-            <nav class="text-[13px] text-white/70 mb-4">
-                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><span class="text-white">Wholesale &amp; Retail</span>
+    <header class="sub-hero relative flex items-end overflow-hidden">
+        <span class="material-symbols-outlined sub-hero-mark" aria-hidden="true">home_work</span>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-12 md:pb-14 pt-32 text-white">
+            <nav class="text-[13px] text-white/65 mb-4">
+                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><a href="./transfer.html" class="hover:text-white">Capital Gains Tax</a><span class="mx-1.5">/</span><span class="text-white">Registered rental housing and the resident home</span>
             </nav>
-            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">Industry tax specialists</p>
-            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">Wholesale &amp; Retail Tax</h1>
-            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Bring sales from every channel onto one basis and keep inventory and settlement transparent. In online distribution, managing data is managing tax.</p>
+            <p class="text-white/70 font-bold text-sm tracking-widest mb-3">Capital gains tax sub-areas</p>
+            <h1 class="text-[32px] md:text-[44px] font-bold leading-tight tracking-tight mb-4">Registered rental housing and the resident home exemption</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Registered rental housing carries its benefit only while the requirements are observed. A single rent increase can undo the exemption.</p>
         </div>
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="Capital gains tax sub-areas">
+                    <a href="./transfer.html" class="subnav-root"><span class="material-symbols-outlined text-[19px]">apps</span>Capital gains tax overview</a>
+                    <a href="./transfer-house.html"><span class="material-symbols-outlined text-[19px]">home</span>Residential property sales</a>
+                    <a href="./transfer-redevelopment.html"><span class="material-symbols-outlined text-[19px]">apartment</span>Reconstruction and redevelopment</a>
+                    <a href="./transfer-expropriation.html"><span class="material-symbols-outlined text-[19px]">account_balance</span>Expropriation and compensation</a>
+                    <a href="./transfer-rental.html" class="is-here"><span class="material-symbols-outlined text-[19px]">home_work</span>Registered rental housing</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
             <div class="max-w-3xl space-y-5">
-                <p class="text-on-surface-variant text-[17px] leading-loose">In wholesale, retail and distribution, sales data scatters as channels multiply across open marketplaces, own-brand stores and offline outlets, and because payment-gateway settlement cycles rarely match tax invoice dates, reported sales and actual deposits appear to diverge. Add inventory shrinkage, returns, coupons and loyalty points, and substantiation becomes complicated. Once there is a system that consolidates data across channels, most of the tax risk disappears.</p>
-                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by consolidating sales data scattered across channels onto a single basis. We reconcile platform settlement records against tax invoices and cash receipts so that any gap between reported sales and actual deposits can be explained, and we document the rules for stocktaking and for handling returns and coupons, keeping you ready to respond to a request for substantiation at once.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">Where a property is registered under a rental business, it can be excluded from the house count when the single-house exemption for the resident home is assessed. That benefit holds only while the mandatory rental period is served and the rent increase limit is observed. The requirements differ according to when and in what category the property was registered, and since repeated changes to the scheme introduced automatic and voluntary deregistration, identical circumstances can produce different outcomes depending on the registration date.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by checking the registration category, the registration date and the history of the lease agreements to establish whether the requirements are still being met. Because the resident home exemption is in principle available only once in a lifetime, which property to sell and when must be calculated first. Where a rental property has been deregistered automatically we confirm the deadline within which the resident home may be disposed of, and where requirements have been breached we quantify the recovery in advance and set the approach accordingly.</p>
             </div>
         </section>
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in wholesale &amp; retail</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in registered rental housing</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Channel-level sales aggregation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales from open marketplaces, your own store and offline outlets must be brought together and matched to reported revenue. The tax base is the gross amount the customer paid, not the amount the platform settled, so booking only the settled deposit understates sales by the full commission.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Mandatory rental period and rent increase limit</h3>
+                            <p class="text-on-surface-variant leading-loose">The mandatory rental period set for the registration category must be served, and the rent increase limit must not be exceeded on renewal or on a new agreement. A breach in a single agreement puts the whole benefit at risk.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Settlement reconciliation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales go unreported unless platform and payment-gateway settlement records are aligned with the dates tax invoices and cash receipts are issued. Where the settlement cycle straddles a tax period, handle it the same way every time so that substantiation is straightforward later.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">The resident home exemption, once in a lifetime</h3>
+                            <p class="text-on-surface-variant leading-loose">Selling the resident home free of tax while holding registered rental housing is in principle available only once in a lifetime. Which property that opportunity is used on must be decided first.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Inventory management</h3>
-                            <p class="text-on-surface-variant leading-loose">You can only substantiate your position if there is a rule for handling differences between counted and book inventory. A large gap between the books and the physical count is a classic trigger for suspicion of omitted sales or fabricated purchases, so record both the counting cycle and the reason for each difference.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Treatment after automatic or voluntary deregistration</h3>
+                            <p class="text-on-surface-variant leading-loose">Following reform of the scheme, registration in certain categories lapses automatically when the mandatory period ends. A deadline applies within which the resident home may then be disposed of, so timing must be managed.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Returns and coupon handling</h3>
-                            <p class="text-on-surface-variant leading-loose">Returns, exchanges, coupons and loyalty points require the timing of the sales deduction and the VAT adjustment to be reflected precisely. Whether an amount is deductible at all depends on who funded the discount, so decide the treatment while the promotion is still being designed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Published price requirement at the start of the tenancy</h3>
+                            <p class="text-on-surface-variant leading-loose">The published price at the time the tenancy began must be at or below a specified amount for the relief to be available. Registration alone does not qualify a property.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Distribution-related tax credits</h3>
-                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the VAT credit for credit-card and similar sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Breach and recovery</h3>
+                            <p class="text-on-surface-variant leading-loose">Where the requirements are breached, tax on a resident home already treated as exempt is recovered and penalty tax is added. The later the breach is identified, the greater the liability.</p>
                         </div>
                     </li>
                 </ol>
@@ -579,8 +646,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Unified multi-channel sales management</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Reviewing registration status and requirements</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We check the rental business registration category and date, together with the deposit and monthly rent recorded in each lease agreement, and assess whether the requirements are still being met.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -589,8 +656,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Inventory and sales deduction clean-up</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Setting the order of disposal</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We calculate which property the resident home exemption should be applied to and the deadline that runs after deregistration, and propose the order and timing of sales.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -599,8 +666,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Review of deductible items</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Responding to a breach</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Where a breach is identified we first quantify the tax and penalty tax at stake, and set out how an amended return and voluntary payment can reduce the liability.</p>
                     </div>
                 </div>
             </div>
@@ -609,47 +676,47 @@
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Wholesale &amp; retail tax FAQ</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Registered rental housing FAQ</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">How should open marketplace revenue be reported?</span>
+                            <span class="flex-1">What happens if the rent is raised above the permitted limit?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A breach of the increase limit removes that property from the relief, and the resident home exemption already claimed can be recovered. The permitted increase should be calculated before the agreement is renewed.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Does a discrepancy between stock and the books create a tax exposure?</span>
+                            <span class="flex-1">If registration lapses automatically, is the benefit lost?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Automatic deregistration is not itself a breach, so benefits already received are not recovered. A deadline applies, however, within which the resident home must be sold for the exemption to hold.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Is a tax credit available on card sales?</span>
+                            <span class="flex-1">Can the resident home exemption be claimed twice?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">In principle it is available once in a lifetime. It cannot be claimed repeatedly by moving between properties, so deciding which property to use it on matters.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which is more advantageous, simplified or general VAT taxation?</span>
+                            <span class="flex-1">What happens if the rental registration is cancelled voluntarily?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">This depends on the category and the timing. Voluntary deregistration after a specified proportion of the mandatory period has been served is treated as an exception under which the benefit holds; otherwise the benefit is recovered.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which expenditures are excluded from the input tax credit?</span>
+                            <span class="flex-1">Is there relief when the rental property itself is sold?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Long-term rental housing that meets the requirements can qualify for a special long-term holding deduction or for tax relief. This depends on the registration category and the rental period and must be confirmed case by case.</p>
                     </details>
                 </div>
             </div>
@@ -672,6 +739,10 @@
                     <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
                 </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Wholesale &amp; Retail</span>
+                </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Private Academy</span>
@@ -684,10 +755,6 @@
                     <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Inheritance &amp; Gift</span>
                 </a>
-                <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Capital Gains Tax</span>
-                </a>
             </div>
             </div>
         </section>
@@ -695,7 +762,7 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Wholesale &amp; Retail Tax Consultation</h2>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Registered Rental Housing Consultation</h2>
             <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">

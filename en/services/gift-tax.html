@@ -8,14 +8,14 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA</title>
-    <meta name="description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
+    <title>Gift tax | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA</title>
+    <meta name="description" content="The gift property deduction and ten-year aggregation, valuation methods, interest-free loans and preparation for a source-of-funds audit, and the start-up and business succession regimes. VALUE Tax &amp; Accounting, Choi Jun-wi, Certified Tax Accountant, Gasan Digital Complex." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://vtax.kr/en/services/retail.html" />
+    <link rel="canonical" href="https://vtax.kr/en/services/gift-tax.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA" />
-    <meta property="og:description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
-    <meta property="og:url" content="https://vtax.kr/en/services/retail.html" />
+    <meta property="og:title" content="Gift tax | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA" />
+    <meta property="og:description" content="What is transferred, to whom and when determines the tax." />
+    <meta property="og:url" content="https://vtax.kr/en/services/gift-tax.html" />
     <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
     <meta property="og:site_name" content="VALUE Tax &amp; Accounting" />
     <meta property="og:locale" content="en_US" />
@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -410,17 +465,18 @@
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://vtax.kr/en/"},
         {"@type":"ListItem","position":2,"name":"Practice Areas","item":"https://vtax.kr/en/#services"},
-        {"@type":"ListItem","position":3,"name":"Wholesale &amp; Retail","item":"https://vtax.kr/en/services/retail.html"}
+        {"@type":"ListItem","position":3,"name":"Inheritance &amp; Gift","item":"https://vtax.kr/en/services/inheritance.html"},
+        {"@type":"ListItem","position":4,"name":"Gift tax","item":"https://vtax.kr/en/services/gift-tax.html"}
     ]}
     </script>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"How should open marketplace revenue be reported?","acceptedAnswer":{"@type":"Answer","text":"The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales."}},
-        {"@type":"Question","name":"Does a discrepancy between stock and the books create a tax exposure?","acceptedAnswer":{"@type":"Answer","text":"A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence."}},
-        {"@type":"Question","name":"Is a tax credit available on card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
-        {"@type":"Question","name":"Which is more advantageous, simplified or general VAT taxation?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable."}},
-        {"@type":"Question","name":"Which expenditures are excluded from the input tax credit?","acceptedAnswer":{"@type":"Answer","text":"Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage."}}
+        {"@type":"Question","name":"How much can be given to a child without tax?","acceptedAnswer":{"@type":"Answer","text":"A deduction limit for lineal descendants applies over ten years, with separate deductions for marriage and childbirth. Amounts already given within ten years are aggregated, so the earlier history must be confirmed first."}},
+        {"@type":"Question","name":"If money from a parent is treated as a loan, is it still a gift?","acceptedAnswer":{"@type":"Answer","text":"A written loan agreement alone is insufficient. Interest at an appropriate rate must actually be paid and the principal repaid for the arrangement to be recognised as a loan; otherwise it is treated as a gift and taxed."}},
+        {"@type":"Question","name":"Is it better to give cash or real estate?","acceptedAnswer":{"@type":"Answer","text":"Transferring assets most likely to appreciate first is frequently advantageous. Real estate carries acquisition tax and valuation issues as well, however, so the total cost should be calculated and compared."}},
+        {"@type":"Question","name":"If I sell property I received as a gift, is there further tax?","acceptedAnswer":{"@type":"Answer","text":"The value at which the gift was made becomes the acquisition value, and capital gains tax applies to any subsequent increase. Where property received from a spouse or a lineal ascendant or descendant is sold within a specified period, the donor's acquisition value applies instead, so the timing of disposal must be confirmed."}},
+        {"@type":"Question","name":"Will anyone know if no return is filed?","acceptedAnswer":{"@type":"Answer","text":"It is identified through property registration, financial records and any subsequent source-of-funds audit. Penalty tax for non-filing and for late payment is added, so filing within the deadline is the better course."}}
     ]}
     </script>
 </head>
@@ -502,67 +558,78 @@
         </div>
     </nav>
 
-    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
-        <img src="../../source/svc-retail.jpg" alt="Retail site" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
-        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
-            <nav class="text-[13px] text-white/70 mb-4">
-                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><span class="text-white">Wholesale &amp; Retail</span>
+    <header class="sub-hero relative flex items-end overflow-hidden">
+        <span class="material-symbols-outlined sub-hero-mark" aria-hidden="true">card_giftcard</span>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-12 md:pb-14 pt-32 text-white">
+            <nav class="text-[13px] text-white/65 mb-4">
+                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><a href="./inheritance.html" class="hover:text-white">Inheritance &amp; Gift</a><span class="mx-1.5">/</span><span class="text-white">Gift tax</span>
             </nav>
-            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">Industry tax specialists</p>
-            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">Wholesale &amp; Retail Tax</h1>
-            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Bring sales from every channel onto one basis and keep inventory and settlement transparent. In online distribution, managing data is managing tax.</p>
+            <p class="text-white/70 font-bold text-sm tracking-widest mb-3">Inheritance &amp; gift sub-areas</p>
+            <h1 class="text-[32px] md:text-[44px] font-bold leading-tight tracking-tight mb-4">Gift tax</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">A gift is a question of order and timing rather than amount. Structured in ten-year steps, the burden falls considerably.</p>
         </div>
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="Inheritance &amp; gift sub-areas">
+                    <a href="./inheritance.html" class="subnav-root"><span class="material-symbols-outlined text-[19px]">apps</span>Inheritance &amp; gift overview</a>
+                    <a href="./inheritance-tax.html"><span class="material-symbols-outlined text-[19px]">family_restroom</span>Inheritance tax</a>
+                    <a href="./gift-tax.html" class="is-here"><span class="material-symbols-outlined text-[19px]">card_giftcard</span>Gift tax</a>
+                    <a href="./gift-burden.html"><span class="material-symbols-outlined text-[19px]">swap_horiz</span>Gift with assumed debt</a>
+                    <a href="./low-price-transfer.html"><span class="material-symbols-outlined text-[19px]">price_change</span>Below-market transfers</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
             <div class="max-w-3xl space-y-5">
-                <p class="text-on-surface-variant text-[17px] leading-loose">In wholesale, retail and distribution, sales data scatters as channels multiply across open marketplaces, own-brand stores and offline outlets, and because payment-gateway settlement cycles rarely match tax invoice dates, reported sales and actual deposits appear to diverge. Add inventory shrinkage, returns, coupons and loyalty points, and substantiation becomes complicated. Once there is a system that consolidates data across channels, most of the tax risk disappears.</p>
-                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by consolidating sales data scattered across channels onto a single basis. We reconcile platform settlement records against tax invoices and cash receipts so that any gap between reported sales and actual deposits can be explained, and we document the rules for stocktaking and for handling returns and coupons, keeping you ready to respond to a request for substantiation at once.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">Gift tax is filed and paid by the recipient within three months of the end of the month in which the gift is made. The gift property deduction is applied by aggregating ten years for each category of donor, so the same amount produces a different result depending on whether it is transferred at once or spread over time. For property whose market value is not readily ascertainable, such as real estate or unlisted shares, the valuation method itself is frequently the point at issue.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting considers the recipient's funding needs alongside the character of each asset and sets the order in which property should be transferred. Transferring assets expected to appreciate first attributes the increase to the recipient and reduces the overall burden. Because lending money without interest and transferring property below market value are both treated as gifts, movements of funds within a family are always reviewed in advance. After the gift we organise the flow of funds and the supporting evidence in preparation for a source-of-funds audit.</p>
             </div>
         </section>
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in wholesale &amp; retail</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in gift tax</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Channel-level sales aggregation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales from open marketplaces, your own store and offline outlets must be brought together and matched to reported revenue. The tax base is the gross amount the customer paid, not the amount the platform settled, so booking only the settled deposit understates sales by the full commission.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">The gift property deduction and ten-year aggregation</h3>
+                            <p class="text-on-surface-variant leading-loose">Spouses, lineal ascendants, lineal descendants and other relatives each have a different deduction limit, aggregated over ten years. Gifts received from the same donor within ten years are combined in applying the rate.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Settlement reconciliation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales go unreported unless platform and payment-gateway settlement records are aligned with the dates tax invoices and cash receipts are issued. Where the settlement cycle straddles a tax period, handle it the same way every time so that substantiation is straightforward later.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Valuation methods</h3>
+                            <p class="text-on-surface-variant leading-loose">Market value governs, and where a comparable sale is available that figure is used. Because the tax differs according to whether an appraisal is obtained or the published price is applied, this requires review in advance.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Inventory management</h3>
-                            <p class="text-on-surface-variant leading-loose">You can only substantiate your position if there is a rule for handling differences between counted and book inventory. A large gap between the books and the physical count is a classic trigger for suspicion of omitted sales or fabricated purchases, so record both the counting cycle and the reason for each difference.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Gifts of real estate and acquisition tax</h3>
+                            <p class="text-on-surface-variant leading-loose">Acquisition tax payable by the recipient arises in addition to gift tax. The rate rises for gifts of high-value housing in a regulated area, so the total cost must be calculated together.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Returns and coupon handling</h3>
-                            <p class="text-on-surface-variant leading-loose">Returns, exchanges, coupons and loyalty points require the timing of the sales deduction and the VAT adjustment to be reflected precisely. Whether an amount is deductible at all depends on who funded the discount, so decide the treatment while the promotion is still being designed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Interest-free loans and below-market transfers</h3>
+                            <p class="text-on-surface-variant leading-loose">Lending money to a family member without interest, or transferring property below market value, is treated as conferring a gift. A loan agreement alone is insufficient; interest must actually be paid and the principal repaid.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Distribution-related tax credits</h3>
-                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the VAT credit for credit-card and similar sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">The start-up and business succession regimes</h3>
+                            <p class="text-on-surface-variant leading-loose">Reduced rates apply to gifts made for a child's start-up or for succession to a family business. The permitted use and the continuing requirements are strict, so the ability to comply should be assessed before the regime is adopted.</p>
                         </div>
                     </li>
                 </ol>
@@ -579,8 +646,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Unified multi-channel sales management</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Building the gift plan</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We set out the asset schedule, the family composition and any gifts made within the past ten years, and design the order in which property should be transferred, to whom and when.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -589,8 +656,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Inventory and sales deduction clean-up</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Valuation and calculation</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We review the valuation method for each asset, calculate the total cost including gift tax and acquisition tax, and compare the alternatives.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -599,8 +666,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Review of deductible items</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Filing and evidence management</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We file within the deadline and advise on organising and retaining the flow of funds, agreements and interest payment records in preparation for later review.</p>
                     </div>
                 </div>
             </div>
@@ -609,47 +676,47 @@
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Wholesale &amp; retail tax FAQ</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Gift tax FAQ</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">How should open marketplace revenue be reported?</span>
+                            <span class="flex-1">How much can be given to a child without tax?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A deduction limit for lineal descendants applies over ten years, with separate deductions for marriage and childbirth. Amounts already given within ten years are aggregated, so the earlier history must be confirmed first.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Does a discrepancy between stock and the books create a tax exposure?</span>
+                            <span class="flex-1">If money from a parent is treated as a loan, is it still a gift?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A written loan agreement alone is insufficient. Interest at an appropriate rate must actually be paid and the principal repaid for the arrangement to be recognised as a loan; otherwise it is treated as a gift and taxed.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Is a tax credit available on card sales?</span>
+                            <span class="flex-1">Is it better to give cash or real estate?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Transferring assets most likely to appreciate first is frequently advantageous. Real estate carries acquisition tax and valuation issues as well, however, so the total cost should be calculated and compared.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which is more advantageous, simplified or general VAT taxation?</span>
+                            <span class="flex-1">If I sell property I received as a gift, is there further tax?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The value at which the gift was made becomes the acquisition value, and capital gains tax applies to any subsequent increase. Where property received from a spouse or a lineal ascendant or descendant is sold within a specified period, the donor's acquisition value applies instead, so the timing of disposal must be confirmed.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which expenditures are excluded from the input tax credit?</span>
+                            <span class="flex-1">Will anyone know if no return is filed?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">It is identified through property registration, financial records and any subsequent source-of-funds audit. Penalty tax for non-filing and for late payment is added, so filing within the deadline is the better course.</p>
                     </details>
                 </div>
             </div>
@@ -672,6 +739,10 @@
                     <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
                 </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Wholesale &amp; Retail</span>
+                </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Private Academy</span>
@@ -679,10 +750,6 @@
                 <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Food Service</span>
-                </a>
-                <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Inheritance &amp; Gift</span>
                 </a>
                 <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
@@ -695,7 +762,7 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Wholesale &amp; Retail Tax Consultation</h2>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Gift Tax Consultation</h2>
             <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">

@@ -888,6 +888,26 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
         .group:active .blog-thumb {
             filter: none;
         }
+
+        /* Property Tax 세부 항목 Quick links */
+        .prop-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .75);
+            background: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            color: #424655;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .prop-chip:hover {
+            border-color: #0055c9;
+            color: #0055c9;
+            background: rgba(0, 85, 201, .05);
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -1414,6 +1434,16 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                 </div>
+                <div class="mt-6 flex flex-wrap justify-center gap-2">
+                    <a href="./services/transfer-house.html" class="prop-chip">Residential property sales and the single-house exemption</a>
+                    <a href="./services/transfer-redevelopment.html" class="prop-chip">Reconstruction and redevelopment</a>
+                    <a href="./services/transfer-expropriation.html" class="prop-chip">Public project expropriation and compensation</a>
+                    <a href="./services/transfer-rental.html" class="prop-chip">Registered rental housing</a>
+                    <a href="./services/inheritance-tax.html" class="prop-chip">Inheritance tax</a>
+                    <a href="./services/gift-tax.html" class="prop-chip">Gift tax</a>
+                    <a href="./services/gift-burden.html" class="prop-chip">Gift with assumed debt</a>
+                    <a href="./services/low-price-transfer.html" class="prop-chip">Below-market transfers and above-market purchases</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1654,7 +1684,15 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         <li><a href="./services/academy.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">Private Academy Tax</a></li>
                         <li><a href="./services/restaurant.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">Restaurant Tax</a></li>
                         <li><a href="./services/inheritance.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">Inheritance &amp; Gift</a></li>
+                        <li class="pl-3"><a href="./services/inheritance-tax.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Inheritance tax</a></li>
+                        <li class="pl-3"><a href="./services/gift-tax.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Gift tax</a></li>
+                        <li class="pl-3"><a href="./services/gift-burden.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Gift with assumed debt</a></li>
+                        <li class="pl-3"><a href="./services/low-price-transfer.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Below-market transfers and above-market purchases</a></li>
                         <li><a href="./services/transfer.html" class="text-outline-variant hover:text-surface-container-lowest transition-colors">Capital Gains Tax</a></li>
+                        <li class="pl-3"><a href="./services/transfer-house.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Residential property sales and the single-house exemption</a></li>
+                        <li class="pl-3"><a href="./services/transfer-redevelopment.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Reconstruction and redevelopment</a></li>
+                        <li class="pl-3"><a href="./services/transfer-expropriation.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Public project expropriation and compensation</a></li>
+                        <li class="pl-3"><a href="./services/transfer-rental.html" class="text-outline-variant/75 hover:text-surface-container-lowest transition-colors text-label-sm">Registered rental housing</a></li>
                     </ul>
                 </nav>
 
@@ -1714,6 +1752,14 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                 { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "./services/restaurant.html" },
                 { t: "Inheritance & Gift Tax", d: "Prior-gift aggregation · Valuation · Spousal deduction · Family business deduction", u: "./services/inheritance.html" },
                 { t: "Capital Gains Tax", d: "Single-house exemption · Expropriation relief · Redevelopment membership rights · Registered rental housing", u: "./services/transfer.html" },
+                { t: "Residential property sales and the single-house exemption", d: "Household determination · Holding and residence requirements · Temporary two houses · Inheritance and marriage relief", u: "./services/transfer-house.html" },
+                { t: "Redevelopment membership rights", d: "Approval of the management and disposal plan · Conversion to an occupancy right · Replacement housing relief · Settlement money", u: "./services/transfer-redevelopment.html" },
+                { t: "Public project expropriation and compensation", d: "Expropriation relief · Bond compensation held to maturity · Deferral on replacement land · Residual land", u: "./services/transfer-expropriation.html" },
+                { t: "Registered rental housing and the resident home", d: "Mandatory rental period · Rent increase limit · Automatic deregistration · Resident home exemption", u: "./services/transfer-rental.html" },
+                { t: "Inheritance tax", d: "Six-month filing deadline · Aggregation of prior gifts · Spousal deduction · Family business deduction", u: "./services/inheritance-tax.html" },
+                { t: "Gift tax", d: "Ten-year gift deduction · Valuation · Interest-free loans · Source-of-funds audit", u: "./services/gift-tax.html" },
+                { t: "Gift with assumed debt", d: "Assumed debt as a transfer · Gift tax and capital gains tax separated · Succession to the lease deposit", u: "./services/gift-burden.html" },
+                { t: "Below-market transfers and above-market purchases", d: "Related-party transactions · Denial of unfair act or calculation · Evidencing market value · Appraisal", u: "./services/low-price-transfer.html" },
                 { t: "Fee Guide", d: "Bookkeeping · Tax filing · Capital gains, inheritance and gift · Tax appeal fees", u: "./price.html" },
                 { t: "Contact", d: "Consultation request form · Phone · Email · KakaoTalk", u: "./contact.html" },
                 { t: "About", d: "Education and career of Choi Jun-wi, CTA", u: "#about" },

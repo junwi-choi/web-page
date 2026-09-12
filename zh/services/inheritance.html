@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -516,12 +571,66 @@
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="继承与赠与细分领域">
+                    <a href="./inheritance.html" class="subnav-root is-here"><span class="material-symbols-outlined text-[19px]">apps</span>继承与赠与总览</a>
+                    <a href="./inheritance-tax.html"><span class="material-symbols-outlined text-[19px]">family_restroom</span>继承税</a>
+                    <a href="./gift-tax.html"><span class="material-symbols-outlined text-[19px]">card_giftcard</span>赠与税</a>
+                    <a href="./gift-burden.html"><span class="material-symbols-outlined text-[19px]">swap_horiz</span>附负担赠与</a>
+                    <a href="./low-price-transfer.html"><span class="material-symbols-outlined text-[19px]">price_change</span>低价转让</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">业务概要</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">继承税与赠与税的税率结构相同，但实际负担因何时将何种财产转移给何人而大不相同。生前赠与中，赠与继承人的在十年内、赠与非继承人的在五年内者应并入遗产；不动产则因评估方法不同，计税依据本身即会改变。申报完成后因税务机关重新评估而税额变动的情形也并不少见。</p>
                 <p class="text-on-surface-variant text-[17px] leading-loose">VALUE税务会计将财产构成、家族关系与预计时点一并考量，首先计算继承与赠与何者更为有利。不动产方面预先比较各评估方法的税额差异并留存依据；对配偶继承扣除、家业继承扣除等要件严格的扣除项目，事先核查是否符合条件。并考虑申报后接受核查的可能性，一并准备应对资料。</p>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">SUB TOPICS</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-3 tracking-tight">继承与赠与细分领域</h2>
+                <p class="text-on-surface-variant mb-9 max-w-2xl leading-relaxed">请点击相应项目查看详细内容。各案件所适用的规定与须备齐的资料各不相同。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="./inheritance-tax.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">family_restroom</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">继承税</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">须在六个月申报期限内完成财产范围的确定、扣除的规划与分割协议。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./gift-tax.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">card_giftcard</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">赠与税</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">这是顺序问题而非金额问题。我们将十年合算与评价方法一并纳入规划。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./gift-burden.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">swap_horiz</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">附负担赠与</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">债务承担部分属转让，其余部分属赠与。我们将其与单纯赠与、买卖并列计算后再作决定。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./low-price-transfer.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">price_change</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">低价转让与高价受让</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">赠与税与转让所得税的基准并不相同。我们计算可同时通过两道门槛的价格区间。</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -759,6 +868,14 @@
                 { t: "餐饮业税务", d: "拟制进项税额扣除 · 外卖平台销售 · 现金收据强制开具", u: "../services/restaurant.html" },
                 { t: "继承与赠与税务", d: "生前赠与并入 · 财产评估 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance.html" },
                 { t: "转让所得税", d: "一户一住宅免税 · 征收补偿减免 · 重建旧改入住权 · 登记出租住宅", u: "../services/transfer.html" },
+                { t: "住宅转让与一户一住宅免税", d: "家庭判定 · 持有与居住要件 · 临时二住宅 · 继承与婚姻特例", u: "../services/transfer-house.html" },
+                { t: "重建与旧改入住权", d: "管理处分计划批准 · 入住权转换 · 替代住宅特例 · 清算金", u: "../services/transfer-redevelopment.html" },
+                { t: "公益事业征收与补偿", d: "征收减免 · 债券补偿持有至到期 · 代土补偿课税递延 · 剩余地", u: "../services/transfer-expropriation.html" },
+                { t: "登记出租住宅与自住住宅", d: "强制出租期间 · 租金增额限制 · 自动注销 · 自住住宅免税", u: "../services/transfer-rental.html" },
+                { t: "继承税", d: "六个月申报期限 · 事前赠与合算 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance-tax.html" },
+                { t: "赠与税", d: "赠与财产扣除十年 · 财产评价 · 无偿借贷资金 · 资金来源调查", u: "../services/gift-tax.html" },
+                { t: "附负担赠与", d: "债务承担部分为转让 · 赠与税与转让所得税分离 · 租赁保证金承继", u: "../services/gift-burden.html" },
+                { t: "低价转让与高价受让", d: "特殊关系人交易 · 不当行为计算否认 · 市价举证 · 鉴定评价", u: "../services/low-price-transfer.html" },
                 { t: "报酬指南", d: "代理记账 · 代理纳税申报 · 转让继承赠与 · 税务争议救济标准报酬", u: "../price.html" },
                 { t: "咨询申请", d: "填写咨询申请表 · 电话 · 邮件 · KakaoTalk咨询", u: "../contact.html" },
                 { t: "致辞", d: "崔埈伟税务师的学历与经历介绍", u: "../index.html#about" },

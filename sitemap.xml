@@ -330,4 +330,244 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    <url>
+        <loc>https://vtax.kr/services/transfer-house.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-house.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/transfer-house.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-house.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/transfer-house.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-house.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-house.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/transfer-redevelopment.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-redevelopment.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/transfer-redevelopment.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-redevelopment.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/transfer-redevelopment.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-redevelopment.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-redevelopment.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/transfer-expropriation.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-expropriation.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/transfer-expropriation.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-expropriation.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/transfer-expropriation.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-expropriation.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-expropriation.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/transfer-rental.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-rental.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/transfer-rental.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-rental.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/transfer-rental.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/transfer-rental.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/transfer-rental.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/inheritance-tax.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/inheritance-tax.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/inheritance-tax.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/inheritance-tax.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/inheritance-tax.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/inheritance-tax.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/inheritance-tax.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/gift-tax.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/gift-tax.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/gift-tax.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/gift-tax.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/gift-tax.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/gift-tax.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/gift-tax.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/gift-burden.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/gift-burden.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/gift-burden.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/gift-burden.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/gift-burden.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/gift-burden.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/gift-burden.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/low-price-transfer.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/low-price-transfer.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/low-price-transfer.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/low-price-transfer.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/low-price-transfer.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/low-price-transfer.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/low-price-transfer.html" />
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>

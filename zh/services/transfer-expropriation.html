@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light scroll-smooth scroll-pt-24" lang="en">
+<html class="light scroll-smooth scroll-pt-24" lang="zh-Hans">
 
 <head>
     <meta charset="utf-8" />
@@ -8,17 +8,17 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA</title>
-    <meta name="description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
+    <title>公益事业征收补偿 转让所得税 | VALUE税务会计 · 崔埈伟税务师</title>
+    <meta name="description" content="公益事业用地征收的转让所得税减免、现金与债券补偿及持有至到期特约、代土补偿的课税递延，以及剩余地征收与自耕农地减免。加山数码园区VALUE税务会计，崔埈伟税务师。" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://vtax.kr/en/services/retail.html" />
+    <link rel="canonical" href="https://vtax.kr/zh/services/transfer-expropriation.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA" />
-    <meta property="og:description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
-    <meta property="og:url" content="https://vtax.kr/en/services/retail.html" />
+    <meta property="og:title" content="公益事业征收补偿 转让所得税 | VALUE税务会计 · 崔埈伟税务师" />
+    <meta property="og:description" content="请在补偿协商阶段先行确认减免比率与申报时点。" />
+    <meta property="og:url" content="https://vtax.kr/zh/services/transfer-expropriation.html" />
     <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
-    <meta property="og:site_name" content="VALUE Tax &amp; Accounting" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="VALUE税务会计" />
+    <meta property="og:locale" content="zh_CN" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
@@ -47,7 +47,7 @@
             .nav-logo { height: 96px; }
         }
 
-        /* 상단바 아이콘 버튼 (검색 · 언어 · Directions) */
+        /* 상단바 아이콘 버튼 (검색 · 언어 · 交通路线) */
         .nav-icon {
             width: 46px;
             height: 46px;
@@ -80,7 +80,7 @@
         #nav.is-scrolled .nav-icon:hover,
         #nav.is-open .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
 
-        /* Select language */
+        /* 语言选择 */
         .nav-lang { position: relative; }
 
         .nav-lang-menu {
@@ -285,14 +285,14 @@
         #nav.is-search .nav-burger span { background: #191c1e; }
 
         /* ── 모바일 상단바 ─────────────────────────────
-           좁은 화면에서 Kakao 버튼이 잘리던 문제.
-           상단바에서는 Kakao 버튼과 Directions 아이콘을 빼고
+           좁은 화면에서 咨询 버튼이 잘리던 문제.
+           상단바에서는 咨询 버튼과 交通路线 아이콘을 빼고
            (둘 다 햄버거 메뉴 안에 있다) 나머지를 한 단계 줄인다. */
         @media (max-width: 767px) {
             /* Tailwind CDN 이 런타임에 뒤쪽에 스타일을 주입하므로
                같은 우선순위(.inline-flex)에 밀린다. #nav 를 붙여 우선순위를 올린다. */
             #nav .nav-kakao { display: none; }
-            #nav .nav-icon[aria-label="Directions"] { display: none; }
+            #nav .nav-icon[aria-label="交通路线"] { display: none; }
 
             .nav-bar {
                 height: 84px;
@@ -315,7 +315,7 @@
             .nav-burger { width: 38px; }
         }
 
-        /* 햄버거 메뉴 안의 Kakao 버튼 */
+        /* 햄버거 메뉴 안의 咨询 버튼 */
         .nav-menu-kakao {
             display: flex;
             align-items: center;
@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -408,19 +463,20 @@
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://vtax.kr/en/"},
-        {"@type":"ListItem","position":2,"name":"Practice Areas","item":"https://vtax.kr/en/#services"},
-        {"@type":"ListItem","position":3,"name":"Wholesale &amp; Retail","item":"https://vtax.kr/en/services/retail.html"}
+        {"@type":"ListItem","position":1,"name":"首页","item":"https://vtax.kr/zh/"},
+        {"@type":"ListItem","position":2,"name":"业务领域","item":"https://vtax.kr/zh/#services"},
+        {"@type":"ListItem","position":3,"name":"转让所得税","item":"https://vtax.kr/zh/services/transfer.html"},
+        {"@type":"ListItem","position":4,"name":"公益事业征收与补偿","item":"https://vtax.kr/zh/services/transfer-expropriation.html"}
     ]}
     </script>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"How should open marketplace revenue be reported?","acceptedAnswer":{"@type":"Answer","text":"The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales."}},
-        {"@type":"Question","name":"Does a discrepancy between stock and the books create a tax exposure?","acceptedAnswer":{"@type":"Answer","text":"A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence."}},
-        {"@type":"Question","name":"Is a tax credit available on card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
-        {"@type":"Question","name":"Which is more advantageous, simplified or general VAT taxation?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable."}},
-        {"@type":"Question","name":"Which expenditures are excluded from the input tax credit?","acceptedAnswer":{"@type":"Answer","text":"Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage."}}
+        {"@type":"Question","name":"被征收后就完全不必缴纳转让所得税吗?","acceptedAnswer":{"@type":"Answer","text":"并非全额免除，而是就算出税额按一定比率予以减免。实际减免额因补偿方式与限额而异，故宜事先计算。"}},
+        {"@type":"Question","name":"以债券受偿更为有利吗?","acceptedAnswer":{"@type":"Answer","text":"债券补偿的减免比率高于现金补偿；若约定持有至到期，减免比率将再提升一档。惟资金因此被锁定，须结合资金计划综合判断。"}},
+        {"@type":"Question","name":"分数年受领补偿金，减免限额会增加吗?","acceptedAnswer":{"@type":"Answer","text":"减免同时适用年度限额与五年累计限额。分年度受领在部分情形下可更充分利用年度限额，但五年限额不变，故须整体计算。"}},
+        {"@type":"Question","name":"选择代土补偿，税负就消失了吗?","acceptedAnswer":{"@type":"Answer","text":"并非消失，而是递延至日后。处置以代土方式取得的土地时即行课税；违反转卖限制等要件的，还须连同相当于利息的金额一并缴纳已递延的税额。"}},
+        {"@type":"Question","name":"因诉讼致补偿金增加的，何时申报?","acceptedAnswer":{"@type":"Answer","text":"增额补偿金以判决确定之时为基准处理。与已申报部分合并后作修正申报；反之若补偿金减少，则可通过更正请求退还。"}}
     ]}
     </script>
 </head>
@@ -428,45 +484,45 @@
 <body class="bg-background text-on-background">
     <nav id="nav" class="fixed inset-x-0 top-0 z-50">
         <div class="nav-bar flex justify-between items-center gap-3">
-            <a href="../index.html" class="shrink-0 flex items-center" aria-label="VALUE Tax &amp; Accounting home">
-                <img src="../../source/logo-full-white.png" alt="VALUE Tax &amp; Accounting" class="logo-white nav-logo w-auto" />
+            <a href="../index.html" class="shrink-0 flex items-center" aria-label="VALUE税务会计首页">
+                <img src="../../source/logo-full-white.png" alt="VALUE税务会计" class="logo-white nav-logo w-auto" />
                 <img src="../../source/logo-full.png" alt="" aria-hidden="true" class="logo-color nav-logo w-auto" />
-                <span class="sr-only">VALUE Tax &amp; Accounting, Choi Jun-wi CTA</span>
+                <span class="sr-only">VALUE税务会计 崔埈伟税务师</span>
             </a>
 
             <div class="hidden md:flex items-center gap-10 lg:gap-16 xl:gap-20">
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">Home</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">About</a>
-                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">Practice Areas</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#insights">Insights</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#contact">Contact</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">Directions</a>
-                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">Fees</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">首页</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">致辞</a>
+                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">业务领域</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#insights">洞察</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#contact">联系我们</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">交通路线</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">报酬</a>
             </div>
 
             <div class="flex items-center gap-0.5 md:gap-1.5 shrink-0">
-                <button type="button" id="search-toggle" class="nav-icon" aria-label="Site search" aria-expanded="false" aria-controls="search-panel">
+                <button type="button" id="search-toggle" class="nav-icon" aria-label="站内搜索" aria-expanded="false" aria-controls="search-panel">
                     <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
                 </button>
                 <div class="nav-lang">
-                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="Select language" aria-expanded="false" aria-controls="lang-menu">
+                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="语言选择" aria-expanded="false" aria-controls="lang-menu">
                         <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg>
-                        <span class="nav-icon-label">EN</span>
+                        <span class="nav-icon-label">ZH</span>
                     </button>
                     <div id="lang-menu" class="nav-lang-menu" hidden>
                         <a href="../../index.html" lang="ko">한국어</a>
-                        <a href="../index.html" class="is-current" lang="en">English</a>
-                        <a href="../../zh/index.html" lang="zh">中文</a>
+                        <a href="../../en/index.html" lang="en">English</a>
+                        <a href="../index.html" class="is-current" lang="zh">中文</a>
                     </div>
                 </div>
-                <a href="../index.html#location" class="nav-icon" aria-label="Directions">
+                <a href="../index.html#location" class="nav-icon" aria-label="交通路线">
                     <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
                 </a>
                 <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-kakao ml-1 inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-3.5 md:px-7 md:py-4 rounded-xl text-[15px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
                     <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
                     <span class="whitespace-nowrap">KakaoTalk</span>
                 </a>
-                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -474,27 +530,27 @@
 
         <div id="search-panel" class="search-panel" hidden>
             <div class="search-inner">
-                <label for="search-input" class="sr-only">Search term</label>
+                <label for="search-input" class="sr-only">搜索词</label>
                 <div class="search-field">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-                    <input type="search" id="search-input" placeholder="Search by industry or tax topic — construction, VAT, fees" autocomplete="off" />
-                    <button type="button" id="search-close" aria-label="Close search">
+                    <input type="search" id="search-input" placeholder="按行业或税务项目检索 — 建设业、增值税、报酬" autocomplete="off" />
+                    <button type="button" id="search-close" aria-label="关闭搜索">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
                     </button>
                 </div>
                 <ul id="search-results" class="search-results"></ul>
-                <p id="search-empty" class="search-empty" hidden>No matching results.</p>
+                <p id="search-empty" class="search-empty" hidden>未找到相关结果。</p>
             </div>
         </div>
 
         <div id="nav-menu" class="nav-menu md:hidden" hidden>
-            <a href="../index.html#home">Home</a>
-            <a href="../index.html#about">About</a>
-            <a href="../index.html#services">Practice Areas</a>
-            <a href="../index.html#insights">Insights</a>
-            <a href="../index.html#contact">Contact</a>
-            <a href="../index.html#location">Directions</a>
-            <a href="../price.html">Fees</a>
+            <a href="../index.html#home">首页</a>
+            <a href="../index.html#about">致辞</a>
+            <a href="../index.html#services">业务领域</a>
+            <a href="../index.html#insights">洞察</a>
+            <a href="../index.html#contact">联系我们</a>
+            <a href="../index.html#location">交通路线</a>
+            <a href="../price.html">报酬</a>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-menu-kakao">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
                 KakaoTalk
@@ -502,67 +558,78 @@
         </div>
     </nav>
 
-    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
-        <img src="../../source/svc-retail.jpg" alt="Retail site" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
-        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
-            <nav class="text-[13px] text-white/70 mb-4">
-                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><span class="text-white">Wholesale &amp; Retail</span>
+    <header class="sub-hero relative flex items-end overflow-hidden">
+        <span class="material-symbols-outlined sub-hero-mark" aria-hidden="true">account_balance</span>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-12 md:pb-14 pt-32 text-white">
+            <nav class="text-[13px] text-white/65 mb-4">
+                <a href="../index.html" class="hover:text-white">首页</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">业务领域</a><span class="mx-1.5">/</span><a href="./transfer.html" class="hover:text-white">转让所得税</a><span class="mx-1.5">/</span><span class="text-white">公益事业征收与补偿</span>
             </nav>
-            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">Industry tax specialists</p>
-            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">Wholesale &amp; Retail Tax</h1>
-            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Bring sales from every channel onto one basis and keep inventory and settlement transparent. In online distribution, managing data is managing tax.</p>
+            <p class="text-white/70 font-bold text-sm tracking-widest mb-3">转让所得税细分领域</p>
+            <h1 class="text-[32px] md:text-[44px] font-bold leading-tight tracking-tight mb-4">公益事业征收与补偿</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">征收补偿的税负在协商阶段即已确定。以何种方式受偿，将改变减免比率。</p>
         </div>
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="转让所得税细分领域">
+                    <a href="./transfer.html" class="subnav-root"><span class="material-symbols-outlined text-[19px]">apps</span>转让所得税总览</a>
+                    <a href="./transfer-house.html"><span class="material-symbols-outlined text-[19px]">home</span>住宅转让</a>
+                    <a href="./transfer-redevelopment.html"><span class="material-symbols-outlined text-[19px]">apartment</span>重建与再开发</a>
+                    <a href="./transfer-expropriation.html" class="is-here"><span class="material-symbols-outlined text-[19px]">account_balance</span>征收与补偿</a>
+                    <a href="./transfer-rental.html"><span class="material-symbols-outlined text-[19px]">home_work</span>登记出租住宅</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
-            <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
+            <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">业务概要</h2>
             <div class="max-w-3xl space-y-5">
-                <p class="text-on-surface-variant text-[17px] leading-loose">In wholesale, retail and distribution, sales data scatters as channels multiply across open marketplaces, own-brand stores and offline outlets, and because payment-gateway settlement cycles rarely match tax invoice dates, reported sales and actual deposits appear to diverge. Add inventory shrinkage, returns, coupons and loyalty points, and substantiation becomes complicated. Once there is a system that consolidates data across channels, most of the tax risk disappears.</p>
-                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by consolidating sales data scattered across channels onto a single basis. We reconcile platform settlement records against tax invoices and cash receipts so that any gap between reported sales and actual deposits can be explained, and we document the rules for stocktaking and for handling returns and coupons, keeping you ready to respond to a request for substantiation at once.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">土地因公益事业而被征收时，转让系非出于本人意愿，故《租税特例限制法》另设减免规定。惟减免并非自动适用。须满足以事业认定公告日为基准的取得时点要件；且以现金受偿抑或以债券受偿、是否约定持有债券至到期，减免比率亦随之不同。此外，还须一并适用年度限额与五年累计限额。</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE税务会计在补偿协商启动之初，即为客户核查减免要件是否具备，并比较各补偿方式下的实际所得。选择代土补偿虽可递延课税，但附有后续要件，须结合资金计划综合判断。若属农地，则权衡自耕农地减免与征收减免何者更为有利；因异议裁决或诉讼致补偿金变动的，确认其归属时点，并以修正申报或更正请求妥为处理。</p>
             </div>
         </section>
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in wholesale &amp; retail</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">征收与补偿主要税务问题</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Channel-level sales aggregation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales from open marketplaces, your own store and offline outlets must be brought together and matched to reported revenue. The tax base is the gross amount the customer paid, not the amount the platform settled, so booking only the settled deposit understates sales by the full commission.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">事业认定公告日与取得时点要件</h3>
+                            <p class="text-on-surface-variant leading-loose">欲享减免，须在自事业认定公告日回溯的一定期间之前取得该土地。公告日前夕取得的土地不属减免对象。</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Settlement reconciliation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales go unreported unless platform and payment-gateway settlement records are aligned with the dates tax invoices and cash receipts are issued. Where the settlement cycle straddles a tax period, handle it the same way every time so that substantiation is straightforward later.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">补偿方式不同导致的减免比率差异</h3>
+                            <p class="text-on-surface-variant leading-loose">现金补偿、债券补偿，以及约定持有至到期的债券补偿，减免比率各不相同。此项于协商阶段选定，故须在签约之前完成比较。</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Inventory management</h3>
-                            <p class="text-on-surface-variant leading-loose">You can only substantiate your position if there is a rule for handling differences between counted and book inventory. A large gap between the books and the physical count is a classic trigger for suspicion of omitted sales or fabricated purchases, so record both the counting cycle and the reason for each difference.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">减免限额的管理</h3>
+                            <p class="text-on-surface-variant leading-loose">税额减免设有年度限额与五年累计限额。多笔地块依次被征收，或同时享受其他减免的，分年度受领或较为有利。</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Returns and coupon handling</h3>
-                            <p class="text-on-surface-variant leading-loose">Returns, exchanges, coupons and loyalty points require the timing of the sales deduction and the VAT adjustment to be reflected precisely. Whether an amount is deductible at all depends on who funded the discount, so decide the treatment while the promotion is still being designed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">代土补偿与课税递延</h3>
+                            <p class="text-on-surface-variant leading-loose">以该事业区域内的土地代替现金受偿的，可递延课税。惟违反转卖限制等后续管理要件的，须补缴已递延的税额。</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Distribution-related tax credits</h3>
-                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the VAT credit for credit-card and similar sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">剩余地征收与农地减免的竞合</h3>
+                            <p class="text-on-surface-variant leading-loose">就请求一并收购的剩余地，以及长期亲自耕作的农地，另有独立的减免规定。适用何项规定，税额差异可能甚大。</p>
                         </div>
                     </li>
                 </ol>
@@ -571,7 +638,7 @@
 
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">HOW WE HELP</p>
-            <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">How VALUE Tax &amp; Accounting responds</h2>
+            <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">VALUE税务会计的应对</h2>
             <div class="flow max-w-2xl">
                 <div class="relative flex gap-5 pb-8 last:pb-0">
                     <div class="relative flex flex-col items-center">
@@ -579,8 +646,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Unified multi-channel sales management</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">补偿协商前的减免诊断</h3>
+                        <p class="text-on-surface-variant leading-relaxed">核查登记簿、土地台账与事业认定公告资料，先行梳理减免要件是否具备以及可适用的法条。</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -589,8 +656,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Inventory and sales deduction clean-up</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">各补偿方式实际所得比较</h3>
+                        <p class="text-on-surface-variant leading-relaxed">计算现金、债券、代土各自的税后所得与资金流入时点，以表格形式呈现，便于在协商阶段作出选择。</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -599,8 +666,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Review of deductible items</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">申报与后续结算</h3>
+                        <p class="text-on-surface-variant leading-relaxed">配合尾款时点备齐减免申请书后申报；因异议裁决或诉讼致补偿金变动的，以修正申报与更正请求妥为处理。</p>
                     </div>
                 </div>
             </div>
@@ -609,47 +676,47 @@
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Wholesale &amp; retail tax FAQ</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">征收与补偿常见问题</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">How should open marketplace revenue be reported?</span>
+                            <span class="flex-1">被征收后就完全不必缴纳转让所得税吗?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">并非全额免除，而是就算出税额按一定比率予以减免。实际减免额因补偿方式与限额而异，故宜事先计算。</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Does a discrepancy between stock and the books create a tax exposure?</span>
+                            <span class="flex-1">以债券受偿更为有利吗?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">债券补偿的减免比率高于现金补偿；若约定持有至到期，减免比率将再提升一档。惟资金因此被锁定，须结合资金计划综合判断。</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Is a tax credit available on card sales?</span>
+                            <span class="flex-1">分数年受领补偿金，减免限额会增加吗?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">减免同时适用年度限额与五年累计限额。分年度受领在部分情形下可更充分利用年度限额，但五年限额不变，故须整体计算。</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which is more advantageous, simplified or general VAT taxation?</span>
+                            <span class="flex-1">选择代土补偿，税负就消失了吗?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">并非消失，而是递延至日后。处置以代土方式取得的土地时即行课税；违反转卖限制等要件的，还须连同相当于利息的金额一并缴纳已递延的税额。</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which expenditures are excluded from the input tax credit?</span>
+                            <span class="flex-1">因诉讼致补偿金增加的，何时申报?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">增额补偿金以判决确定之时为基准处理。与已申报部分合并后作修正申报；反之若补偿金减少，则可通过更正请求退还。</p>
                     </details>
                 </div>
             </div>
@@ -658,35 +725,35 @@
         <section class="bg-surface-container-low border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
-                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">Other practice areas</h2>
+                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">其他业务领域</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Construction</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">建设业</span>
                 </a>
                 <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Import &amp; Export</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">进出口业</span>
                 </a>
                 <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">制造业</span>
+                </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">批发零售业</span>
                 </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Private Academy</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">补习班</span>
                 </a>
                 <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Food Service</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">餐饮业</span>
                 </a>
                 <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Inheritance &amp; Gift</span>
-                </a>
-                <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Capital Gains Tax</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">继承与赠与</span>
                 </a>
             </div>
             </div>
@@ -695,30 +762,30 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Wholesale &amp; Retail Tax Consultation</h2>
-            <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">征收与补偿咨询</h2>
+            <p class="text-white/85 mb-8 text-[17px]">无需填写表格，即可通过KakaoTalk直接与崔埈伟税务师咨询。</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
-                Request a consultation via KakaoTalk
+                通过KakaoTalk申请咨询
             </a>
         </div>
     </section>
 
     <footer class="bg-inverse-surface text-white/65">
         <div class="max-w-[1100px] mx-auto px-5 py-12 text-sm leading-relaxed">
-            <div class="text-white font-bold text-lg mb-3">VALUE Tax &amp; Accounting <span class="font-medium text-white/45">| Choi Jun-wi CTA</span></div>
-            <p>Room 302, Building 1, Gasan Urban Work, 135 Gasan Digital 2-ro, Geumcheon-gu, Seoul<br />
-            Representative: Choi Jun-wi · Business registration no. 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
+            <div class="text-white font-bold text-lg mb-3">VALUE税务会计 <span class="font-medium text-white/45">| 崔埈伟税务师</span></div>
+            <p>首尔特别市衿川区加山数码2路135号 加山Urban Work 1栋302室<br />
+            代表：崔埈伟 · 营业执照号码 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
             <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-white/50">
-                <a href="../index.html" class="hover:text-white">Home</a>
-                <a href="../index.html#about" class="hover:text-white">About</a>
-                <a href="../index.html#services" class="hover:text-white">Practice Areas</a>
-                <a href="../contact.html" class="hover:text-white">Contact</a>
-                <a href="../price.html" class="hover:text-white">Fees</a>
-                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">Blog</a>
+                <a href="../index.html" class="hover:text-white">首页</a>
+                <a href="../index.html#about" class="hover:text-white">致辞</a>
+                <a href="../index.html#services" class="hover:text-white">业务领域</a>
+                <a href="../contact.html" class="hover:text-white">联系我们</a>
+                <a href="../price.html" class="hover:text-white">报酬</a>
+                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">博客</a>
             </p>
-            <p class="mt-6 text-white/40">&copy; 2024 VALUE Tax &amp; Accounting. All rights reserved.</p>
+            <p class="mt-6 text-white/40">&copy; 2024 VALUE税务会计. All rights reserved.</p>
         </div>
     </footer>
 
@@ -743,35 +810,35 @@
             window.addEventListener('scroll', onScroll, { passive: true });
         })();
     </script>
-    <!-- 상단바 검색 · Select language -->
+    <!-- 상단바 검색 · 语言选择 -->
     <script>
         (function () {
             var nav = document.getElementById("nav");
             if (!nav) return;
 
-            // ---- Site search (정적 색인) ----
+            // ---- 站内搜索 (정적 색인) ----
             var INDEX = [
-                { t: "Construction Tax", d: "Revenue recognition based on percentage of completion · On-site labour documentation · Maintaining construction registration", u: "../services/construction.html" },
-                { t: "Import & Export Tax", d: "Zero-rating requirements · Early VAT refund · Foreign Exchange Transactions Act filing", u: "../services/trade.html" },
-                { t: "Manufacturing Tax", d: "Inventory valuation and cost · R&D and human resources development tax credit · Plant investment credit", u: "../services/manufacturing.html" },
-                { t: "Wholesale & Retail Tax", d: "Channel-level sales aggregation · Settlement reconciliation · Inventory management", u: "../services/retail.html" },
-                { t: "Private Academy Tax", d: "Exempt tuition classification · Instructor fee withholding · Business establishment status return", u: "../services/academy.html" },
-                { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
-                { t: "Inheritance & Gift Tax", d: "Prior-gift aggregation · Valuation · Spousal deduction · Family business deduction", u: "../services/inheritance.html" },
-                { t: "Capital Gains Tax", d: "Single-house exemption · Expropriation relief · Redevelopment membership rights · Registered rental housing", u: "../services/transfer.html" },
-                { t: "Residential property sales and the single-house exemption", d: "Household determination · Holding and residence requirements · Temporary two houses · Inheritance and marriage relief", u: "../services/transfer-house.html" },
-                { t: "Redevelopment membership rights", d: "Approval of the management and disposal plan · Conversion to an occupancy right · Replacement housing relief · Settlement money", u: "../services/transfer-redevelopment.html" },
-                { t: "Public project expropriation and compensation", d: "Expropriation relief · Bond compensation held to maturity · Deferral on replacement land · Residual land", u: "../services/transfer-expropriation.html" },
-                { t: "Registered rental housing and the resident home", d: "Mandatory rental period · Rent increase limit · Automatic deregistration · Resident home exemption", u: "../services/transfer-rental.html" },
-                { t: "Inheritance tax", d: "Six-month filing deadline · Aggregation of prior gifts · Spousal deduction · Family business deduction", u: "../services/inheritance-tax.html" },
-                { t: "Gift tax", d: "Ten-year gift deduction · Valuation · Interest-free loans · Source-of-funds audit", u: "../services/gift-tax.html" },
-                { t: "Gift with assumed debt", d: "Assumed debt as a transfer · Gift tax and capital gains tax separated · Succession to the lease deposit", u: "../services/gift-burden.html" },
-                { t: "Below-market transfers and above-market purchases", d: "Related-party transactions · Denial of unfair act or calculation · Evidencing market value · Appraisal", u: "../services/low-price-transfer.html" },
-                { t: "Fee Guide", d: "Bookkeeping · Tax filing · Capital gains, inheritance and gift · Tax appeal fees", u: "../price.html" },
-                { t: "Contact", d: "Consultation request form · Phone · Email · KakaoTalk", u: "../contact.html" },
-                { t: "About", d: "Education and career of Choi Jun-wi, CTA", u: "../index.html#about" },
-                { t: "Practice Areas", d: "Six tax solutions tailored by industry", u: "../index.html#services" },
-                { t: "Directions", d: "Room 302, Building 1, Gasan Urban Work, 135 Gasan Digital 2-ro, Geumcheon-gu, Seoul", u: "../index.html#location" }
+                { t: "建设业税务", d: "完工进度（履约进度）收入确认 · 工地劳务费凭证 · 建设业登记标准维持", u: "../services/construction.html" },
+                { t: "进出口业税务", d: "零税率适用要件 · 增值税提前退税 · 外汇交易法申报", u: "../services/trade.html" },
+                { t: "制造业税务", d: "存货计价与成本 · 研究及人力开发费税额抵免 · 设备投资抵免", u: "../services/manufacturing.html" },
+                { t: "批发零售业税务", d: "分渠道销售归集 · 结算明细核对 · 存货资产管理", u: "../services/retail.html" },
+                { t: "补习班税务", d: "学费免税划分 · 讲师酬金代扣代缴 · 营业场所现状申报", u: "../services/academy.html" },
+                { t: "餐饮业税务", d: "拟制进项税额扣除 · 外卖平台销售 · 现金收据强制开具", u: "../services/restaurant.html" },
+                { t: "继承与赠与税务", d: "生前赠与并入 · 财产评估 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance.html" },
+                { t: "转让所得税", d: "一户一住宅免税 · 征收补偿减免 · 重建旧改入住权 · 登记出租住宅", u: "../services/transfer.html" },
+                { t: "住宅转让与一户一住宅免税", d: "家庭判定 · 持有与居住要件 · 临时二住宅 · 继承与婚姻特例", u: "../services/transfer-house.html" },
+                { t: "重建与旧改入住权", d: "管理处分计划批准 · 入住权转换 · 替代住宅特例 · 清算金", u: "../services/transfer-redevelopment.html" },
+                { t: "公益事业征收与补偿", d: "征收减免 · 债券补偿持有至到期 · 代土补偿课税递延 · 剩余地", u: "../services/transfer-expropriation.html" },
+                { t: "登记出租住宅与自住住宅", d: "强制出租期间 · 租金增额限制 · 自动注销 · 自住住宅免税", u: "../services/transfer-rental.html" },
+                { t: "继承税", d: "六个月申报期限 · 事前赠与合算 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance-tax.html" },
+                { t: "赠与税", d: "赠与财产扣除十年 · 财产评价 · 无偿借贷资金 · 资金来源调查", u: "../services/gift-tax.html" },
+                { t: "附负担赠与", d: "债务承担部分为转让 · 赠与税与转让所得税分离 · 租赁保证金承继", u: "../services/gift-burden.html" },
+                { t: "低价转让与高价受让", d: "特殊关系人交易 · 不当行为计算否认 · 市价举证 · 鉴定评价", u: "../services/low-price-transfer.html" },
+                { t: "报酬指南", d: "代理记账 · 代理纳税申报 · 转让继承赠与 · 税务争议救济标准报酬", u: "../price.html" },
+                { t: "咨询申请", d: "填写咨询申请表 · 电话 · 邮件 · KakaoTalk咨询", u: "../contact.html" },
+                { t: "致辞", d: "崔埈伟税务师的学历与经历介绍", u: "../index.html#about" },
+                { t: "业务领域", d: "六项分行业定制税务方案", u: "../index.html#services" },
+                { t: "交通路线", d: "首尔衿川区加山数码2路135号 加山Urban Work 1栋302室", u: "../index.html#location" }
             ];
 
             var sBtn = document.getElementById("search-toggle");
@@ -816,7 +883,7 @@
                 sList.addEventListener("click", function (e) { if (e.target.closest("a")) setSearch(false); });
             }
 
-            // ---- Select language ----
+            // ---- 语言选择 ----
             var lBtn = document.getElementById("lang-toggle");
             var lMenu = document.getElementById("lang-menu");
 
@@ -853,7 +920,7 @@
                 nav.classList.toggle("is-open", open);
                 menu.hidden = !open;
                 btn.setAttribute("aria-expanded", open ? "true" : "false");
-                btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+                btn.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
             }
 
             btn.addEventListener("click", function () { setOpen(menu.hidden); });

@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -516,12 +571,66 @@
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="양도소득세 세부 분야">
+                    <a href="./transfer.html" class="subnav-root is-here"><span class="material-symbols-outlined text-[19px]">apps</span>양도소득세 전체</a>
+                    <a href="./transfer-house.html"><span class="material-symbols-outlined text-[19px]">home</span>주택 양도</a>
+                    <a href="./transfer-redevelopment.html"><span class="material-symbols-outlined text-[19px]">apartment</span>재건축·재개발</a>
+                    <a href="./transfer-expropriation.html"><span class="material-symbols-outlined text-[19px]">account_balance</span>수용·보상</a>
+                    <a href="./transfer-rental.html"><span class="material-symbols-outlined text-[19px]">home_work</span>등록임대주택</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">업무 개요</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">양도소득세는 파는 시점에 정해지는 것이 아니라 취득한 때부터 쌓여 온 이력으로 결정됩니다. 1세대 1주택 비과세는 보유와 거주 요건을 언제 충족하는지에 따라 갈리고, 공익사업으로 수용되는 토지에는 별도의 감면 규정이 적용됩니다. 재건축·재개발 과정에서 주택이 조합원 입주권으로 바뀌면 주택 수 판정과 비과세 판단이 다시 복잡해집니다.</p>
                 <p class="text-on-surface-variant text-[17px] leading-loose">가치 세무회계는 매도 계약을 맺기 전에 보유·거주 이력과 세대 구성, 다른 주택 보유 현황을 먼저 확인합니다. 수용 보상은 보상 방식과 시기에 따라 감면율이 달라지므로 협의 단계부터 검토하고, 재개발 입주권은 관리처분계획 인가 시점을 기준으로 판정합니다. 오래전 취득한 부동산은 취득가액 입증 자료를 미리 갖추어 필요경비가 부인되지 않도록 합니다.</p>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">SUB TOPICS</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-3 tracking-tight">양도소득세 세부 분야</h2>
+                <p class="text-on-surface-variant mb-9 max-w-2xl leading-relaxed">해당하는 항목을 눌러 자세한 내용을 확인하세요. 사안마다 적용되는 규정과 준비할 자료가 다릅니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="./transfer-house.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">home</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">주택 양도·1세대 1주택 비과세</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">세대 판정부터 보유·거주 요건, 일시적 2주택과 상속·혼인 특례까지. 계약 전에 비과세 가능 시점을 계산합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./transfer-redevelopment.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">apartment</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">재건축·재개발</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">관리처분계획 인가일을 기준으로 주택과 입주권이 갈립니다. 대체주택 특례와 청산금 정산까지 함께 검토합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./transfer-expropriation.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">account_balance</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">공익사업 수용·보상</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">감면은 자동으로 적용되지 않습니다. 사업인정고시일 요건과 보상 방식, 감면 한도를 협의 전에 계산합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                    <a href="./transfer-rental.html" class="group flex gap-5 bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 md:p-7 hover:border-primary hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-primary text-[30px] shrink-0 mt-0.5">home_work</span>
+                        <div>
+                            <h3 class="font-bold text-[19px] mb-2 group-hover:text-primary transition-colors">등록임대주택·거주주택</h3>
+                            <p class="text-on-surface-variant text-[15px] leading-relaxed">요건을 지키는 동안에만 혜택이 유지됩니다. 말소 이후 처분 기한과 추징 위험까지 함께 점검합니다.</p>
+                            <span class="mt-4 text-primary text-[14px] font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[17px]">arrow_forward</span></span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -759,6 +868,14 @@
                 { t: "음식점업 세무", d: "의제매입세액공제 · 배달앱 매출 · 현금영수증 의무발행", u: "../services/restaurant.html" },
                 { t: "상속·증여 세무", d: "사전증여 합산 · 재산 평가 · 배우자 상속공제 · 가업상속공제", u: "../services/inheritance.html" },
                 { t: "양도소득세", d: "1세대 1주택 비과세 · 수용 보상 감면 · 재건축 재개발 입주권 · 등록임대주택", u: "../services/transfer.html" },
+                { t: "주택 양도·1세대 1주택 비과세", d: "세대 판정 · 보유 거주 요건 · 일시적 2주택 · 상속 혼인 특례", u: "../services/transfer-house.html" },
+                { t: "재건축·재개발 입주권", d: "관리처분계획 인가 · 입주권 전환 · 대체주택 특례 · 청산금", u: "../services/transfer-redevelopment.html" },
+                { t: "공익사업 수용·보상", d: "수용 감면 · 채권 보상 만기보유 · 대토보상 과세이연 · 잔여지", u: "../services/transfer-expropriation.html" },
+                { t: "등록임대주택·거주주택", d: "임대 의무기간 · 임대료 증액 제한 · 자동말소 · 거주주택 비과세", u: "../services/transfer-rental.html" },
+                { t: "상속세", d: "신고기한 6개월 · 사전증여 합산 · 배우자 상속공제 · 가업상속공제", u: "../services/inheritance-tax.html" },
+                { t: "증여세", d: "증여재산공제 10년 · 재산 평가 · 금전 무상 대여 · 자금출처조사", u: "../services/gift-tax.html" },
+                { t: "부담부증여", d: "채무 인수분 양도 · 증여세와 양도소득세 분리 · 전세보증금 승계", u: "../services/gift-burden.html" },
+                { t: "저가양도·고가양수", d: "특수관계인 거래 · 부당행위계산부인 · 시가 입증 · 감정평가", u: "../services/low-price-transfer.html" },
                 { t: "보수 안내", d: "기장대리 · 신고대리 · 양도 상속 증여 · 조세불복 기준 보수", u: "../price.html" },
                 { t: "상담 신청", d: "상담 신청서 작성 · 전화 · 이메일 · 카카오톡 문의", u: "../contact.html" },
                 { t: "인사말", d: "최준위 세무사 학력과 경력 소개", u: "../index.html#about" },

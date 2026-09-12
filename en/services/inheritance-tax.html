@@ -8,14 +8,14 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA</title>
-    <meta name="description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
+    <title>Inheritance tax | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA</title>
+    <meta name="description" content="The inheritance tax filing deadline and the aggregation of prior gifts, the spousal and co-residence deductions, continuing obligations under the family business deduction, and payment in instalments or in kind. VALUE Tax &amp; Accounting, Choi Jun-wi, Certified Tax Accountant, Gasan Digital Complex." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://vtax.kr/en/services/retail.html" />
+    <link rel="canonical" href="https://vtax.kr/en/services/inheritance-tax.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Wholesale &amp; Retail Tax | VALUE Tax &amp; Accounting · Choi Jun-wi CTA" />
-    <meta property="og:description" content="Wholesale, retail and distribution tax — channel-level sales management, payment-gateway reconciliation, inventory and distribution tax credits. VALUE Tax &amp; Accounting, Choi Jun-wi CTA." />
-    <meta property="og:url" content="https://vtax.kr/en/services/retail.html" />
+    <meta property="og:title" content="Inheritance tax | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA" />
+    <meta property="og:description" content="From identifying the estate to structuring the deductions, filing and payment." />
+    <meta property="og:url" content="https://vtax.kr/en/services/inheritance-tax.html" />
     <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
     <meta property="og:site_name" content="VALUE Tax &amp; Accounting" />
     <meta property="og:locale" content="en_US" />
@@ -396,6 +396,61 @@
         #nav.is-scrolled .nav-link { color:#424655; }
         #nav.is-scrolled .nav-link:hover { color:#0055c9; }
         #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+        /* 세부 분야 페이지 히어로 — 사진 대신 단색 그라데이션 */
+        .sub-hero {
+            min-height: 340px;
+            background:
+                radial-gradient(120% 95% at 88% 6%, rgba(0, 85, 201, .95) 0%, rgba(0, 41, 107, 0) 62%),
+                linear-gradient(158deg, #00307a 0%, #001a44 100%);
+        }
+
+        .sub-hero-mark {
+            position: absolute;
+            right: -26px;
+            bottom: -34px;
+            font-size: 240px;
+            line-height: 1;
+            color: rgba(255, 255, 255, .085);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .sub-hero { min-height: 400px; }
+            .sub-hero-mark { right: 28px; bottom: -48px; font-size: 320px; }
+        }
+
+        /* 같은 분야 안에서 이동하는 탭 */
+        .subnav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .subnav::-webkit-scrollbar { display: none; }
+
+        .subnav a {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 15px;
+            border-radius: 9999px;
+            border: 1px solid rgba(194, 198, 215, .7);
+            font-size: 15px;
+            font-weight: 700;
+            color: #424655;
+            white-space: nowrap;
+            transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+
+        .subnav a:hover { border-color: #0055c9; color: #0055c9; }
+        .subnav a.is-here { background: #0055c9; border-color: #0055c9; color: #fff; }
+        .subnav a.subnav-root { color: #0055c9; border-color: rgba(0, 85, 201, .38); }
+        .subnav a.subnav-root:hover { background: rgba(0, 85, 201, .08); }
     </style>
     <script id="tailwind-config">
         tailwind.config = { theme: { extend: { colors: {
@@ -410,17 +465,18 @@
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://vtax.kr/en/"},
         {"@type":"ListItem","position":2,"name":"Practice Areas","item":"https://vtax.kr/en/#services"},
-        {"@type":"ListItem","position":3,"name":"Wholesale &amp; Retail","item":"https://vtax.kr/en/services/retail.html"}
+        {"@type":"ListItem","position":3,"name":"Inheritance &amp; Gift","item":"https://vtax.kr/en/services/inheritance.html"},
+        {"@type":"ListItem","position":4,"name":"Inheritance tax","item":"https://vtax.kr/en/services/inheritance-tax.html"}
     ]}
     </script>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"How should open marketplace revenue be reported?","acceptedAnswer":{"@type":"Answer","text":"The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales."}},
-        {"@type":"Question","name":"Does a discrepancy between stock and the books create a tax exposure?","acceptedAnswer":{"@type":"Answer","text":"A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence."}},
-        {"@type":"Question","name":"Is a tax credit available on card sales?","acceptedAnswer":{"@type":"Answer","text":"Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year."}},
-        {"@type":"Question","name":"Which is more advantageous, simplified or general VAT taxation?","acceptedAnswer":{"@type":"Answer","text":"The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable."}},
-        {"@type":"Question","name":"Which expenditures are excluded from the input tax credit?","acceptedAnswer":{"@type":"Answer","text":"Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage."}}
+        {"@type":"Question","name":"When must inheritance tax be filed?","acceptedAnswer":{"@type":"Answer","text":"Within six months of the end of the month in which the inheritance began. The deadline is longer where all the heirs reside outside Korea. Missing it forfeits the filing credit and attracts penalty tax."}},
+        {"@type":"Question","name":"Are gifts made ten years ago aggregated?","acceptedAnswer":{"@type":"Answer","text":"Property given to an heir within ten years, and to a person other than an heir within five years, is aggregated. Gift tax already paid is credited, but the aggregation can move the estate into a higher rate band."}},
+        {"@type":"Question","name":"If the estate is small, is filing still necessary?","acceptedAnswer":{"@type":"Answer","text":"Even where the deductions leave no tax to pay, filing is generally advisable. The value reported becomes the acquisition value when the property is later sold, so not filing can be disadvantageous for capital gains tax."}},
+        {"@type":"Question","name":"Does the tax fall if the spouse takes more?","acceptedAnswer":{"@type":"Answer","text":"The spousal deduction is based on the amount actually inherited but is subject to a statutory ceiling, so it does not reduce the tax without limit. Inheritance tax arises again on the spouse's death, so both inheritances should be considered together."}},
+        {"@type":"Question","name":"What if there is no cash to pay the tax?","acceptedAnswer":{"@type":"Answer","text":"Where the requirements are met, payment in annual instalments or payment in kind with property or securities may be applied for. The application must be made within the filing deadline, so it requires advance preparation."}}
     ]}
     </script>
 </head>
@@ -502,67 +558,78 @@
         </div>
     </nav>
 
-    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
-        <img src="../../source/svc-retail.jpg" alt="Retail site" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
-        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
-            <nav class="text-[13px] text-white/70 mb-4">
-                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><span class="text-white">Wholesale &amp; Retail</span>
+    <header class="sub-hero relative flex items-end overflow-hidden">
+        <span class="material-symbols-outlined sub-hero-mark" aria-hidden="true">family_restroom</span>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-12 md:pb-14 pt-32 text-white">
+            <nav class="text-[13px] text-white/65 mb-4">
+                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><a href="./inheritance.html" class="hover:text-white">Inheritance &amp; Gift</a><span class="mx-1.5">/</span><span class="text-white">Inheritance tax</span>
             </nav>
-            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">Industry tax specialists</p>
-            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">Wholesale &amp; Retail Tax</h1>
-            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Bring sales from every channel onto one basis and keep inventory and settlement transparent. In online distribution, managing data is managing tax.</p>
+            <p class="text-white/70 font-bold text-sm tracking-widest mb-3">Inheritance &amp; gift sub-areas</p>
+            <h1 class="text-[32px] md:text-[44px] font-bold leading-tight tracking-tight mb-4">Inheritance tax</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Inheritance tax is calculated not only on what was left but on ten years of history. A great deal has to be confirmed within the filing deadline.</p>
         </div>
     </header>
 
     <main>
+        <div class="border-b border-outline-variant/40 bg-surface-container-lowest">
+            <div class="max-w-[1100px] mx-auto px-5 py-4">
+                <nav class="subnav" aria-label="Inheritance &amp; gift sub-areas">
+                    <a href="./inheritance.html" class="subnav-root"><span class="material-symbols-outlined text-[19px]">apps</span>Inheritance &amp; gift overview</a>
+                    <a href="./inheritance-tax.html" class="is-here"><span class="material-symbols-outlined text-[19px]">family_restroom</span>Inheritance tax</a>
+                    <a href="./gift-tax.html"><span class="material-symbols-outlined text-[19px]">card_giftcard</span>Gift tax</a>
+                    <a href="./gift-burden.html"><span class="material-symbols-outlined text-[19px]">swap_horiz</span>Gift with assumed debt</a>
+                    <a href="./low-price-transfer.html"><span class="material-symbols-outlined text-[19px]">price_change</span>Below-market transfers</a>
+                </nav>
+            </div>
+        </div>
+
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
             <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
             <div class="max-w-3xl space-y-5">
-                <p class="text-on-surface-variant text-[17px] leading-loose">In wholesale, retail and distribution, sales data scatters as channels multiply across open marketplaces, own-brand stores and offline outlets, and because payment-gateway settlement cycles rarely match tax invoice dates, reported sales and actual deposits appear to diverge. Add inventory shrinkage, returns, coupons and loyalty points, and substantiation becomes complicated. Once there is a system that consolidates data across channels, most of the tax risk disappears.</p>
-                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by consolidating sales data scattered across channels onto a single basis. We reconcile platform settlement records against tax invoices and cash receipts so that any gap between reported sales and actual deposits can be explained, and we document the rules for stocktaking and for handling returns and coupons, keeping you ready to respond to a request for substantiation at once.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">Inheritance tax must be filed within six months of the end of the month in which the inheritance began. That may appear generous, but it is by no means a long period in which to identify and value an entire estate. Property given by the deceased to an heir within ten years before death is aggregated with the estate, and deposits withdrawn or debts incurred shortly before death are presumed to have been inherited unless their use can be shown.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting first establishes the scope of the estate through financial transaction searches and records of property and shareholdings, and then reviews the history of prior gifts and whether any presumed estate arises. Because the spousal deduction varies considerably with the amount actually allocated and the statutory ceiling, we calculate the tax at the stage the division is being agreed. Deductions that carry continuing obligations, such as the family business or farming inheritance deductions, are adopted only after the future burden has been explained.</p>
             </div>
         </section>
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in wholesale &amp; retail</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in inheritance tax</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Channel-level sales aggregation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales from open marketplaces, your own store and offline outlets must be brought together and matched to reported revenue. The tax base is the gross amount the customer paid, not the amount the platform settled, so booking only the settled deposit understates sales by the full commission.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Establishing the scope of the estate</h3>
+                            <p class="text-on-surface-variant leading-loose">Property, deposits, insurance proceeds, retirement benefits and unlisted shares must all be identified. The one-stop inheritance service and financial transaction searches are used first to filter out omissions.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Settlement reconciliation</h3>
-                            <p class="text-on-surface-variant leading-loose">Sales go unreported unless platform and payment-gateway settlement records are aligned with the dates tax invoices and cash receipts are issued. Where the settlement cycle straddles a tax period, handle it the same way every time so that substantiation is straightforward later.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Aggregation of prior gifts</h3>
+                            <p class="text-on-surface-variant leading-loose">Property given to an heir within ten years before death, and to a person other than an heir within five years, is aggregated with the estate. Gift tax already paid is credited, but the aggregation can move the estate into a higher rate band.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Inventory management</h3>
-                            <p class="text-on-surface-variant leading-loose">You can only substantiate your position if there is a rule for handling differences between counted and book inventory. A large gap between the books and the physical count is a classic trigger for suspicion of omitted sales or fabricated purchases, so record both the counting cycle and the reason for each difference.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Presumed estate</h3>
+                            <p class="text-on-surface-variant leading-loose">Where deposits were withdrawn or property disposed of during a specified period before death and the use of the proceeds is unclear, the amount is presumed to have been inherited. Evidence of expenditure such as medical and nursing costs should be collected.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Returns and coupon handling</h3>
-                            <p class="text-on-surface-variant leading-loose">Returns, exchanges, coupons and loyalty points require the timing of the sales deduction and the VAT adjustment to be reflected precisely. Whether an amount is deductible at all depends on who funded the discount, so decide the treatment while the promotion is still being designed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">The spousal deduction and the division agreement</h3>
+                            <p class="text-on-surface-variant leading-loose">The deduction is applied by reference to the amount the spouse actually inherits, subject to a statutory ceiling. The division must be agreed and registered within the filing deadline for the deduction to be available.</p>
                         </div>
                     </li>
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
                         <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
                         <div>
-                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Distribution-related tax credits</h3>
-                            <p class="text-on-surface-variant leading-loose">We apply every credit suited to your industry and scale, such as the VAT credit for credit-card and similar sales. Eligibility turns on the prior year's supply value and an annual ceiling applies, so availability must be rechecked each year if nothing is to be missed.</p>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">The family business deduction and continuing obligations</h3>
+                            <p class="text-on-surface-variant leading-loose">Meeting the requirements allows a substantial deduction, but obligations to maintain the business and employment then apply for a set period. A breach means the tax deducted is recovered.</p>
                         </div>
                     </li>
                 </ol>
@@ -579,8 +646,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Unified multi-channel sales management</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Searching for assets and fixing the scope</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We gather financial transaction searches, registry and local tax records and corporate shareholding records to build the estate schedule, and set out debts, public charges and funeral expenses.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -589,8 +656,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Inventory and sales deduction clean-up</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Structuring deductions and supporting the division</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We calculate the tax under each method of division, including the spousal and co-residence deductions, and provide a comparison so the heirs can decide.</p>
                     </div>
                 </div>
                 <div class="relative flex gap-5 pb-8 last:pb-0">
@@ -599,8 +666,8 @@
                         <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
                     </div>
                     <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Review of deductible items</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
+                        <h3 class="font-bold text-[18px] mb-1.5">Filing, payment and subsequent management</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We file within the deadline, review whether payment in annual instalments or in kind is required, and set out the timetable for deductions that carry continuing obligations.</p>
                     </div>
                 </div>
             </div>
@@ -609,47 +676,47 @@
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
                 <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
-                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Wholesale &amp; retail tax FAQ</h2>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Inheritance tax FAQ</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">How should open marketplace revenue be reported?</span>
+                            <span class="flex-1">When must inheritance tax be filed?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The tax base is the gross amount sold to the customer, not the amount the platform settled. Selling commissions are credited separately as input VAT, so booking only the settled deposit as revenue understates sales.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Within six months of the end of the month in which the inheritance began. The deadline is longer where all the heirs reside outside Korea. Missing it forfeits the filing credit and attracts penalty tax.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Does a discrepancy between stock and the books create a tax exposure?</span>
+                            <span class="flex-1">Are gifts made ten years ago aggregated?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">A large gap between book inventory and physical inventory is a classic trigger for suspicion of omitted sales or fabricated purchases. Counting regularly and recording the reason for each difference is the surest defence.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Property given to an heir within ten years, and to a person other than an heir within five years, is aggregated. Gift tax already paid is credited, but the aggregation can move the estate into a higher rate band.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Is a tax credit available on card sales?</span>
+                            <span class="flex-1">If the estate is small, is filing still necessary?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Sole proprietors below a certain size can claim the VAT credit for credit-card and similar sales. An annual ceiling applies and eligibility turns on the prior year's supply value, so availability should be checked each year.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Even where the deductions leave no tax to pay, filing is generally advisable. The value reported becomes the acquisition value when the property is later sold, so not filing can be disadvantageous for capital gains tax.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which is more advantageous, simplified or general VAT taxation?</span>
+                            <span class="flex-1">Does the tax fall if the spouse takes more?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The answer depends not only on turnover but on how much input VAT you incur and whether your customers require tax invoices. If early facility investment or inventory purchases are large, general VAT taxation, which allows refunds, may be more favourable.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">The spousal deduction is based on the amount actually inherited but is subject to a statutory ceiling, so it does not reduce the tax without limit. Inheritance tax arises again on the spouse's death, so both inheritances should be considered together.</p>
                     </details>
                     <details class="group py-5">
                         <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
                             <span class="text-primary shrink-0">Q</span>
-                            <span class="flex-1">Which expenditures are excluded from the input tax credit?</span>
+                            <span class="flex-1">What if there is no cash to pay the tax?</span>
                             <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
                         </summary>
-                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Entertainment expenses, the purchase and running costs of non-business passenger cars, and spending unrelated to the business are not creditable even if a tax invoice is received. Treating them as creditable often leads to a lump-sum assessment at the correction stage.</p>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Where the requirements are met, payment in annual instalments or payment in kind with property or securities may be applied for. The application must be made within the filing deadline, so it requires advance preparation.</p>
                     </details>
                 </div>
             </div>
@@ -672,6 +739,10 @@
                     <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
                 </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Wholesale &amp; Retail</span>
+                </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Private Academy</span>
@@ -679,10 +750,6 @@
                 <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Food Service</span>
-                </a>
-                <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Inheritance &amp; Gift</span>
                 </a>
                 <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
@@ -695,7 +762,7 @@
 
     <section class="bg-primary text-white">
         <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
-            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Wholesale &amp; Retail Tax Consultation</h2>
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Inheritance Tax Consultation</h2>
             <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
             <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
