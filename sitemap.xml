@@ -570,4 +570,34 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://vtax.kr/services/stock-valuation.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/stock-valuation.html" />
+        <lastmod>2026-10-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/stock-valuation.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/stock-valuation.html" />
+        <lastmod>2026-10-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/stock-valuation.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/stock-valuation.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/stock-valuation.html" />
+        <lastmod>2026-10-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

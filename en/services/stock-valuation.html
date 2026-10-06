@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth scroll-pt-24" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>Unlisted share valuation | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA</title>
+    <meta name="description" content="Supplementary valuation of unlisted shares for inheritance and gift tax filings, business succession and related-party transactions. The weighted average of net earnings value and net asset value, and the premium for the largest shareholder. VALUE Tax &amp; Accounting, Choi Jun-wi, Certified Tax Accountant, Gasan Digital Complex." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vtax.kr/en/services/stock-valuation.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Unlisted share valuation | VALUE Tax &amp; Accounting · Choi Jun-wi, CTA" />
+    <meta property="og:description" content="Where there is no market price, the valuation method is the tax." />
+    <meta property="og:url" content="https://vtax.kr/en/services/stock-valuation.html" />
+    <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
+    <meta property="og:site_name" content="VALUE Tax &amp; Accounting" />
+    <meta property="og:locale" content="en_US" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <style>
+        /* 상단바는 화면 끝까지 펼쳐진 채 고정한다.
+           스크롤하든 메뉴를 누르든 로고 크기와 바 높이는 변하지 않는다. */
+        .nav-bar {
+            height: 96px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .nav-logo {
+            height: 70px;
+            width: auto;
+        }
+
+        @media (min-width: 768px) {
+            .nav-bar {
+                height: 124px;
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+
+            .nav-logo { height: 96px; }
+        }
+
+        /* 상단바 아이콘 버튼 (검색 · 언어 · Directions) */
+        .nav-icon {
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            border: 0;
+            background: transparent;
+            border-radius: 9999px;
+            color: #fff;
+            cursor: pointer;
+            padding: 0;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .nav-icon-wide { width: auto; padding: 0 10px; }
+
+        .nav-icon-label {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .04em;
+        }
+
+        .nav-icon:hover { background: rgba(255, 255, 255, .18); }
+
+        #nav.is-scrolled .nav-icon,
+        #nav.is-open .nav-icon { color: #424655; }
+
+        #nav.is-scrolled .nav-icon:hover,
+        #nav.is-open .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
+
+        /* Select language */
+        .nav-lang { position: relative; }
+
+        .nav-lang-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            padding: 6px;
+            background: #fff;
+            border: 1px solid rgba(194, 198, 215, .55);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+            z-index: 60;
+        }
+
+        .nav-lang-menu[hidden] { display: none; }
+
+        .nav-lang-menu a {
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #424655;
+            white-space: nowrap;
+        }
+
+        .nav-lang-menu a:hover { background: #f2f4f6; color: #0055c9; }
+        .nav-lang-menu a.is-current { color: #0055c9; background: rgba(0, 85, 201, .08); }
+
+        /* 검색 패널 */
+        .search-panel {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(194, 198, 215, .5);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .12);
+        }
+
+        .search-panel[hidden] { display: none; }
+
+        .search-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 18px 16px 22px;
+        }
+
+        .search-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border: 1.5px solid rgba(194, 198, 215, .8);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .search-field:focus-within { border-color: #0055c9; }
+
+        .search-field input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            color: #191c1e;
+            background: transparent;
+            min-width: 0;
+        }
+
+        .search-field button {
+            border: 0;
+            background: transparent;
+            color: #727786;
+            cursor: pointer;
+            display: inline-flex;
+            padding: 2px;
+        }
+
+        .search-field button:hover { color: #191c1e; }
+
+        .search-results {
+            margin-top: 10px;
+            max-height: 46vh;
+            overflow-y: auto;
+        }
+
+        .search-results a {
+            display: block;
+            padding: 12px 14px;
+            border-radius: 10px;
+        }
+
+        .search-results a:hover { background: #f2f4f6; }
+
+        .search-results .r-title {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            color: #191c1e;
+        }
+
+        .search-results .r-desc {
+            display: block;
+            margin-top: 3px;
+            font-size: 13px;
+            color: #424655;
+        }
+
+        .search-empty {
+            margin-top: 14px;
+            padding: 0 14px;
+            font-size: 14px;
+            color: #727786;
+        }
+
+        .search-empty[hidden] { display: none; }
+
+        /* 모바일 햄버거 */
+        .nav-burger {
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #fff;
+            transition: transform .25s ease, opacity .2s ease, background .3s ease;
+        }
+
+        #nav.is-scrolled .nav-burger span,
+        #nav.is-open .nav-burger span {
+            background: #191c1e;
+        }
+
+        #nav.is-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #nav.is-open .nav-burger span:nth-child(2) { opacity: 0; }
+        #nav.is-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* 모바일 메뉴 패널 */
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-top: 1px solid rgba(194, 198, 215, .5);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .12);
+            padding: 4px 16px 18px;
+            max-height: calc(100vh - 96px);
+            overflow-y: auto;
+        }
+
+        .nav-menu[hidden] {
+            display: none;
+        }
+
+        .nav-menu a {
+            padding: 17px 4px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #191c1e;
+            border-bottom: 1px solid rgba(194, 198, 215, .35);
+        }
+
+        .nav-menu a:last-child { border-bottom: 0; }
+        .nav-menu a:active { color: #0055c9; }
+
+        /* 메뉴가 열리면 상단바도 흰 배경으로 (로고·햄버거 대비 확보) */
+        #nav.is-open {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+        }
+
+        #nav.is-open::before { opacity: 0; }
+        #nav.is-open .logo-white { display: none; }
+        #nav.is-open .logo-color { display: block; }
+
+        /* 검색 패널이 열려 있을 때도 상단바를 흰 배경으로 (아이콘·로고 대비 확보) */
+        #nav.is-search {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+        }
+
+        #nav.is-search::before { opacity: 0; }
+        #nav.is-search .logo-white { display: none; }
+        #nav.is-search .logo-color { display: block; }
+        #nav.is-search .nav-link { color: #424655; }
+        #nav.is-search .nav-link:hover { color: #0055c9; }
+        #nav.is-search .nav-link.is-current { color: #0055c9; border-color: #0055c9; }
+        #nav.is-search .nav-icon { color: #424655; }
+        #nav.is-search .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
+        #nav.is-search .nav-burger span { background: #191c1e; }
+
+        /* ── 모바일 상단바 ─────────────────────────────
+           좁은 화면에서 Kakao 버튼이 잘리던 문제.
+           상단바에서는 Kakao 버튼과 Directions 아이콘을 빼고
+           (둘 다 햄버거 메뉴 안에 있다) 나머지를 한 단계 줄인다. */
+        @media (max-width: 767px) {
+            /* Tailwind CDN 이 런타임에 뒤쪽에 스타일을 주입하므로
+               같은 우선순위(.inline-flex)에 밀린다. #nav 를 붙여 우선순위를 올린다. */
+            #nav .nav-kakao { display: none; }
+            #nav .nav-icon[aria-label="Directions"] { display: none; }
+
+            .nav-bar {
+                height: 84px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .nav-logo { height: 56px; }
+
+            .nav-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .nav-icon-wide {
+                width: auto;
+                padding: 0 6px;
+            }
+
+            .nav-burger { width: 38px; }
+        }
+
+        /* 햄버거 메뉴 안의 Kakao 버튼 */
+        .nav-menu-kakao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 15px 4px;
+            border: 0;
+            border-radius: 12px;
+            background: #FEE500;
+            color: #191919;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .nav-menu a.nav-menu-kakao { border-bottom: 0; }
+        .nav-menu-kakao:active { background: #0055c9; color: #fff; }
+
+        /* 모바일 스크롤 성능 — 고정 헤더 블러와 배경 사진 애니메이션이
+           휴대폰에서 프레임을 떨어뜨리므로 좁은 화면에서는 끈다. */
+        @media (max-width: 767px) {
+            #nav.is-scrolled,
+            #nav.is-open,
+            #nav.is-search,
+            .search-panel {
+                backdrop-filter: none;
+                background: #fff;
+            }
+
+            /* 배경 확대는 유지한다. transform 만 바뀌는 애니메이션은 합성 단계에서
+               처리되어 레이아웃·페인트를 다시 하지 않는다. 확대 폭만 줄인다. */
+            .page-hero > img {
+                animation-name: page-hero-kenburns-mobile;
+            }
+
+             page-hero-kenburns-mobile {
+                from { transform: scale(1.02); }
+                to   { transform: scale(1.09); }
+            }
+        }
+
+        /* 상단 배경 사진 — 페이지가 열려 있는 동안 아주 천천히 확대·이동(켄번스) */
+        .page-hero > img {
+            transform: scale(1.02);
+            will-change: transform;
+            animation: page-hero-kenburns 22s ease-out forwards;
+        }
+
+        @keyframes page-hero-kenburns {
+            from { transform: scale(1.02) translate(0, 0); }
+            to   { transform: scale(1.14) translate(-1.2%, -1.6%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-hero > img { animation: none; }
+        }
+
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        html, body { overflow-x: hidden; }
+        body {
+            font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+            word-break: keep-all; overflow-wrap: break-word;
+        }
+        .step-line { min-height: 1.5rem; }
+        summary::-webkit-details-marker { display: none; }
+        .flow > div:last-child .step-line { display: none; }
+        #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
+        #nav.is-scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom:1px solid rgba(194,198,215,.35); box-shadow:0 2px 14px rgba(0,0,0,.06); }
+        #nav.is-scrolled::before { opacity: 0; }
+        #nav .logo-color { display:none; }
+        #nav.is-scrolled .logo-white { display:none; }
+        #nav.is-scrolled .logo-color { display:block; }
+        #nav .nav-link { color:#fff; }
+        #nav .nav-link:hover { color:rgba(255,255,255,.75); }
+        #nav .nav-link.is-current { color:#fff; border-color:#fff; }
+        #nav.is-scrolled .nav-link { color:#424655; }
+        #nav.is-scrolled .nav-link:hover { color:#0055c9; }
+        #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = { theme: { extend: { colors: {
+            "primary": "#0055c9", "on-primary": "#ffffff", "primary-fixed-dim": "#b1c5ff",
+            "background": "#f7f9fb", "on-background": "#191c1e",
+            "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6", "surface-container": "#eceef0",
+            "secondary-container": "#d5e0f8", "on-secondary-container": "#586377",
+            "on-surface-variant": "#424655", "outline": "#727786", "outline-variant": "#c2c6d7", "inverse-surface": "#2d3133"
+        } } } };
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://vtax.kr/en/"},
+        {"@type":"ListItem","position":2,"name":"Practice Areas","item":"https://vtax.kr/en/#services"},
+        {"@type":"ListItem","position":3,"name":"Unlisted share valuation","item":"https://vtax.kr/en/services/stock-valuation.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Can unlisted shares be valued at market price?","acceptedAnswer":{"@type":"Answer","text":"Where there was an objective transaction between unrelated parties within the period around the valuation base date, that price is the market value. Transactions between related parties, and trades of small volume, are unlikely to be accepted as market value, so the supplementary method is used in most cases."}},
+        {"@type":"Question","name":"Can an appraisal be used as the reported value?","acceptedAnswer":{"@type":"Answer","text":"Unlike real estate, an appraised value is not accepted as the market value of unlisted shares. A valuation report may serve as supporting material, but the reported figure must rest on the method the statute prescribes."}},
+        {"@type":"Question","name":"Can shares in a loss-making company still be valued highly?","acceptedAnswer":{"@type":"Answer","text":"Yes. Even where the net earnings value is low, a large net asset value driven by property holdings pushes the valuation up through the floor rule. A loss is no reason to assume the value is low."}},
+        {"@type":"Question","name":"Do provisional payments affect the valuation?","acceptedAnswer":{"@type":"Answer","text":"Provisional payments are counted as assets and raise the net asset value, while the deemed interest is added to gross income and so affects the net earnings value as well. Where a gift or a succession is planned, clearing them in advance is the better course."}},
+        {"@type":"Question","name":"What if the company holds shares in a subsidiary?","acceptedAnswer":{"@type":"Answer","text":"Where the subsidiary is itself unlisted, its shares are valued by the same method first and the result is carried into the parent's net assets. The extra step means the records take longer to prepare."}}
+    ]}
+    </script>
+</head>
+
+<body class="bg-background text-on-background">
+    <nav id="nav" class="fixed inset-x-0 top-0 z-50">
+        <div class="nav-bar flex justify-between items-center gap-3">
+            <a href="../index.html" class="shrink-0 flex items-center" aria-label="VALUE Tax &amp; Accounting home">
+                <img src="../../source/logo-full-white.png" alt="VALUE Tax &amp; Accounting" class="logo-white nav-logo w-auto" />
+                <img src="../../source/logo-full.png" alt="" aria-hidden="true" class="logo-color nav-logo w-auto" />
+                <span class="sr-only">VALUE Tax &amp; Accounting, Choi Jun-wi CTA</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-10 lg:gap-16 xl:gap-20">
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">Home</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">About</a>
+                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">Practice Areas</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#insights">Insights</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#contact">Contact</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">Directions</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">Fees</a>
+            </div>
+
+            <div class="flex items-center gap-0.5 md:gap-1.5 shrink-0">
+                <button type="button" id="search-toggle" class="nav-icon" aria-label="Site search" aria-expanded="false" aria-controls="search-panel">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+                </button>
+                <div class="nav-lang">
+                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="Select language" aria-expanded="false" aria-controls="lang-menu">
+                        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg>
+                        <span class="nav-icon-label">EN</span>
+                    </button>
+                    <div id="lang-menu" class="nav-lang-menu" hidden>
+                        <a href="../../index.html" lang="ko">한국어</a>
+                        <a href="../index.html" class="is-current" lang="en">English</a>
+                        <a href="../../zh/index.html" lang="zh">中文</a>
+                    </div>
+                </div>
+                <a href="../index.html#location" class="nav-icon" aria-label="Directions">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+                </a>
+                <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-kakao ml-1 inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-3.5 md:px-7 md:py-4 rounded-xl text-[15px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
+                    <span class="whitespace-nowrap">KakaoTalk</span>
+                </a>
+                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="search-panel" class="search-panel" hidden>
+            <div class="search-inner">
+                <label for="search-input" class="sr-only">Search term</label>
+                <div class="search-field">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+                    <input type="search" id="search-input" placeholder="Search by industry or tax topic — construction, VAT, fees" autocomplete="off" />
+                    <button type="button" id="search-close" aria-label="Close search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+                    </button>
+                </div>
+                <ul id="search-results" class="search-results"></ul>
+                <p id="search-empty" class="search-empty" hidden>No matching results.</p>
+            </div>
+        </div>
+
+        <div id="nav-menu" class="nav-menu md:hidden" hidden>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#services">Practice Areas</a>
+            <a href="../index.html#insights">Insights</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="../index.html#location">Directions</a>
+            <a href="../price.html">Fees</a>
+            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-menu-kakao">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
+                KakaoTalk
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
+        <img src="../../source/hero-4-knowhow.jpg" alt="Analysing financial statements" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
+            <nav class="text-[13px] text-white/70 mb-4">
+                <a href="../index.html" class="hover:text-white">Home</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">Practice Areas</a><span class="mx-1.5">/</span><span class="text-white">Unlisted share valuation</span>
+            </nav>
+            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">Tax specialists by area</p>
+            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">Unlisted share valuation</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">Unlisted shares have no market to trade in, so they are valued by the method the statute prescribes. That single calculation governs the inheritance and gift tax.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+            <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
+            <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
+            <div class="max-w-3xl space-y-5">
+                <p class="text-on-surface-variant text-[17px] leading-loose">Unlisted shares have no quoted price, so they are valued by the supplementary method prescribed in the Inheritance and Gift Tax Act. It takes the weighted average of the net earnings value, being the capitalised profit and loss of the past three years, and the net asset value, being assets less liabilities. The same calculation applies wherever a share value is needed: inheritance and gift, business succession, share transactions between related parties, the unwinding of a title trust, a rights issue, and the liquidation of a company.</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE Tax &amp; Accounting begins by fixing the valuation base date. Where items such as provisional payments and receipts, non-recurring profit and loss, and provisions for directors' retirement benefits are left unresolved, the valuation comes out higher than it should or becomes a point of dispute with the tax office. We adjust the financial statements for valuation purposes, derive the net earnings value and the net asset value separately, and review both whether the premium applies and whether the family business deduction requirements are met, before proposing the timing of the filing and the structure of the transaction.</p>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low border-y border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in unlisted share valuation</h2>
+                <ol class="max-w-3xl border-t border-outline-variant/50">
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">How the supplementary method is built</h3>
+                            <p class="text-on-surface-variant leading-loose">The net earnings value and the net asset value are averaged three to two. For a company holding substantial real estate the ratio becomes two to three, and in either case eighty per cent of the net asset value sets the floor.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Arriving at the net earnings value</h3>
+                            <p class="text-on-surface-variant leading-loose">The profit and loss of the three business years before the valuation base date is weighted one, two and three, then divided by the capitalisation rate. Temporary and incidental items must be stripped out, so taking the accounts as they stand produces a different figure.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">Arriving at the net asset value</h3>
+                            <p class="text-on-surface-variant leading-loose">The figure used is not book value but the amount revalued under the Inheritance and Gift Tax Act. Real estate is taken at market value rather than the published price, and goodwill is added to the assets where the requirements are met.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">The premium for the largest shareholder</h3>
+                            <p class="text-on-surface-variant leading-loose">Shares held by the largest shareholder and their related parties carry a premium. It does not apply in the cases the statute sets out, such as shares in a small or medium enterprise, so whether the exception applies must be established first.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">When only the net asset value is used</h3>
+                            <p class="text-on-surface-variant leading-loose">A company that has yet to begin trading, one that is dormant or has closed, one in liquidation, and one whose assets are mostly real estate are valued on the net asset value alone, without the weighted average.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+            <p class="text-primary font-bold text-sm tracking-widest mb-3">HOW WE HELP</p>
+            <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">How VALUE Tax &amp; Accounting responds</h2>
+            <div class="flow max-w-2xl">
+                <div class="relative flex gap-5 pb-8 last:pb-0">
+                    <div class="relative flex flex-col items-center">
+                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">01</span>
+                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
+                    </div>
+                    <div class="pt-1.5">
+                        <h3 class="font-bold text-[18px] mb-1.5">Fixing the base date and putting the records in order</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Working from the date the inheritance began, the date of the gift or the date of the transaction, we gather the financial statements, tax adjustment statements and shareholder register, and identify at the outset the items that need clearing, such as provisional payments.</p>
+                    </div>
+                </div>
+                <div class="relative flex gap-5 pb-8 last:pb-0">
+                    <div class="relative flex flex-col items-center">
+                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">02</span>
+                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
+                    </div>
+                    <div class="pt-1.5">
+                        <h3 class="font-bold text-[18px] mb-1.5">Deriving the value and comparing the alternatives</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We calculate the net earnings value and the net asset value separately to arrive at the valuation, and compare how the tax changes if the timing of the gift or the structure of the transaction is altered.</p>
+                    </div>
+                </div>
+                <div class="relative flex gap-5 pb-8 last:pb-0">
+                    <div class="relative flex flex-col items-center">
+                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">03</span>
+                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
+                    </div>
+                    <div class="pt-1.5">
+                        <h3 class="font-bold text-[18px] mb-1.5">Filing and the supporting record</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We prepare the valuation schedule and the basis of the calculation in the form the return requires, and advise on keeping the adjustments and supporting material in order against a later review by the tax office.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Unlisted share valuation FAQ</h2>
+                <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">Can unlisted shares be valued at market price?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Where there was an objective transaction between unrelated parties within the period around the valuation base date, that price is the market value. Transactions between related parties, and trades of small volume, are unlikely to be accepted as market value, so the supplementary method is used in most cases.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">Can an appraisal be used as the reported value?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Unlike real estate, an appraised value is not accepted as the market value of unlisted shares. A valuation report may serve as supporting material, but the reported figure must rest on the method the statute prescribes.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">Can shares in a loss-making company still be valued highly?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Yes. Even where the net earnings value is low, a large net asset value driven by property holdings pushes the valuation up through the floor rule. A loss is no reason to assume the value is low.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">Do provisional payments affect the valuation?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Provisional payments are counted as assets and raise the net asset value, while the deemed interest is added to gross income and so affects the net earnings value as well. Where a gift or a succession is planned, clearing them in advance is the better course.</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">What if the company holds shares in a subsidiary?</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">Where the subsidiary is itself unlisted, its shares are valued by the same method first and the result is carried into the parent's net assets. The extra step means the records take longer to prepare.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
+                <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
+                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">Other practice areas</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Construction</span>
+                </a>
+                <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Import &amp; Export</span>
+                </a>
+                <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
+                </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Wholesale &amp; Retail</span>
+                </a>
+                <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Private Academy</span>
+                </a>
+                <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Food Service</span>
+                </a>
+                <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Inheritance &amp; Gift</span>
+                </a>
+                <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Capital gains tax</span>
+                </a>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="bg-primary text-white">
+        <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">Unlisted Share Valuation Consultation</h2>
+            <p class="text-white/85 mb-8 text-[17px]">Consultation with Choi Jun-wi, CTA is available directly via KakaoTalk, without completing a form.</p>
+            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
+                Request a consultation via KakaoTalk
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-inverse-surface text-white/65">
+        <div class="max-w-[1100px] mx-auto px-5 py-12 text-sm leading-relaxed">
+            <div class="text-white font-bold text-lg mb-3">VALUE Tax &amp; Accounting <span class="font-medium text-white/45">| Choi Jun-wi CTA</span></div>
+            <p>Room 302, Building 1, Gasan Urban Work, 135 Gasan Digital 2-ro, Geumcheon-gu, Seoul<br />
+            Representative: Choi Jun-wi · Business registration no. 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
+            <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-white/50">
+                <a href="../index.html" class="hover:text-white">Home</a>
+                <a href="../index.html#about" class="hover:text-white">About</a>
+                <a href="../index.html#services" class="hover:text-white">Practice Areas</a>
+                <a href="../contact.html" class="hover:text-white">Contact</a>
+                <a href="../price.html" class="hover:text-white">Fees</a>
+                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">Blog</a>
+            </p>
+            <p class="mt-6 text-white/40">&copy; 2024 VALUE Tax &amp; Accounting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var nav = document.getElementById('nav');
+            if (!nav) return;
+            // 스크롤 이벤트마다 클래스를 만지면 모바일에서 프레임이 밀리므로
+            // requestAnimationFrame 으로 한 프레임에 한 번만 반영한다.
+            var scrolled = null, ticking = false;
+            function applyNavState() {
+                ticking = false;
+                var next = window.scrollY > 40;
+                if (next !== scrolled) { scrolled = next; nav.classList.toggle("is-scrolled", next); }
+            }
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(applyNavState);
+            }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+    </script>
+    <!-- 상단바 검색 · Select language -->
+    <script>
+        (function () {
+            var nav = document.getElementById("nav");
+            if (!nav) return;
+
+            // ---- Site search (정적 색인) ----
+            var INDEX = [
+                { t: "Construction Tax", d: "Revenue recognition based on percentage of completion · On-site labour documentation · Maintaining construction registration", u: "../services/construction.html" },
+                { t: "Import & Export Tax", d: "Zero-rating requirements · Early VAT refund · Foreign Exchange Transactions Act filing", u: "../services/trade.html" },
+                { t: "Manufacturing Tax", d: "Inventory valuation and cost · R&D and human resources development tax credit · Plant investment credit", u: "../services/manufacturing.html" },
+                { t: "Wholesale & Retail Tax", d: "Channel-level sales aggregation · Settlement reconciliation · Inventory management", u: "../services/retail.html" },
+                { t: "Private Academy Tax", d: "Exempt tuition classification · Instructor fee withholding · Business establishment status return", u: "../services/academy.html" },
+                { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
+                { t: "Inheritance & Gift Tax", d: "Prior-gift aggregation · Valuation · Spousal deduction · Family business deduction", u: "../services/inheritance.html" },
+                { t: "Capital gains tax", d: "Single-house exemption · Expropriation relief · Redevelopment membership rights · Registered rental housing", u: "../services/transfer.html" },
+                { t: "Unlisted share valuation", d: "Supplementary valuation method · Net earnings value · Net asset value · Largest shareholder premium · Business succession", u: "../services/stock-valuation.html" },
+                { t: "Residential property sales and the single-house exemption", d: "Household determination · Holding and residence requirements · Temporary two houses · Inheritance and marriage relief", u: "../services/transfer-house.html" },
+                { t: "Redevelopment membership rights", d: "Approval of the management and disposal plan · Conversion to an occupancy right · Replacement housing relief · Settlement money", u: "../services/transfer-redevelopment.html" },
+                { t: "Public project expropriation and compensation", d: "Expropriation relief · Bond compensation held to maturity · Deferral on replacement land · Residual land", u: "../services/transfer-expropriation.html" },
+                { t: "Registered rental housing and the resident home", d: "Mandatory rental period · Rent increase limit · Automatic deregistration · Resident home exemption", u: "../services/transfer-rental.html" },
+                { t: "Inheritance tax", d: "Six-month filing deadline · Aggregation of prior gifts · Spousal deduction · Family business deduction", u: "../services/inheritance-tax.html" },
+                { t: "Gift tax", d: "Ten-year gift deduction · Valuation · Interest-free loans · Source-of-funds audit", u: "../services/gift-tax.html" },
+                { t: "Gift with assumed debt", d: "Assumed debt as a transfer · Gift tax and capital gains tax separated · Succession to the lease deposit", u: "../services/gift-burden.html" },
+                { t: "Below-market transfers and above-market purchases", d: "Related-party transactions · Denial of unfair act or calculation · Evidencing market value · Appraisal", u: "../services/low-price-transfer.html" },
+                { t: "Fee Guide", d: "Bookkeeping · Tax filing · Capital gains, inheritance and gift · Tax appeal fees", u: "../price.html" },
+                { t: "Contact", d: "Consultation request form · Phone · Email · KakaoTalk", u: "../contact.html" },
+                { t: "About", d: "Education and career of Choi Jun-wi, CTA", u: "../index.html#about" },
+                { t: "Practice Areas", d: "Six tax solutions tailored by industry", u: "../index.html#services" },
+                { t: "Directions", d: "Room 302, Building 1, Gasan Urban Work, 135 Gasan Digital 2-ro, Geumcheon-gu, Seoul", u: "../index.html#location" }
+            ];
+
+            var sBtn = document.getElementById("search-toggle");
+            var sPanel = document.getElementById("search-panel");
+            var sInput = document.getElementById("search-input");
+            var sClose = document.getElementById("search-close");
+            var sList = document.getElementById("search-results");
+            var sEmpty = document.getElementById("search-empty");
+
+            function render(q) {
+                var query = (q || "").trim().toLowerCase();
+                sList.innerHTML = "";
+                if (!query) { sEmpty.hidden = true; return; }
+                var hits = INDEX.filter(function (it) {
+                    return (it.t + " " + it.d).toLowerCase().indexOf(query) !== -1;
+                });
+                sEmpty.hidden = hits.length > 0;
+                hits.forEach(function (it) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.href = it.u;
+                    a.innerHTML = '<span class="r-title"></span><span class="r-desc"></span>';
+                    a.querySelector(".r-title").textContent = it.t;
+                    a.querySelector(".r-desc").textContent = it.d;
+                    li.appendChild(a);
+                    sList.appendChild(li);
+                });
+            }
+
+            function setSearch(open) {
+                if (!sPanel) return;
+                sPanel.hidden = !open;
+                nav.classList.toggle("is-search", open);
+                sBtn.setAttribute("aria-expanded", open ? "true" : "false");
+                if (open) { sInput.focus(); } else { sInput.value = ""; render(""); }
+            }
+
+            if (sBtn && sPanel) {
+                sBtn.addEventListener("click", function () { setSearch(sPanel.hidden); });
+                sClose.addEventListener("click", function () { setSearch(false); });
+                sInput.addEventListener("input", function () { render(sInput.value); });
+                sList.addEventListener("click", function (e) { if (e.target.closest("a")) setSearch(false); });
+            }
+
+            // ---- Select language ----
+            var lBtn = document.getElementById("lang-toggle");
+            var lMenu = document.getElementById("lang-menu");
+
+            function setLang(open) {
+                if (!lMenu) return;
+                lMenu.hidden = !open;
+                lBtn.setAttribute("aria-expanded", open ? "true" : "false");
+            }
+
+            if (lBtn && lMenu) {
+                lBtn.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    setLang(lMenu.hidden);
+                });
+                document.addEventListener("click", function (e) {
+                    if (!e.target.closest(".nav-lang")) setLang(false);
+                });
+            }
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") { setSearch(false); setLang(false); }
+            });
+        })();
+    </script>
+    <!-- 모바일 메뉴 열고 닫기 -->
+    <script>
+        (function () {
+            var nav = document.getElementById("nav");
+            var btn = document.getElementById("nav-toggle");
+            var menu = document.getElementById("nav-menu");
+            if (!nav || !btn || !menu) return;
+
+            function setOpen(open) {
+                nav.classList.toggle("is-open", open);
+                menu.hidden = !open;
+                btn.setAttribute("aria-expanded", open ? "true" : "false");
+                btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            }
+
+            btn.addEventListener("click", function () { setOpen(menu.hidden); });
+            menu.addEventListener("click", function (e) {
+                if (e.target.closest("a")) setOpen(false);
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") setOpen(false);
+            });
+            window.addEventListener("resize", function () {
+                if (window.innerWidth >= 768) setOpen(false);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
