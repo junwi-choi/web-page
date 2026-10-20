@@ -380,9 +380,7 @@
             -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
             word-break: keep-all; overflow-wrap: break-word;
         }
-        .step-line { min-height: 1.5rem; }
         summary::-webkit-details-marker { display: none; }
-        .flow > div:last-child .step-line { display: none; }
         #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
         #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
         #nav.is-scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom:1px solid rgba(194,198,215,.35); box-shadow:0 2px 14px rgba(0,0,0,.06); }
@@ -517,7 +515,6 @@
 
     <main>
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-            <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">Overview</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">In wholesale, retail and distribution, sales data scatters as channels multiply across open marketplaces, own-brand stores and offline outlets, and because payment-gateway settlement cycles rarely match tax invoice dates, reported sales and actual deposits appear to diverge. Add inventory shrinkage, returns, coupons and loyalty points, and substantiation becomes complicated. Once there is a system that consolidates data across channels, most of the tax risk disappears.</p>
@@ -527,7 +524,6 @@
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-                <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
                 <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Key tax issues in wholesale &amp; retail</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
@@ -570,45 +566,25 @@
         </section>
 
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-            <p class="text-primary font-bold text-sm tracking-widest mb-3">HOW WE HELP</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">How VALUE Tax &amp; Accounting responds</h2>
-            <div class="flow max-w-2xl">
-                <div class="relative flex gap-5 pb-8 last:pb-0">
-                    <div class="relative flex flex-col items-center">
-                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">01</span>
-                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
-                    </div>
-                    <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Unified multi-channel sales management</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
-                    </div>
+            <div class="max-w-4xl border-t border-outline-variant/50">
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">Unified multi-channel sales management</h3>
+                    <p class="text-on-surface-variant leading-loose">We gather settlement data from every platform into one place so any gap between reported sales and actual deposits can be explained.</p>
                 </div>
-                <div class="relative flex gap-5 pb-8 last:pb-0">
-                    <div class="relative flex flex-col items-center">
-                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">02</span>
-                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
-                    </div>
-                    <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Inventory and sales deduction clean-up</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
-                    </div>
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">Inventory and sales deduction clean-up</h3>
+                    <p class="text-on-surface-variant leading-loose">We standardise stocktaking and the handling of returns and coupons, raising the reliability of VAT and income tax filings.</p>
                 </div>
-                <div class="relative flex gap-5 pb-8 last:pb-0">
-                    <div class="relative flex flex-col items-center">
-                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">03</span>
-                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
-                    </div>
-                    <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">Review of deductible items</h3>
-                        <p class="text-on-surface-variant leading-relaxed">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
-                    </div>
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">Review of deductible items</h3>
+                    <p class="text-on-surface-variant leading-loose">We capture every input VAT and tax credit suited to your industry, lowering your effective rate.</p>
                 </div>
             </div>
         </section>
 
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
                 <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">Wholesale &amp; retail tax FAQ</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
@@ -657,20 +633,31 @@
 
         <section class="bg-surface-container-low border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
-                <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
                 <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">Other practice areas</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Construction</span>
                 </a>
+                <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
+                </a>
                 <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Import &amp; Export</span>
                 </a>
-                <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Manufacturing</span>
+                <a href="./logistics.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">local_shipping</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Transport &amp; Logistics</span>
+                </a>
+                <a href="./medical.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">medical_services</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Medical Clinics</span>
+                </a>
+                <a href="./pharmacy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">medication</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Pharmacies</span>
                 </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
@@ -679,6 +666,10 @@
                 <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">Food Service</span>
+                </a>
+                <a href="./it.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">code</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">IT &amp; Software</span>
                 </a>
                 <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
@@ -757,10 +748,14 @@
             var INDEX = [
                 { t: "Construction Tax", d: "Revenue recognition based on percentage of completion · On-site labour documentation · Maintaining construction registration", u: "../services/construction.html" },
                 { t: "Import & Export Tax", d: "Zero-rating requirements · Early VAT refund · Foreign Exchange Transactions Act filing", u: "../services/trade.html" },
+                { t: "Transport & Logistics Tax", d: "Zero-rated international carriage · Gross vs net revenue · Disbursement invoices · Logistics tax reduction", u: "../services/tradlogistics.html" },
                 { t: "Manufacturing Tax", d: "Inventory valuation and cost · R&D and human resources development tax credit · Plant investment credit", u: "../services/manufacturing.html" },
                 { t: "Wholesale & Retail Tax", d: "Channel-level sales aggregation · Settlement reconciliation · Inventory management", u: "../services/retail.html" },
                 { t: "Private Academy Tax", d: "Exempt tuition classification · Instructor fee withholding · Business establishment status return", u: "../services/academy.html" },
+                { t: "Medical Clinic Tax", d: "Taxable cosmetic procedures · Non-covered revenue · Mandatory cash receipts · Status return", u: "../services/medical.html" },
+                { t: "Pharmacy Tax", d: "Exempt dispensing · Taxable OTC · Input VAT apportionment · Dispensing-fee withholding", u: "../services/medicapharmacy.html" },
                 { t: "Restaurant Tax", d: "Deemed input tax credit · Delivery-app revenue · Mandatory cash receipts", u: "../services/restaurant.html" },
+                { t: "IT & Software Tax", d: "R&D tax credit · Startup SME reduction · Startup venture · Stock options · Overseas zero-rating", u: "../services/restauranit.html" },
                 { t: "Inheritance & Gift Tax", d: "Prior-gift aggregation · Valuation · Spousal deduction · Family business deduction", u: "../services/inheritance.html" },
                 { t: "Capital Gains Tax", d: "Single-house exemption · Expropriation relief · Redevelopment membership rights · Registered rental housing", u: "../services/transfer.html" },
                 { t: "Unlisted share valuation", d: "Supplementary valuation method · Net earnings value · Net asset value · Largest shareholder premium · Business succession", u: "../services/stock-valuation.html" },

@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth scroll-pt-24" lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>IT软件业税务 | VALUE税务会计 · 崔埈伟税务师</title>
+    <meta name="description" content="IT软件业税务——研究与人力开发费税额抵免、创业中小企业与创业风险企业减免、股票期权、境外供应零税率。VALUE税务会计崔埈伟税务师。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vtax.kr/zh/services/it.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="IT软件业税务 | VALUE税务会计 · 崔埈伟税务师" />
+    <meta property="og:description" content="IT软件业税务——研究与人力开发费税额抵免、创业中小企业与创业风险企业减免、股票期权、境外供应零税率。VALUE税务会计崔埈伟税务师。" />
+    <meta property="og:url" content="https://vtax.kr/zh/services/it.html" />
+    <meta property="og:image" content="https://vtax.kr/source/og-image-dark.jpg" />
+    <meta property="og:site_name" content="VALUE税务会计" />
+    <meta property="og:locale" content="zh_CN" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <style>
+        /* 상단바는 화면 끝까지 펼쳐진 채 고정한다.
+           스크롤하든 메뉴를 누르든 로고 크기와 바 높이는 변하지 않는다. */
+        .nav-bar {
+            height: 96px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .nav-logo {
+            height: 70px;
+            width: auto;
+        }
+
+        @media (min-width: 768px) {
+            .nav-bar {
+                height: 124px;
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+
+            .nav-logo { height: 96px; }
+        }
+
+        /* 상단바 아이콘 버튼 (검색 · 언어 · 交通路线) */
+        .nav-icon {
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            border: 0;
+            background: transparent;
+            border-radius: 9999px;
+            color: #fff;
+            cursor: pointer;
+            padding: 0;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .nav-icon-wide { width: auto; padding: 0 10px; }
+
+        .nav-icon-label {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .04em;
+        }
+
+        .nav-icon:hover { background: rgba(255, 255, 255, .18); }
+
+        #nav.is-scrolled .nav-icon,
+        #nav.is-open .nav-icon { color: #424655; }
+
+        #nav.is-scrolled .nav-icon:hover,
+        #nav.is-open .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
+
+        /* 语言选择 */
+        .nav-lang { position: relative; }
+
+        .nav-lang-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            padding: 6px;
+            background: #fff;
+            border: 1px solid rgba(194, 198, 215, .55);
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .14);
+            z-index: 60;
+        }
+
+        .nav-lang-menu[hidden] { display: none; }
+
+        .nav-lang-menu a {
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #424655;
+            white-space: nowrap;
+        }
+
+        .nav-lang-menu a:hover { background: #f2f4f6; color: #0055c9; }
+        .nav-lang-menu a.is-current { color: #0055c9; background: rgba(0, 85, 201, .08); }
+
+        /* 검색 패널 */
+        .search-panel {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(194, 198, 215, .5);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .12);
+        }
+
+        .search-panel[hidden] { display: none; }
+
+        .search-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 18px 16px 22px;
+        }
+
+        .search-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border: 1.5px solid rgba(194, 198, 215, .8);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .search-field:focus-within { border-color: #0055c9; }
+
+        .search-field input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            color: #191c1e;
+            background: transparent;
+            min-width: 0;
+        }
+
+        .search-field button {
+            border: 0;
+            background: transparent;
+            color: #727786;
+            cursor: pointer;
+            display: inline-flex;
+            padding: 2px;
+        }
+
+        .search-field button:hover { color: #191c1e; }
+
+        .search-results {
+            margin-top: 10px;
+            max-height: 46vh;
+            overflow-y: auto;
+        }
+
+        .search-results a {
+            display: block;
+            padding: 12px 14px;
+            border-radius: 10px;
+        }
+
+        .search-results a:hover { background: #f2f4f6; }
+
+        .search-results .r-title {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            color: #191c1e;
+        }
+
+        .search-results .r-desc {
+            display: block;
+            margin-top: 3px;
+            font-size: 13px;
+            color: #424655;
+        }
+
+        .search-empty {
+            margin-top: 14px;
+            padding: 0 14px;
+            font-size: 14px;
+            color: #727786;
+        }
+
+        .search-empty[hidden] { display: none; }
+
+        /* 모바일 햄버거 */
+        .nav-burger {
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #fff;
+            transition: transform .25s ease, opacity .2s ease, background .3s ease;
+        }
+
+        #nav.is-scrolled .nav-burger span,
+        #nav.is-open .nav-burger span {
+            background: #191c1e;
+        }
+
+        #nav.is-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #nav.is-open .nav-burger span:nth-child(2) { opacity: 0; }
+        #nav.is-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* 모바일 메뉴 패널 */
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-top: 1px solid rgba(194, 198, 215, .5);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .12);
+            padding: 4px 16px 18px;
+            max-height: calc(100vh - 96px);
+            overflow-y: auto;
+        }
+
+        .nav-menu[hidden] {
+            display: none;
+        }
+
+        .nav-menu a {
+            padding: 17px 4px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #191c1e;
+            border-bottom: 1px solid rgba(194, 198, 215, .35);
+        }
+
+        .nav-menu a:last-child { border-bottom: 0; }
+        .nav-menu a:active { color: #0055c9; }
+
+        /* 메뉴가 열리면 상단바도 흰 배경으로 (로고·햄버거 대비 확보) */
+        #nav.is-open {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+        }
+
+        #nav.is-open::before { opacity: 0; }
+        #nav.is-open .logo-white { display: none; }
+        #nav.is-open .logo-color { display: block; }
+
+        /* 검색 패널이 열려 있을 때도 상단바를 흰 배경으로 (아이콘·로고 대비 확보) */
+        #nav.is-search {
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(8px);
+        }
+
+        #nav.is-search::before { opacity: 0; }
+        #nav.is-search .logo-white { display: none; }
+        #nav.is-search .logo-color { display: block; }
+        #nav.is-search .nav-link { color: #424655; }
+        #nav.is-search .nav-link:hover { color: #0055c9; }
+        #nav.is-search .nav-link.is-current { color: #0055c9; border-color: #0055c9; }
+        #nav.is-search .nav-icon { color: #424655; }
+        #nav.is-search .nav-icon:hover { background: rgba(0, 85, 201, .09); color: #0055c9; }
+        #nav.is-search .nav-burger span { background: #191c1e; }
+
+        /* ── 모바일 상단바 ─────────────────────────────
+           좁은 화면에서 咨询 버튼이 잘리던 문제.
+           상단바에서는 咨询 버튼과 交通路线 아이콘을 빼고
+           (둘 다 햄버거 메뉴 안에 있다) 나머지를 한 단계 줄인다. */
+        @media (max-width: 767px) {
+            /* Tailwind CDN 이 런타임에 뒤쪽에 스타일을 주입하므로
+               같은 우선순위(.inline-flex)에 밀린다. #nav 를 붙여 우선순위를 올린다. */
+            #nav .nav-kakao { display: none; }
+            #nav .nav-icon[aria-label="交通路线"] { display: none; }
+
+            .nav-bar {
+                height: 84px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .nav-logo { height: 56px; }
+
+            .nav-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .nav-icon-wide {
+                width: auto;
+                padding: 0 6px;
+            }
+
+            .nav-burger { width: 38px; }
+        }
+
+        /* 햄버거 메뉴 안의 咨询 버튼 */
+        .nav-menu-kakao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 15px 4px;
+            border: 0;
+            border-radius: 12px;
+            background: #FEE500;
+            color: #191919;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .nav-menu a.nav-menu-kakao { border-bottom: 0; }
+        .nav-menu-kakao:active { background: #0055c9; color: #fff; }
+
+        /* 모바일 스크롤 성능 — 고정 헤더 블러와 배경 사진 애니메이션이
+           휴대폰에서 프레임을 떨어뜨리므로 좁은 화면에서는 끈다. */
+        @media (max-width: 767px) {
+            #nav.is-scrolled,
+            #nav.is-open,
+            #nav.is-search,
+            .search-panel {
+                backdrop-filter: none;
+                background: #fff;
+            }
+
+            /* 배경 확대는 유지한다. transform 만 바뀌는 애니메이션은 합성 단계에서
+               처리되어 레이아웃·페인트를 다시 하지 않는다. 확대 폭만 줄인다. */
+            .page-hero > img {
+                animation-name: page-hero-kenburns-mobile;
+            }
+
+             page-hero-kenburns-mobile {
+                from { transform: scale(1.02); }
+                to   { transform: scale(1.09); }
+            }
+        }
+
+        /* 상단 배경 사진 — 페이지가 열려 있는 동안 아주 천천히 확대·이동(켄번스) */
+        .page-hero > img {
+            transform: scale(1.02);
+            will-change: transform;
+            animation: page-hero-kenburns 22s ease-out forwards;
+        }
+
+        @keyframes page-hero-kenburns {
+            from { transform: scale(1.02) translate(0, 0); }
+            to   { transform: scale(1.14) translate(-1.2%, -1.6%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-hero > img { animation: none; }
+        }
+
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        html, body { overflow-x: hidden; }
+        body {
+            font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+            word-break: keep-all; overflow-wrap: break-word;
+        }
+        summary::-webkit-details-marker { display: none; }
+        #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
+        #nav.is-scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom:1px solid rgba(194,198,215,.35); box-shadow:0 2px 14px rgba(0,0,0,.06); }
+        #nav.is-scrolled::before { opacity: 0; }
+        #nav .logo-color { display:none; }
+        #nav.is-scrolled .logo-white { display:none; }
+        #nav.is-scrolled .logo-color { display:block; }
+        #nav .nav-link { color:#fff; }
+        #nav .nav-link:hover { color:rgba(255,255,255,.75); }
+        #nav .nav-link.is-current { color:#fff; border-color:#fff; }
+        #nav.is-scrolled .nav-link { color:#424655; }
+        #nav.is-scrolled .nav-link:hover { color:#0055c9; }
+        #nav.is-scrolled .nav-link.is-current { color:#0055c9; border-color:#0055c9; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = { theme: { extend: { colors: {
+            "primary": "#0055c9", "on-primary": "#ffffff", "primary-fixed-dim": "#b1c5ff",
+            "background": "#f7f9fb", "on-background": "#191c1e",
+            "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6", "surface-container": "#eceef0",
+            "secondary-container": "#d5e0f8", "on-secondary-container": "#586377",
+            "on-surface-variant": "#424655", "outline": "#727786", "outline-variant": "#c2c6d7", "inverse-surface": "#2d3133"
+        } } } };
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"首页","item":"https://vtax.kr/zh/"},
+        {"@type":"ListItem","position":2,"name":"业务领域","item":"https://vtax.kr/zh/#services"},
+        {"@type":"ListItem","position":3,"name":"IT软件业","item":"https://vtax.kr/zh/services/it.html"}
+    ]}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"没有研究所也能享受研发税额抵免吗？","acceptedAnswer":{"@type":"Answer","text":"若取得企业附设研究所或研发专责部门认定，说明人工费范围会容易得多。即便没有认定，符合要件的研发费用仍有抵免余地，但实务中常因无法证明谁在哪个课题投入多少而被否认。若有意申请抵免，宜将认定程序与记录体系一并准备。"}},
+        {"@type":"Question","name":"在首尔创业，能享受创业中小企业减免吗？","acceptedAnswer":{"@type":"Answer","text":"在首都圈过密抑制圈域内创业的，只有属于青年创业中小企业时才可享50%减免，其余创业中小企业不在适用之列。包括加山数码园区在内的首尔相当一部分地区属于该圈域。不过，创业后3年内取得风险企业认定的，可不受地区限制地考虑创业风险中小企业减免。"}},
+        {"@type":"Question","name":"只要是信息通信业就都属减免适用行业吗？","acceptedAnswer":{"@type":"Answer","text":"信息通信业属于创业中小企业减免的适用行业，但影像观赏室运营业、新闻提供业以及虚拟资产买卖与中介业除外。在中小企业特别税额减免方面，计算机编程与系统集成管理业、信息服务业、研发业等属适用行业。首先应确认行业代码与实际业务是否相符。"}},
+        {"@type":"Question","name":"从海外应用市场取得的收入适用零税率吗？","acceptedAnswer":{"@type":"Answer","text":"若符合要件，例如在境外提供服务，或提供给非居民、外国法人并通过外汇银行以韩元收取对价，即可适用零税率。但一旦平台介入，供应对象是谁以及款项收取路径便成为争点，因此须将结算报告与外币入账明细同销售额核对后一并保存。"}},
+        {"@type":"Question","name":"开发外包费用应如何处理？","acceptedAnswer":{"@type":"Answer","text":"委托外部进行的研发费用，符合要件的也可纳入税额抵免范围，但委托合同、产出物与付款明细必须与课题相互衔接。单纯的服务外包与研发委托在文件上即见分晓，因此宜在合同阶段写明目的与范围。"}}
+    ]}
+    </script>
+</head>
+
+<body class="bg-background text-on-background">
+    <nav id="nav" class="fixed inset-x-0 top-0 z-50">
+        <div class="nav-bar flex justify-between items-center gap-3">
+            <a href="../index.html" class="shrink-0 flex items-center" aria-label="VALUE税务会计首页">
+                <img src="../../source/logo-full-white.png" alt="VALUE税务会计" class="logo-white nav-logo w-auto" />
+                <img src="../../source/logo-full.png" alt="" aria-hidden="true" class="logo-color nav-logo w-auto" />
+                <span class="sr-only">VALUE税务会计 崔埈伟税务师</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-10 lg:gap-16 xl:gap-20">
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#home">首页</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#about">致辞</a>
+                <a class="nav-link is-current border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#services">业务领域</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#insights">洞察</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#contact">联系我们</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../index.html#location">交通路线</a>
+                <a class="nav-link border-b-2 border-transparent pb-1 font-bold text-[17px] lg:text-[19px]" href="../price.html">报酬</a>
+            </div>
+
+            <div class="flex items-center gap-0.5 md:gap-1.5 shrink-0">
+                <button type="button" id="search-toggle" class="nav-icon" aria-label="站内搜索" aria-expanded="false" aria-controls="search-panel">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+                </button>
+                <div class="nav-lang">
+                    <button type="button" id="lang-toggle" class="nav-icon nav-icon-wide" aria-label="语言选择" aria-expanded="false" aria-controls="lang-menu">
+                        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg>
+                        <span class="nav-icon-label">ZH</span>
+                    </button>
+                    <div id="lang-menu" class="nav-lang-menu" hidden>
+                        <a href="../../index.html" lang="ko">한국어</a>
+                        <a href="../../en/index.html" lang="en">English</a>
+                        <a href="../index.html" class="is-current" lang="zh">中文</a>
+                    </div>
+                </div>
+                <a href="../index.html#location" class="nav-icon" aria-label="交通路线">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+                </a>
+                <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-kakao ml-1 inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-5 py-3.5 md:px-7 md:py-4 rounded-xl text-[15px] md:text-[17px] font-bold shadow-md hover:bg-primary hover:text-white active:bg-primary active:text-white transition-all duration-200 active:scale-95">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
+                    <span class="whitespace-nowrap">KakaoTalk</span>
+                </a>
+                <button type="button" id="nav-toggle" class="nav-burger md:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="search-panel" class="search-panel" hidden>
+            <div class="search-inner">
+                <label for="search-input" class="sr-only">搜索词</label>
+                <div class="search-field">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-outline"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+                    <input type="search" id="search-input" placeholder="按行业或税务项目检索 — 建设业、增值税、报酬" autocomplete="off" />
+                    <button type="button" id="search-close" aria-label="关闭搜索">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+                    </button>
+                </div>
+                <ul id="search-results" class="search-results"></ul>
+                <p id="search-empty" class="search-empty" hidden>未找到相关结果。</p>
+            </div>
+        </div>
+
+        <div id="nav-menu" class="nav-menu md:hidden" hidden>
+            <a href="../index.html#home">首页</a>
+            <a href="../index.html#about">致辞</a>
+            <a href="../index.html#services">业务领域</a>
+            <a href="../index.html#insights">洞察</a>
+            <a href="../index.html#contact">联系我们</a>
+            <a href="../index.html#location">交通路线</a>
+            <a href="../price.html">报酬</a>
+            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer" class="nav-menu-kakao">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z" /></svg>
+                KakaoTalk
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-hero relative min-h-[440px] md:min-h-[520px] flex items-end overflow-hidden">
+        <img src="../../source/svc-it.jpg" alt="显示代码的开发者屏幕" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/35"></div>
+        <div class="relative z-10 w-full max-w-[1100px] mx-auto px-5 pb-14 md:pb-16 pt-32 text-white">
+            <nav class="text-[13px] text-white/70 mb-4">
+                <a href="../index.html" class="hover:text-white">首页</a><span class="mx-1.5">/</span><a href="../index.html#services" class="hover:text-white">业务领域</a><span class="mx-1.5">/</span><span class="text-white">IT软件业</span>
+            </nav>
+            <p class="text-primary-fixed-dim font-bold text-sm tracking-widest mb-3">分行业税务专长</p>
+            <h1 class="text-[34px] md:text-[46px] font-bold leading-tight tracking-tight mb-4">IT软件业税务</h1>
+            <p class="text-[17px] md:text-lg text-white/90 max-w-2xl leading-relaxed">这是把支出直接从税款中扣除的制度最多的行业。而要件，从花钱的那一刻起就开始累积。</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+            <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">业务概要</h2>
+            <div class="max-w-3xl space-y-5">
+                <p class="text-on-surface-variant text-[17px] leading-loose">软件企业的成本大多花在人身上。因此像研究与人力开发费税额抵免这类把支出直接从税款中扣除的制度，在这个行业作用最大；但抵免要件并非在决算时形成，而是从花钱的那一刻起就开始累积。若没有研究所认定、按课题留存的记录以及人工费分摊依据，便会出现钱花了却拿不到抵免的情形。</p>
+                <p class="text-on-surface-variant text-[17px] leading-loose">VALUE税务会计首先搭建按课题划分开发人工费的框架。确认创业时点与地区、是否可取得风险企业认定，先行判断哪些减免路径是打开的；对股票期权、融资等日后会产生税负的事项，则在设计阶段即予审视。将海外销售与国内销售分开以备齐零税率凭证，并厘清订阅与服务收入的归属时点。</p>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low border-y border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">IT软件业主要税务问题</h2>
+                <ol class="max-w-3xl border-t border-outline-variant/50">
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">01</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">研发费用抵免，记录就是一切</h3>
+                            <p class="text-on-surface-variant leading-loose">中小企业就一般研究与人力开发费，可在当期发生额与增加额中择优抵免；若属新增长与源泉技术或国家战略技术，抵免率还会提高。但若没有能显示开发人员投入了哪些课题、投入多少的记录，人工费便难以被认定为抵免对象。研发计划书、报告书与工时记录，须自支出之时起留存。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">02</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">在首尔创业，减免路径会变窄</h3>
+                            <p class="text-on-surface-variant leading-loose">创业中小企业税额减免的比例因创业地区而异。在首都圈过密抑制圈域内创业的，只有青年创业中小企业可享50%减免，其余创业中小企业则不在适用之列。包括加山数码园区在内的首尔大部分地区均属该圈域，因此创业前应将代表者要件与地区一并权衡后再作决定。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">03</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">风险企业认定不受地区限制</h3>
+                            <p class="text-on-surface-variant leading-loose">创业后3年内取得风险企业认定的，可作为创业风险中小企业享受税额减免，且与创业中小企业减免不同，这一路径不受地区限制。对在首尔创业的企业而言，这实际上是最现实的减免路径。该减免自认定之日后首次产生所得的纳税年度起适用，因此不可错过认定时点。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">04</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">股票期权的问题爆发在行权时而非授予时</h3>
+                            <p class="text-on-surface-variant leading-loose">股票期权在授予时并无动静，问题出现在员工行权之时，即所得税问题。若符合风险企业要件，行权收益尚有适用课税特例的余地，因此在设计授予条件与行权时点时须一并考虑税务。许多条件日后无法更改。</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
+                        <span class="shrink-0 w-7 pt-1 text-primary font-bold text-[15px] tabular-nums">05</span>
+                        <div>
+                            <h3 class="font-bold text-[17px] mb-2 leading-snug">海外销售必须单独划分</h3>
+                            <p class="text-on-surface-variant leading-loose">在境外提供，或提供给非居民、外国法人并通过外汇银行以韩元收取对价的服务，可成为零税率对象。经由应用市场或海外平台取得的销售额，须将结算明细与外币入账相互核对，方能作为凭证。订阅型收入是否按合同期间分期归属，也须一并厘清。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+            <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">VALUE税务会计的应对</h2>
+            <div class="max-w-4xl border-t border-outline-variant/50">
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">研发抵免基础设计</h3>
+                    <p class="text-on-surface-variant leading-loose">先建立按课题分摊人工费与留存凭证的体系，使支出以可抵免的形式被记录下来。</p>
+                </div>
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">减免路径诊断</h3>
+                    <p class="text-on-surface-variant leading-loose">权衡创业时点、地区、代表者要件与取得风险企业认定的可能性，找出实际可享的减免。</p>
+                </div>
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">股票期权与海外销售审视</h3>
+                    <p class="text-on-surface-variant leading-loose">在设计阶段即预先核查行权时点的税负与境内外销售的划分。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
+                <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">IT软件业税务常见问题</h2>
+                <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">没有研究所也能享受研发税额抵免吗？</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">若取得企业附设研究所或研发专责部门认定，说明人工费范围会容易得多。即便没有认定，符合要件的研发费用仍有抵免余地，但实务中常因无法证明谁在哪个课题投入多少而被否认。若有意申请抵免，宜将认定程序与记录体系一并准备。</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">在首尔创业，能享受创业中小企业减免吗？</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">在首都圈过密抑制圈域内创业的，只有属于青年创业中小企业时才可享50%减免，其余创业中小企业不在适用之列。包括加山数码园区在内的首尔相当一部分地区属于该圈域。不过，创业后3年内取得风险企业认定的，可不受地区限制地考虑创业风险中小企业减免。</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">只要是信息通信业就都属减免适用行业吗？</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">信息通信业属于创业中小企业减免的适用行业，但影像观赏室运营业、新闻提供业以及虚拟资产买卖与中介业除外。在中小企业特别税额减免方面，计算机编程与系统集成管理业、信息服务业、研发业等属适用行业。首先应确认行业代码与实际业务是否相符。</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">从海外应用市场取得的收入适用零税率吗？</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">若符合要件，例如在境外提供服务，或提供给非居民、外国法人并通过外汇银行以韩元收取对价，即可适用零税率。但一旦平台介入，供应对象是谁以及款项收取路径便成为争点，因此须将结算报告与外币入账明细同销售额核对后一并保存。</p>
+                    </details>
+                    <details class="group py-5">
+                        <summary class="flex items-start gap-3 cursor-pointer list-none font-bold text-[17px] leading-snug">
+                            <span class="text-primary shrink-0">Q</span>
+                            <span class="flex-1">开发外包费用应如何处理？</span>
+                            <span class="material-symbols-outlined text-outline shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-on-surface-variant leading-loose mt-3 pl-7">委托外部进行的研发费用，符合要件的也可纳入税额抵免范围，但委托合同、产出物与付款明细必须与课题相互衔接。单纯的服务外包与研发委托在文件上即见分晓，因此宜在合同阶段写明目的与范围。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low border-t border-outline-variant/40">
+            <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
+                <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">其他业务领域</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">建设业</span>
+                </a>
+                <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">制造业</span>
+                </a>
+                <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">进出口业</span>
+                </a>
+                <a href="./logistics.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">local_shipping</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">运输物流业</span>
+                </a>
+                <a href="./medical.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">medical_services</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">医疗机构</span>
+                </a>
+                <a href="./pharmacy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">medication</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">药局</span>
+                </a>
+                <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">补习班</span>
+                </a>
+                <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">餐饮业</span>
+                </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">批发零售业</span>
+                </a>
+                <a href="./inheritance.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">继承与赠与</span>
+                </a>
+                <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">转让所得税</span>
+                </a>
+                <a href="./stock-valuation.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">query_stats</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">非上市股票评估</span>
+                </a>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="bg-primary text-white">
+        <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20 text-center">
+            <h2 class="text-2xl md:text-[32px] font-bold mb-3 tracking-tight">IT软件业税务咨询</h2>
+            <p class="text-white/85 mb-8 text-[17px]">无需填写表格，即可通过KakaoTalk直接与崔埈伟税务师咨询。</p>
+            <a href="http://pf.kakao.com/_dHbAn/chat" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[#FEE500] text-[#191919] px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 transition-transform shadow-xl">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.864 1.832 5.378 4.604 6.848L5.3 22l4.898-3.23c.582.15 1.186.23 1.802.23 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>
+                通过KakaoTalk申请咨询
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-inverse-surface text-white/65">
+        <div class="max-w-[1100px] mx-auto px-5 py-12 text-sm leading-relaxed">
+            <div class="text-white font-bold text-lg mb-3">VALUE税务会计 <span class="font-medium text-white/45">| 崔埈伟税务师</span></div>
+            <p>首尔特别市衿川区加山数码2路135号 加山Urban Work 1栋302室<br />
+            代表：崔埈伟 · 营业执照号码 662-45-01114 · <a href="tel:01046235076" class="hover:text-white">010-4623-5076</a></p>
+            <p class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-white/50">
+                <a href="../index.html" class="hover:text-white">首页</a>
+                <a href="../index.html#about" class="hover:text-white">致辞</a>
+                <a href="../index.html#services" class="hover:text-white">业务领域</a>
+                <a href="../contact.html" class="hover:text-white">联系我们</a>
+                <a href="../price.html" class="hover:text-white">报酬</a>
+                <a href="https://blog.naver.com/tax_lecture" target="_blank" rel="noopener noreferrer" class="hover:text-white">博客</a>
+            </p>
+            <p class="mt-6 text-white/40">&copy; 2024 VALUE税务会计. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var nav = document.getElementById('nav');
+            if (!nav) return;
+            // 스크롤 이벤트마다 클래스를 만지면 모바일에서 프레임이 밀리므로
+            // requestAnimationFrame 으로 한 프레임에 한 번만 반영한다.
+            var scrolled = null, ticking = false;
+            function applyNavState() {
+                ticking = false;
+                var next = window.scrollY > 40;
+                if (next !== scrolled) { scrolled = next; nav.classList.toggle("is-scrolled", next); }
+            }
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(applyNavState);
+            }
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+    </script>
+    <!-- 상단바 검색 · 语言选择 -->
+    <script>
+        (function () {
+            var nav = document.getElementById("nav");
+            if (!nav) return;
+
+            // ---- 站内搜索 (정적 색인) ----
+            var INDEX = [
+                { t: "建设业税务", d: "完工进度（履约进度）收入确认 · 工地劳务费凭证 · 建设业登记标准维持", u: "../services/construction.html" },
+                { t: "进出口业税务", d: "零税率适用要件 · 增值税提前退税 · 外汇交易法申报", u: "../services/trade.html" },
+                { t: "运输物流业税务", d: "国际运输零税率 · 总额与净额收入确认 · 垫付款税务发票 · 物流产业税额减免", u: "../services/tradlogistics.html" },
+                { t: "制造业税务", d: "存货计价与成本 · 研究及人力开发费税额抵免 · 设备投资抵免", u: "../services/manufacturing.html" },
+                { t: "批发零售业税务", d: "分渠道销售归集 · 结算明细核对 · 存货资产管理", u: "../services/retail.html" },
+                { t: "补习班税务", d: "学费免税划分 · 讲师酬金代扣代缴 · 营业场所现状申报", u: "../services/academy.html" },
+                { t: "医疗机构税务", d: "美容诊疗应税划分 · 自费收入 · 现金收据强制开具 · 营业场所现状申报", u: "../services/medical.html" },
+                { t: "药局税务", d: "调剂收入免税 · 非处方药应税 · 进项税额分摊 · 调剂费代扣", u: "../services/medicapharmacy.html" },
+                { t: "餐饮业税务", d: "拟制进项税额扣除 · 外卖平台销售 · 现金收据强制开具", u: "../services/restaurant.html" },
+                { t: "IT软件业税务", d: "研发费用税额抵免 · 创业中小企业减免 · 创业风险企业 · 股票期权 · 境外零税率", u: "../services/restauranit.html" },
+                { t: "继承与赠与税务", d: "生前赠与并入 · 财产评估 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance.html" },
+                { t: "转让所得税", d: "一户一住宅免税 · 征收补偿减免 · 重建旧改入住权 · 登记出租住宅", u: "../services/transfer.html" },
+                { t: "非上市股票评估", d: "补充评估方法 · 净损益价值 · 净资产价值 · 最大股东溢价 · 家业承继", u: "../services/stock-valuation.html" },
+                { t: "住宅转让与一户一住宅免税", d: "家庭判定 · 持有与居住要件 · 临时二住宅 · 继承与婚姻特例", u: "../services/transfer-house.html" },
+                { t: "重建与旧改入住权", d: "管理处分计划批准 · 入住权转换 · 替代住宅特例 · 清算金", u: "../services/transfer-redevelopment.html" },
+                { t: "公益事业征收与补偿", d: "征收减免 · 债券补偿持有至到期 · 代土补偿课税递延 · 剩余地", u: "../services/transfer-expropriation.html" },
+                { t: "登记出租住宅与自住住宅", d: "强制出租期间 · 租金增额限制 · 自动注销 · 自住住宅免税", u: "../services/transfer-rental.html" },
+                { t: "继承税", d: "六个月申报期限 · 事前赠与合算 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance-tax.html" },
+                { t: "赠与税", d: "赠与财产扣除十年 · 财产评价 · 无偿借贷资金 · 资金来源调查", u: "../services/gift-tax.html" },
+                { t: "附负担赠与", d: "债务承担部分为转让 · 赠与税与转让所得税分离 · 租赁保证金承继", u: "../services/gift-burden.html" },
+                { t: "低价转让与高价受让", d: "特殊关系人交易 · 不当行为计算否认 · 市价举证 · 鉴定评价", u: "../services/low-price-transfer.html" },
+                { t: "报酬指南", d: "代理记账 · 代理纳税申报 · 转让继承赠与 · 税务争议救济标准报酬", u: "../price.html" },
+                { t: "咨询申请", d: "填写咨询申请表 · 电话 · 邮件 · KakaoTalk咨询", u: "../contact.html" },
+                { t: "致辞", d: "崔埈伟税务师的学历与经历介绍", u: "../index.html#about" },
+                { t: "业务领域", d: "六项分行业定制税务方案", u: "../index.html#services" },
+                { t: "交通路线", d: "首尔衿川区加山数码2路135号 加山Urban Work 1栋302室", u: "../index.html#location" }
+            ];
+
+            var sBtn = document.getElementById("search-toggle");
+            var sPanel = document.getElementById("search-panel");
+            var sInput = document.getElementById("search-input");
+            var sClose = document.getElementById("search-close");
+            var sList = document.getElementById("search-results");
+            var sEmpty = document.getElementById("search-empty");
+
+            function render(q) {
+                var query = (q || "").trim().toLowerCase();
+                sList.innerHTML = "";
+                if (!query) { sEmpty.hidden = true; return; }
+                var hits = INDEX.filter(function (it) {
+                    return (it.t + " " + it.d).toLowerCase().indexOf(query) !== -1;
+                });
+                sEmpty.hidden = hits.length > 0;
+                hits.forEach(function (it) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.href = it.u;
+                    a.innerHTML = '<span class="r-title"></span><span class="r-desc"></span>';
+                    a.querySelector(".r-title").textContent = it.t;
+                    a.querySelector(".r-desc").textContent = it.d;
+                    li.appendChild(a);
+                    sList.appendChild(li);
+                });
+            }
+
+            function setSearch(open) {
+                if (!sPanel) return;
+                sPanel.hidden = !open;
+                nav.classList.toggle("is-search", open);
+                sBtn.setAttribute("aria-expanded", open ? "true" : "false");
+                if (open) { sInput.focus(); } else { sInput.value = ""; render(""); }
+            }
+
+            if (sBtn && sPanel) {
+                sBtn.addEventListener("click", function () { setSearch(sPanel.hidden); });
+                sClose.addEventListener("click", function () { setSearch(false); });
+                sInput.addEventListener("input", function () { render(sInput.value); });
+                sList.addEventListener("click", function (e) { if (e.target.closest("a")) setSearch(false); });
+            }
+
+            // ---- 语言选择 ----
+            var lBtn = document.getElementById("lang-toggle");
+            var lMenu = document.getElementById("lang-menu");
+
+            function setLang(open) {
+                if (!lMenu) return;
+                lMenu.hidden = !open;
+                lBtn.setAttribute("aria-expanded", open ? "true" : "false");
+            }
+
+            if (lBtn && lMenu) {
+                lBtn.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    setLang(lMenu.hidden);
+                });
+                document.addEventListener("click", function (e) {
+                    if (!e.target.closest(".nav-lang")) setLang(false);
+                });
+            }
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") { setSearch(false); setLang(false); }
+            });
+        })();
+    </script>
+    <!-- 모바일 메뉴 열고 닫기 -->
+    <script>
+        (function () {
+            var nav = document.getElementById("nav");
+            var btn = document.getElementById("nav-toggle");
+            var menu = document.getElementById("nav-menu");
+            if (!nav || !btn || !menu) return;
+
+            function setOpen(open) {
+                nav.classList.toggle("is-open", open);
+                menu.hidden = !open;
+                btn.setAttribute("aria-expanded", open ? "true" : "false");
+                btn.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
+            }
+
+            btn.addEventListener("click", function () { setOpen(menu.hidden); });
+            menu.addEventListener("click", function (e) {
+                if (e.target.closest("a")) setOpen(false);
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") setOpen(false);
+            });
+            window.addEventListener("resize", function () {
+                if (window.innerWidth >= 768) setOpen(false);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

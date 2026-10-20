@@ -380,9 +380,7 @@
             -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
             word-break: keep-all; overflow-wrap: break-word;
         }
-        .step-line { min-height: 1.5rem; }
         summary::-webkit-details-marker { display: none; }
-        .flow > div:last-child .step-line { display: none; }
         #nav { background: transparent; transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
         #nav::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)); transition:opacity .3s ease; }
         #nav.is-scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom:1px solid rgba(194,198,215,.35); box-shadow:0 2px 14px rgba(0,0,0,.06); }
@@ -562,7 +560,6 @@
         </div>
 
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-            <p class="text-primary font-bold text-sm tracking-widest mb-3">OVERVIEW</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">业务概要</h2>
             <div class="max-w-3xl space-y-5">
                 <p class="text-on-surface-variant text-[17px] leading-loose">附负担赠与，系指在赠与财产的同时，由受赠人一并承受该财产所附债务的方式。税法将其一分为二：承担债务的部分视为有偿移转，就该部分向赠与人课征转让所得税；其余部分则向受赠人课征赠与税。因此，既有较单纯赠与更为有利的情形，亦有因赠与人的转让所得税负担加重而反显不利的情形。</p>
@@ -572,7 +569,6 @@
 
         <section class="bg-surface-container-low border-y border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-                <p class="text-primary font-bold text-sm tracking-widest mb-3">KEY ISSUES</p>
                 <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">附负担赠与主要税务问题</h2>
                 <ol class="max-w-3xl border-t border-outline-variant/50">
                     <li class="flex gap-5 md:gap-7 py-7 border-b border-outline-variant/50">
@@ -615,45 +611,25 @@
         </section>
 
         <section class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-            <p class="text-primary font-bold text-sm tracking-widest mb-3">HOW WE HELP</p>
             <h2 class="text-2xl md:text-[28px] font-bold mb-10 tracking-tight">VALUE税务会计的应对</h2>
-            <div class="flow max-w-2xl">
-                <div class="relative flex gap-5 pb-8 last:pb-0">
-                    <div class="relative flex flex-col items-center">
-                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">01</span>
-                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
-                    </div>
-                    <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">三种方式的比较计算</h3>
-                        <p class="text-on-surface-variant leading-relaxed">以同一基准计算单纯赠与、附负担赠与与买卖，比较赠与税、转让所得税与取得税合计的总负担及资金流向。</p>
-                    </div>
+            <div class="max-w-4xl border-t border-outline-variant/50">
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">三种方式的比较计算</h3>
+                    <p class="text-on-surface-variant leading-loose">以同一基准计算单纯赠与、附负担赠与与买卖，比较赠与税、转让所得税与取得税合计的总负担及资金流向。</p>
                 </div>
-                <div class="relative flex gap-5 pb-8 last:pb-0">
-                    <div class="relative flex flex-col items-center">
-                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">02</span>
-                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
-                    </div>
-                    <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">债务承担要件的整备</h3>
-                        <p class="text-on-surface-variant leading-relaxed">就租赁合同的承继与贷款名义变更等使债务确实移转的程序提供指引，并协助预先备齐举证资料。</p>
-                    </div>
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">债务承担要件的整备</h3>
+                    <p class="text-on-surface-variant leading-loose">就租赁合同的承继与贷款名义变更等使债务确实移转的程序提供指引，并协助预先备齐举证资料。</p>
                 </div>
-                <div class="relative flex gap-5 pb-8 last:pb-0">
-                    <div class="relative flex flex-col items-center">
-                        <span class="grid place-items-center w-11 h-11 rounded-full bg-primary text-white font-bold text-[15px] shrink-0">03</span>
-                        <span class="step-line flex-1 w-px bg-outline-variant/60 mt-1"></span>
-                    </div>
-                    <div class="pt-1.5">
-                        <h3 class="font-bold text-[18px] mb-1.5">申报与后续管理</h3>
-                        <p class="text-on-surface-variant leading-relaxed">分别在期限内申报赠与税与转让所得税，并整理所承担债务的偿还明细，以备日后核查。</p>
-                    </div>
+                <div class="grid md:grid-cols-[13rem_1fr] gap-x-10 gap-y-2 py-7 border-b border-outline-variant/50">
+                    <h3 class="font-bold text-[17px] leading-snug">申报与后续管理</h3>
+                    <p class="text-on-surface-variant leading-loose">分别在期限内申报赠与税与转让所得税，并整理所承担债务的偿还明细，以备日后核查。</p>
                 </div>
             </div>
         </section>
 
         <section class="border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-16 md:py-20">
-                <p class="text-primary font-bold text-sm tracking-widest mb-3">FAQ</p>
                 <h2 class="text-2xl md:text-[28px] font-bold mb-8 tracking-tight">附负担赠与常见问题</h2>
                 <div class="max-w-3xl border-y border-outline-variant/40 divide-y divide-outline-variant/40">
                     <details class="group py-5">
@@ -702,24 +678,31 @@
 
         <section class="bg-surface-container-low border-t border-outline-variant/40">
             <div class="max-w-[1100px] mx-auto px-5 py-14 md:py-16">
-                <p class="text-primary font-bold text-sm tracking-widest mb-3">OTHER INDUSTRIES</p>
                 <h2 class="text-xl md:text-2xl font-bold mb-6 tracking-tight">其他业务领域</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a href="./construction.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">建设业</span>
                 </a>
-                <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">进出口业</span>
-                </a>
                 <a href="./manufacturing.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">制造业</span>
                 </a>
-                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
-                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">批发零售业</span>
+                <a href="./trade.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">directions_boat</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">进出口业</span>
+                </a>
+                <a href="./logistics.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">local_shipping</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">运输物流业</span>
+                </a>
+                <a href="./medical.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">medical_services</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">医疗机构</span>
+                </a>
+                <a href="./pharmacy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">medication</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">药局</span>
                 </a>
                 <a href="./academy.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">menu_book</span>
@@ -728,6 +711,14 @@
                 <a href="./restaurant.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
                     <span class="font-bold text-[15px] group-hover:text-primary transition-colors">餐饮业</span>
+                </a>
+                <a href="./it.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">code</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">IT软件业</span>
+                </a>
+                <a href="./retail.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+                    <span class="font-bold text-[15px] group-hover:text-primary transition-colors">批发零售业</span>
                 </a>
                 <a href="./transfer.html" class="group flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/40 rounded-xl px-4 py-3.5 hover:border-primary hover:shadow-sm transition-all">
                     <span class="material-symbols-outlined text-primary text-[22px]">real_estate_agent</span>
@@ -802,10 +793,14 @@
             var INDEX = [
                 { t: "建设业税务", d: "完工进度（履约进度）收入确认 · 工地劳务费凭证 · 建设业登记标准维持", u: "../services/construction.html" },
                 { t: "进出口业税务", d: "零税率适用要件 · 增值税提前退税 · 外汇交易法申报", u: "../services/trade.html" },
+                { t: "运输物流业税务", d: "国际运输零税率 · 总额与净额收入确认 · 垫付款税务发票 · 物流产业税额减免", u: "../services/tradlogistics.html" },
                 { t: "制造业税务", d: "存货计价与成本 · 研究及人力开发费税额抵免 · 设备投资抵免", u: "../services/manufacturing.html" },
                 { t: "批发零售业税务", d: "分渠道销售归集 · 结算明细核对 · 存货资产管理", u: "../services/retail.html" },
                 { t: "补习班税务", d: "学费免税划分 · 讲师酬金代扣代缴 · 营业场所现状申报", u: "../services/academy.html" },
+                { t: "医疗机构税务", d: "美容诊疗应税划分 · 自费收入 · 现金收据强制开具 · 营业场所现状申报", u: "../services/medical.html" },
+                { t: "药局税务", d: "调剂收入免税 · 非处方药应税 · 进项税额分摊 · 调剂费代扣", u: "../services/medicapharmacy.html" },
                 { t: "餐饮业税务", d: "拟制进项税额扣除 · 外卖平台销售 · 现金收据强制开具", u: "../services/restaurant.html" },
+                { t: "IT软件业税务", d: "研发费用税额抵免 · 创业中小企业减免 · 创业风险企业 · 股票期权 · 境外零税率", u: "../services/restauranit.html" },
                 { t: "继承与赠与税务", d: "生前赠与并入 · 财产评估 · 配偶继承扣除 · 家业继承扣除", u: "../services/inheritance.html" },
                 { t: "转让所得税", d: "一户一住宅免税 · 征收补偿减免 · 重建旧改入住权 · 登记出租住宅", u: "../services/transfer.html" },
                 { t: "非上市股票评估", d: "补充评估方法 · 净损益价值 · 净资产价值 · 最大股东溢价 · 家业承继", u: "../services/stock-valuation.html" },

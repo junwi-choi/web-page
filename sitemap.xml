@@ -221,6 +221,46 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://vtax.kr/services/it.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/it.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/pharmacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/pharmacy.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/logistics.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/logistics.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/services/medical.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/medical.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://vtax.kr/en/services/academy.html</loc>
         <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/academy.html" />
         <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/academy.html" />
@@ -231,12 +271,92 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://vtax.kr/en/services/it.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/it.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/pharmacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/pharmacy.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/logistics.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/logistics.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/en/services/medical.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/medical.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://vtax.kr/zh/services/academy.html</loc>
         <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/academy.html" />
         <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/academy.html" />
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/academy.html" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/academy.html" />
         <lastmod>2026-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/it.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/it.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/it.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/pharmacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/pharmacy.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/pharmacy.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/logistics.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/logistics.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/logistics.html" />
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vtax.kr/zh/services/medical.html</loc>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://vtax.kr/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://vtax.kr/en/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vtax.kr/zh/services/medical.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://vtax.kr/services/medical.html" />
+        <lastmod>2026-10-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
