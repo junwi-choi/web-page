@@ -889,6 +889,38 @@
             filter: none;
         }
 
+        /* 业务领域 카드 — 사진 위 제목, 아래 키워드 태그 */
+        .svc-card-img { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #e9ecf3; }
+
+        .svc-card-img > img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .7s cubic-bezier(.2, .7, .3, 1);
+        }
+
+        .svc-card:hover .svc-card-img > img { transform: scale(1.06); }
+
+        .svc-card-scrim {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .35) 42%, rgba(0, 0, 0, .05) 100%);
+        }
+
+        .svc-tag {
+            display: inline-flex; align-items: center;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background: rgba(0, 85, 201, .07);
+            color: #3c5478;
+            font-size: 12.5px; font-weight: 700;
+            letter-spacing: -.01em;
+            white-space: nowrap;
+        }
+
+        .svc-card:hover .svc-tag { background: rgba(0, 85, 201, .12); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .svc-card-img > img { transition: none; }
+            .svc-card:hover .svc-card-img > img { transform: none; }
+        }
         /* 财产税务 세부 항목 快捷链接 */
         .prop-chip {
             display: inline-flex;
@@ -1340,103 +1372,184 @@
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Industry 1 -->
-                <a href="./services/construction.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">engineering</span>
+                <a href="./services/medical.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-medical.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">medical_services</span>
+                            <h4 class="text-title-lg">医疗机构</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">建设业</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">我们以工地为单位管理按完工进度的损益归属与工地日雇劳动者劳务费凭证，并在决算前检查实质资本与财务比率，一并顾及建设业登记标准的维持。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">诊疗免税，以美容为目的的诊疗则划为应税。我们按诊疗项目确立划分标准，并核对医保支付明细与自费、刷卡销售额，使营业场所现状申报与综合所得税申报不致出现偏差。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">美容诊疗应税划分</span>
+                            <span class="svc-tag">现金收据强制开具</span>
+                            <span class="svc-tag">共同开业损益分配</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 2 -->
-                <a href="./services/manufacturing.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
+                <a href="./services/trade.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-trade.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">directions_boat</span>
+                            <h4 class="text-title-lg">进出口业</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">制造业</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">我们设计成本体系，使制造成本明细表如实反映实际生产流程。研究及人力开发费税额抵免、综合投资税额抵免的要件，自费用发生之时起即予管理，确保决算时不被否认。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">我们整顿零税率适用要件与装运单证，并将提前退税常态化以减轻资金压力。转口贸易、委托加工等征税方式不同的交易，在合同阶段即审查其架构。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">零税率适用要件</span>
+                            <span class="svc-tag">增值税提前退税</span>
+                            <span class="svc-tag">中转贸易与委托加工</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 3 -->
-                <a href="./services/trade.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">directions_boat</span>
+                <a href="./services/manufacturing.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-manufacturing.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+                            <h4 class="text-title-lg">制造业</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">进出口业</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">我们整顿零税率适用要件与装运单证，并将提前退税常态化以减轻资金压力。转口贸易、委托加工等征税方式不同的交易，在合同阶段即审查其架构。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">我们设计成本体系，使制造成本明细表如实反映实际生产流程。研究及人力开发费税额抵免、综合投资税额抵免的要件，自费用发生之时起即予管理，确保决算时不被否认。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">制造成本体系设计</span>
+                            <span class="svc-tag">研发费用税额抵免</span>
+                            <span class="svc-tag">综合投资税额抵免</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 4 -->
-                <a href="./services/logistics.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">local_shipping</span>
+                <a href="./services/pharmacy.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-pharmacy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">medication</span>
+                            <h4 class="text-title-lg">药局</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">运输物流业</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">先依合同实质确定：销售额是向货主收取的运费全额，还是扣除支付给承运人运费后的差额。再将国际区段与国内区段分开，理顺零税率凭证与垫付款税务发票。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">调剂收入免税、非处方药与化妆品销售应税，销售额在同一柜台分流。我们将处方药与非处方药的采购划分为可抵扣与不可抵扣，并收回公团扣下的调剂费代扣税。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">调剂与销售收入分离</span>
+                            <span class="svc-tag">进项税额分摊</span>
+                            <span class="svc-tag">调剂费代扣代缴</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 5 -->
-                <a href="./services/medical.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">medical_services</span>
+                <a href="./services/logistics.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-logistics.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">local_shipping</span>
+                            <h4 class="text-title-lg">运输物流业</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">医疗机构</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">诊疗免税，以美容为目的的诊疗则划为应税。我们按诊疗项目确立划分标准，并核对医保支付明细与自费、刷卡销售额，使营业场所现状申报与综合所得税申报不致出现偏差。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">先依合同实质确定：销售额是向货主收取的运费全额，还是扣除支付给承运人运费后的差额。再将国际区段与国内区段分开，理顺零税率凭证与垫付款税务发票。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">国际运输零税率</span>
+                            <span class="svc-tag">总额与净额收入确认</span>
+                            <span class="svc-tag">垫付款税务发票</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 6 -->
-                <a href="./services/pharmacy.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">medication</span>
+                <a href="./services/construction.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-construction.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">engineering</span>
+                            <h4 class="text-title-lg">建设业</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">药局</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">调剂收入免税、非处方药与化妆品销售应税，销售额在同一柜台分流。我们将处方药与非处方药的采购划分为可抵扣与不可抵扣，并收回公团扣下的调剂费代扣税。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">我们以工地为单位管理按完工进度的损益归属与工地日雇劳动者劳务费凭证，并在决算前检查实质资本与财务比率，一并顾及建设业登记标准的维持。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">完工百分比收入确认</span>
+                            <span class="svc-tag">工地劳务费凭证</span>
+                            <span class="svc-tag">登记基准实质资本</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 7 -->
-                <a href="./services/academy.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">menu_book</span>
+                <a href="./services/it.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-it.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">code</span>
+                            <h4 class="text-title-lg">IT软件业</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">补习班</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">我们建立学费与教材费划分免税与应税的标准，并按经济实质整顿讲师合同形式，管理营业场所现状申报与综合所得税申报，使二者建立在同一收入金额基础之上。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">研究与人力开发费税额抵免的要件并非在决算时形成，而是自支出之时起累积。我们先建立按课题分摊人工费的体系，再依创业地区与是否取得风险企业认定，找出实际可享的减免。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">研发费用税额抵免</span>
+                            <span class="svc-tag">创业风险企业税额减免</span>
+                            <span class="svc-tag">股票期权课税</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 8 -->
-                <a href="./services/restaurant.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">restaurant</span>
+                <a href="./services/academy.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-academy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">menu_book</span>
+                            <h4 class="text-title-lg">补习班</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">餐饮业</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">我们从采购凭证的取得方式着手整顿，以最大限度运用拟制进项税额扣除。刷卡、现金与外卖销售同POS记录核对，为申报销售额留下依据；中介手续费确认为单独费用。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">我们建立学费与教材费划分免税与应税的标准，并按经济实质整顿讲师合同形式，管理营业场所现状申报与综合所得税申报，使二者建立在同一收入金额基础之上。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">学费免税划分</span>
+                            <span class="svc-tag">讲师酬金代扣代缴</span>
+                            <span class="svc-tag">营业场所现状申报</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 9 -->
-                <a href="./services/it.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">code</span>
+                <a href="./services/restaurant.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-restaurant.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">restaurant</span>
+                            <h4 class="text-title-lg">餐饮业</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">IT软件业</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">研究与人力开发费税额抵免的要件并非在决算时形成，而是自支出之时起累积。我们先建立按课题分摊人工费的体系，再依创业地区与是否取得风险企业认定，找出实际可享的减免。</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">我们从采购凭证的取得方式着手整顿，以最大限度运用拟制进项税额扣除。刷卡、现金与外卖销售同POS记录核对，为申报销售额留下依据；中介手续费确认为单独费用。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">拟制进项税额扣除</span>
+                            <span class="svc-tag">外卖平台销售核对</span>
+                            <span class="svc-tag">POS销售核对</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
             </div>
 
@@ -1454,6 +1567,11 @@
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">继承与赠与</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">税额取决于生前赠与的并入与财产评估方法。我们计算赠与与继承何者更为有利，并事先核查配偶继承扣除与家业继承扣除的要件。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">事前赠与合算</span>
+                            <span class="svc-tag">配偶继承扣除</span>
+                            <span class="svc-tag">家业继承扣除</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                     <a href="./services/transfer.html"
@@ -1464,6 +1582,11 @@
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">转让所得税</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">一户一住宅免税、公益事业征收补偿减免、重建与旧改入住权认定、登记出租住宅要件。唯有在签订出售合同前审查，方能降低负担。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">一户一住宅免税</span>
+                            <span class="svc-tag">征收补偿减免</span>
+                            <span class="svc-tag">重建与旧改入住权</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                     <a href="./services/stock-valuation.html"
@@ -1474,6 +1597,11 @@
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">非上市股票评估</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">没有市价的非上市股票，须按法律规定的方法估值。我们逐一审视净损益价值、净资产价值与最大股东溢价，为继承赠与及家业承继确立基准。</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">补充性评价方法</span>
+                            <span class="svc-tag">最大股东溢价</span>
+                            <span class="svc-tag">家业承继事前审查</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">查看详情<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                 </div>

@@ -889,6 +889,38 @@
             filter: none;
         }
 
+        /* 업무 분야 카드 — 사진 위 제목, 아래 키워드 태그 */
+        .svc-card-img { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #e9ecf3; }
+
+        .svc-card-img > img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .7s cubic-bezier(.2, .7, .3, 1);
+        }
+
+        .svc-card:hover .svc-card-img > img { transform: scale(1.06); }
+
+        .svc-card-scrim {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .35) 42%, rgba(0, 0, 0, .05) 100%);
+        }
+
+        .svc-tag {
+            display: inline-flex; align-items: center;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background: rgba(0, 85, 201, .07);
+            color: #3c5478;
+            font-size: 12.5px; font-weight: 700;
+            letter-spacing: -.01em;
+            white-space: nowrap;
+        }
+
+        .svc-card:hover .svc-tag { background: rgba(0, 85, 201, .12); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .svc-card-img > img { transition: none; }
+            .svc-card:hover .svc-card-img > img { transform: none; }
+        }
         /* 재산 세무 세부 항목 바로가기 */
         .prop-chip {
             display: inline-flex;
@@ -1340,103 +1372,184 @@
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Industry 1 -->
-                <a href="./services/construction.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">engineering</span>
+                <a href="./services/medical.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-medical.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">medical_services</span>
+                            <h4 class="text-title-lg">병의원</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">건설업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">공사 진행률에 따른 손익 귀속과 현장 일용직 노무비 증빙을 현장 단위로 관리합니다. 결산 전에 실질자본과 재무비율을 점검해 건설업 등록기준 유지까지 함께 살핍니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">진료는 면세, 미용 목적 시술은 과세로 갈립니다. 시술 항목별로 구분 기준을 세우고, 공단 지급내역과 비급여·카드 매출을 맞춰 사업장현황신고와 종합소득세 신고가 어긋나지 않도록 관리합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">미용시술 과세 구분</span>
+                            <span class="svc-tag">현금영수증 의무발행</span>
+                            <span class="svc-tag">공동개원 손익분배</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 2 -->
-                <a href="./services/manufacturing.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
+                <a href="./services/trade.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-trade.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">directions_boat</span>
+                            <h4 class="text-title-lg">수출입업</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">제조업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">제조원가명세서가 실제 생산 흐름을 반영하도록 원가 체계를 설계합니다. 연구·인력개발비 세액공제와 통합투자세액공제는 요건을 지출 시점부터 관리해 결산에서 부인되지 않도록 합니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">영세율 적용 요건과 선적서류를 정비하고, 조기환급을 정례화해 자금 부담을 줄입니다. 중계무역·위탁가공처럼 과세 방식이 달라지는 거래는 계약 단계에서 구조를 검토합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">영세율 적용 요건</span>
+                            <span class="svc-tag">부가세 조기환급</span>
+                            <span class="svc-tag">중계무역·위탁가공</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 3 -->
-                <a href="./services/trade.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">directions_boat</span>
+                <a href="./services/manufacturing.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-manufacturing.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+                            <h4 class="text-title-lg">제조업</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">수출입업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">영세율 적용 요건과 선적서류를 정비하고, 조기환급을 정례화해 자금 부담을 줄입니다. 중계무역·위탁가공처럼 과세 방식이 달라지는 거래는 계약 단계에서 구조를 검토합니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">제조원가명세서가 실제 생산 흐름을 반영하도록 원가 체계를 설계합니다. 연구·인력개발비 세액공제와 통합투자세액공제는 요건을 지출 시점부터 관리해 결산에서 부인되지 않도록 합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">제조원가 체계 설계</span>
+                            <span class="svc-tag">연구인력개발비 공제</span>
+                            <span class="svc-tag">통합투자세액공제</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 4 -->
-                <a href="./services/logistics.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">local_shipping</span>
+                <a href="./services/pharmacy.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-pharmacy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">medication</span>
+                            <h4 class="text-title-lg">약국</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">운수·물류업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">화주에게 받은 운임 전부가 매출인지, 운송인에게 준 운임을 뺀 차액만 매출인지부터 계약의 실질로 정합니다. 국제 구간과 국내 구간을 나눠 영세율 증빙과 대납금 세금계산서를 정리합니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">조제수입은 면세, 일반의약품과 화장품 판매는 과세라 한 카운터에서 매출이 갈립니다. 전문의약품과 일반의약품 매입을 공제·불공제로 나누고 공단에서 떼인 조제료 원천세까지 챙깁니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">조제·판매 매출 분리</span>
+                            <span class="svc-tag">매입세액 안분</span>
+                            <span class="svc-tag">조제료 원천징수</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 5 -->
-                <a href="./services/medical.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">medical_services</span>
+                <a href="./services/logistics.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-logistics.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">local_shipping</span>
+                            <h4 class="text-title-lg">운수·물류업</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">병의원</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">진료는 면세, 미용 목적 시술은 과세로 갈립니다. 시술 항목별로 구분 기준을 세우고, 공단 지급내역과 비급여·카드 매출을 맞춰 사업장현황신고와 종합소득세 신고가 어긋나지 않도록 관리합니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">화주에게 받은 운임 전부가 매출인지, 운송인에게 준 운임을 뺀 차액만 매출인지부터 계약의 실질로 정합니다. 국제 구간과 국내 구간을 나눠 영세율 증빙과 대납금 세금계산서를 정리합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">국제운송 영세율</span>
+                            <span class="svc-tag">총액·순액 수익인식</span>
+                            <span class="svc-tag">대납금 세금계산서</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 6 -->
-                <a href="./services/pharmacy.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">medication</span>
+                <a href="./services/construction.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-construction.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">engineering</span>
+                            <h4 class="text-title-lg">건설업</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">약국</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">조제수입은 면세, 일반의약품과 화장품 판매는 과세라 한 카운터에서 매출이 갈립니다. 전문의약품과 일반의약품 매입을 공제·불공제로 나누고 공단에서 떼인 조제료 원천세까지 챙깁니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">공사 진행률에 따른 손익 귀속과 현장 일용직 노무비 증빙을 현장 단위로 관리합니다. 결산 전에 실질자본과 재무비율을 점검해 건설업 등록기준 유지까지 함께 살핍니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">기성고 수익인식</span>
+                            <span class="svc-tag">현장 노무비 증빙</span>
+                            <span class="svc-tag">등록기준 실질자본</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 7 -->
-                <a href="./services/academy.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">menu_book</span>
+                <a href="./services/it.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-it.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">code</span>
+                            <h4 class="text-title-lg">IT·소프트웨어</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">학원업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">교습비와 교재비를 면세·과세로 나누는 기준을 세우고, 강사 계약 형태를 실질에 맞게 정비합니다. 사업장현황신고와 종합소득세 신고가 하나의 수입금액 기준 위에서 이어지도록 관리합니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">연구·인력개발비 세액공제는 결산이 아니라 지출 시점부터 요건이 쌓입니다. 과제별 인건비 배분 체계를 먼저 만들고, 창업 지역과 벤처 확인 여부에 따라 실제로 받을 수 있는 감면을 찾습니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">연구인력개발비 공제</span>
+                            <span class="svc-tag">창업벤처 세액감면</span>
+                            <span class="svc-tag">스톡옵션 과세</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 8 -->
-                <a href="./services/restaurant.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">restaurant</span>
+                <a href="./services/academy.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-academy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">menu_book</span>
+                            <h4 class="text-title-lg">학원업</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">음식점업</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">의제매입세액공제를 최대한 활용하도록 매입 증빙 수취 방식부터 정비합니다. 카드·현금·배달 매출을 POS 기록과 대사해 신고 매출의 근거를 남기고, 중개수수료는 별도 비용으로 인식합니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">교습비와 교재비를 면세·과세로 나누는 기준을 세우고, 강사 계약 형태를 실질에 맞게 정비합니다. 사업장현황신고와 종합소득세 신고가 하나의 수입금액 기준 위에서 이어지도록 관리합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">교습비 면세 구분</span>
+                            <span class="svc-tag">강사료 원천징수</span>
+                            <span class="svc-tag">사업장현황신고</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 9 -->
-                <a href="./services/it.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">code</span>
+                <a href="./services/restaurant.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="./source/card-restaurant.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">restaurant</span>
+                            <h4 class="text-title-lg">음식점업</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">IT·소프트웨어</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">연구·인력개발비 세액공제는 결산이 아니라 지출 시점부터 요건이 쌓입니다. 과제별 인건비 배분 체계를 먼저 만들고, 창업 지역과 벤처 확인 여부에 따라 실제로 받을 수 있는 감면을 찾습니다.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">의제매입세액공제를 최대한 활용하도록 매입 증빙 수취 방식부터 정비합니다. 카드·현금·배달 매출을 POS 기록과 대사해 신고 매출의 근거를 남기고, 중개수수료는 별도 비용으로 인식합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">의제매입세액공제</span>
+                            <span class="svc-tag">배달앱 매출 대사</span>
+                            <span class="svc-tag">POS 매출 대사</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
             </div>
 
@@ -1454,6 +1567,11 @@
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">상속·증여</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">사전증여 합산과 재산 평가 방법에 따라 세액이 달라집니다. 증여와 상속 중 어느 쪽이 유리한지 계산하고, 배우자 상속공제와 가업상속공제 요건을 미리 점검합니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">사전증여 합산</span>
+                            <span class="svc-tag">배우자 상속공제</span>
+                            <span class="svc-tag">가업상속공제</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                     <a href="./services/transfer.html"
@@ -1464,6 +1582,11 @@
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">양도소득세</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">1세대 1주택 비과세, 공익사업 수용 보상 감면, 재건축·재개발 입주권 판정, 등록임대주택 요건까지. 매도 계약 전에 검토해야 줄일 수 있습니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">1세대 1주택 비과세</span>
+                            <span class="svc-tag">수용 보상 감면</span>
+                            <span class="svc-tag">재건축·재개발 입주권</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                     <a href="./services/stock-valuation.html"
@@ -1474,6 +1597,11 @@
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">비상장주식 평가</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">시가가 없는 비상장주식은 법이 정한 방법으로 값을 매깁니다. 순손익가치와 순자산가치, 최대주주 할증까지 따져 상속·증여와 가업승계의 기준을 세웁니다.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">보충적 평가방법</span>
+                            <span class="svc-tag">최대주주 할증</span>
+                            <span class="svc-tag">가업승계 사전검토</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">자세히 보기<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                 </div>

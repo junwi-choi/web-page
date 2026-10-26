@@ -889,6 +889,38 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
             filter: none;
         }
 
+        /* Practice Areas 카드 — 사진 위 제목, 아래 키워드 태그 */
+        .svc-card-img { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #e9ecf3; }
+
+        .svc-card-img > img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .7s cubic-bezier(.2, .7, .3, 1);
+        }
+
+        .svc-card:hover .svc-card-img > img { transform: scale(1.06); }
+
+        .svc-card-scrim {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .35) 42%, rgba(0, 0, 0, .05) 100%);
+        }
+
+        .svc-tag {
+            display: inline-flex; align-items: center;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background: rgba(0, 85, 201, .07);
+            color: #3c5478;
+            font-size: 12.5px; font-weight: 700;
+            letter-spacing: -.01em;
+            white-space: nowrap;
+        }
+
+        .svc-card:hover .svc-tag { background: rgba(0, 85, 201, .12); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .svc-card-img > img { transition: none; }
+            .svc-card:hover .svc-card-img > img { transform: none; }
+        }
         /* Property Tax 세부 항목 Quick links */
         .prop-chip {
             display: inline-flex;
@@ -1340,103 +1372,184 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
         <div class="max-w-[1200px] mx-auto px-4 md:px-margin-desktop">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Industry 1 -->
-                <a href="./services/construction.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">engineering</span>
+                <a href="./services/medical.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-medical.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">medical_services</span>
+                            <h4 class="text-title-lg">Medical Clinics</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Construction</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We manage the attribution of profit by percentage of completion and the documentation of on-site daily labour at site level. Before closing we check substantive capital and financial ratios, so that construction registration is maintained as well.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">Treatment is exempt while cosmetic procedures are taxable. We set the classification standard procedure by procedure and reconcile NHIS payment records with non-covered and card sales so the status return and the global income tax filing stay consistent.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Taxable cosmetic procedures</span>
+                            <span class="svc-tag">Mandatory cash receipts</span>
+                            <span class="svc-tag">Joint practice profit sharing</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 2 -->
-                <a href="./services/manufacturing.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
+                <a href="./services/trade.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-trade.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">directions_boat</span>
+                            <h4 class="text-title-lg">Import &amp; Export</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Manufacturing</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We design a cost structure so that the statement of cost of goods manufactured reflects how production actually flows. For the R&amp;D and integrated investment tax credits, we manage the requirements from the moment each expense arises so nothing is disallowed at closing.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">We put the zero-rating requirements and shipping documents in order and make early refunds routine to ease cash pressure. Transactions taxed differently, such as intermediary trade and consignment processing, are reviewed at the contract stage.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Zero-rating requirements</span>
+                            <span class="svc-tag">Early VAT refund</span>
+                            <span class="svc-tag">Intermediary trade &amp; toll processing</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 3 -->
-                <a href="./services/trade.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">directions_boat</span>
+                <a href="./services/manufacturing.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-manufacturing.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+                            <h4 class="text-title-lg">Manufacturing</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Import &amp; Export</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We put the zero-rating requirements and shipping documents in order and make early refunds routine to ease cash pressure. Transactions taxed differently, such as intermediary trade and consignment processing, are reviewed at the contract stage.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">We design a cost structure so that the statement of cost of goods manufactured reflects how production actually flows. For the R&amp;D and integrated investment tax credits, we manage the requirements from the moment each expense arises so nothing is disallowed at closing.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Production cost system design</span>
+                            <span class="svc-tag">R&amp;D tax credit</span>
+                            <span class="svc-tag">Integrated investment credit</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 4 -->
-                <a href="./services/logistics.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">local_shipping</span>
+                <a href="./services/pharmacy.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-pharmacy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">medication</span>
+                            <h4 class="text-title-lg">Pharmacies</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Transport &amp; Logistics</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We start from the substance of the contract to decide whether revenue is the whole freight received or only the margin after paying the carrier. We then separate international from domestic legs and organise zero-rating evidence and disbursement invoices.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">Dispensing is exempt while OTC and cosmetics sales are taxable, so revenue splits at a single counter. We divide prescription and OTC purchases into deductible and non-deductible input VAT and recover the dispensing-fee tax withheld by the NHIS.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Separating dispensing and retail sales</span>
+                            <span class="svc-tag">Input VAT apportionment</span>
+                            <span class="svc-tag">Dispensing fee withholding</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 5 -->
-                <a href="./services/medical.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">medical_services</span>
+                <a href="./services/logistics.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-logistics.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">local_shipping</span>
+                            <h4 class="text-title-lg">Transport &amp; Logistics</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Medical Clinics</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">Treatment is exempt while cosmetic procedures are taxable. We set the classification standard procedure by procedure and reconcile NHIS payment records with non-covered and card sales so the status return and the global income tax filing stay consistent.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">We start from the substance of the contract to decide whether revenue is the whole freight received or only the margin after paying the carrier. We then separate international from domestic legs and organise zero-rating evidence and disbursement invoices.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Zero-rated international carriage</span>
+                            <span class="svc-tag">Gross vs net revenue</span>
+                            <span class="svc-tag">Disbursement tax invoices</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 6 -->
-                <a href="./services/pharmacy.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">medication</span>
+                <a href="./services/construction.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-construction.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">engineering</span>
+                            <h4 class="text-title-lg">Construction</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Pharmacies</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">Dispensing is exempt while OTC and cosmetics sales are taxable, so revenue splits at a single counter. We divide prescription and OTC purchases into deductible and non-deductible input VAT and recover the dispensing-fee tax withheld by the NHIS.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">We manage the attribution of profit by percentage of completion and the documentation of on-site daily labour at site level. Before closing we check substantive capital and financial ratios, so that construction registration is maintained as well.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Percentage-of-completion revenue</span>
+                            <span class="svc-tag">On-site labour documentation</span>
+                            <span class="svc-tag">Registration capital requirement</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 7 -->
-                <a href="./services/academy.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">menu_book</span>
+                <a href="./services/it.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-it.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">code</span>
+                            <h4 class="text-title-lg">IT &amp; Software</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Private Academy</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We set the criteria for splitting tuition and materials between exempt and taxable supplies and align instructor contracts with their substance. The business establishment status return and the global income tax return are managed so that both rest on a single revenue figure.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">The requirements for the R&amp;D credit accumulate from the moment you spend, not at closing. We build project-level payroll allocation first, then find the reduction you can actually claim based on where you founded and whether venture certification is available.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">R&amp;D tax credit</span>
+                            <span class="svc-tag">Startup venture tax reduction</span>
+                            <span class="svc-tag">Stock option taxation</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 8 -->
-                <a href="./services/restaurant.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">restaurant</span>
+                <a href="./services/academy.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-academy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">menu_book</span>
+                            <h4 class="text-title-lg">Private Academy</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">Food Service</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">We start by fixing how purchase documentation is obtained so the deemed input tax credit can be used to the fullest. Card, cash and delivery sales are reconciled against POS records to evidence reported revenue, and platform commissions are recognised as a separate cost.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">We set the criteria for splitting tuition and materials between exempt and taxable supplies and align instructor contracts with their substance. The business establishment status return and the global income tax return are managed so that both rest on a single revenue figure.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Exempt tuition classification</span>
+                            <span class="svc-tag">Instructor fee withholding</span>
+                            <span class="svc-tag">Business establishment status return</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
                 <!-- Industry 9 -->
-                <a href="./services/it.html"
-                    class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:shadow-lg transition-all group flex flex-col">
-                    <div
-                        class="w-14 h-14 bg-secondary-container rounded-lg flex items-center justify-center mb-6 text-on-secondary-container group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[32px]">code</span>
+                <a href="./services/restaurant.html" class="svc-card group flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all">
+                    <div class="svc-card-img">
+                        <img src="../source/card-restaurant.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="640" height="360" />
+                        <span class="svc-card-scrim"></span>
+                        <span class="absolute left-5 bottom-4 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-[22px]">restaurant</span>
+                            <h4 class="text-title-lg">Food Service</h4>
+                        </span>
                     </div>
-                    <h4 class="text-title-lg text-on-background mb-3">IT &amp; Software</h4>
-                    <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">The requirements for the R&amp;D credit accumulate from the moment you spend, not at closing. We build project-level payroll allocation first, then find the reduction you can actually claim based on where you founded and whether venture certification is available.</p>
-                    <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow">
+                        <p class="text-on-surface-variant text-body-sm leading-relaxed line-clamp-4 flex-grow">We start by fixing how purchase documentation is obtained so the deemed input tax credit can be used to the fullest. Card, cash and delivery sales are reconciled against POS records to evidence reported revenue, and platform commissions are recognised as a separate cost.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Deemed input tax credit</span>
+                            <span class="svc-tag">Delivery app sales reconciliation</span>
+                            <span class="svc-tag">POS sales reconciliation</span>
+                        </div>
+                        <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+                    </div>
                 </a>
             </div>
 
@@ -1454,6 +1567,11 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">Inheritance &amp; Gift</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">The tax turns on the aggregation of prior gifts and the method of valuation. We calculate whether gifting or inheritance is more favourable and check the conditions for the spousal and family business deductions in advance.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Aggregation of prior gifts</span>
+                            <span class="svc-tag">Spousal inheritance deduction</span>
+                            <span class="svc-tag">Family business inheritance deduction</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                     <a href="./services/transfer.html"
@@ -1464,6 +1582,11 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">Capital Gains Tax</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">Exemption for a single house per household, relief on expropriation compensation, membership-right analysis in redevelopment, and registered rental housing requirements. The burden can only be reduced if reviewed before the sale contract.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Single-house exemption</span>
+                            <span class="svc-tag">Expropriation compensation relief</span>
+                            <span class="svc-tag">Redevelopment membership rights</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                     <a href="./services/stock-valuation.html"
@@ -1474,6 +1597,11 @@ Tailored tax solutions from VALUE Tax &amp; Accounting" />
                         </div>
                         <h4 class="text-title-lg text-on-background mb-3">Unlisted share valuation</h4>
                         <p class="text-on-surface-variant text-body-sm leading-relaxed flex-grow">Unlisted shares with no market price are valued by the method the statute prescribes. We work through the net earnings value, the net asset value and the premium for the largest shareholder to set the basis for inheritance, gift and business succession.</p>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="svc-tag">Supplementary valuation method</span>
+                            <span class="svc-tag">Largest shareholder premium</span>
+                            <span class="svc-tag">Business succession pre-review</span>
+                        </div>
                         <span class="mt-5 text-primary text-label-md font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">View details<span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
                     </a>
                 </div>
